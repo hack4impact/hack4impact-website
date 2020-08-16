@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @font-face {
   font-family: 'HK Grotesk';
   src: local('HK Grotesk'), local('HKGrotesk-Regular'),
@@ -20,8 +22,21 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'HK Grotesk', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: $font-family;
+  color: $black;
+}
+
+h1 {
+  font-size: $h1;
+}
+h2 {
+  font-size: $h2;
+}
+h3 {
+  font-size: $h3;
+}
+h4 {
+  font-size: $h4;
 }
 
 h1,
