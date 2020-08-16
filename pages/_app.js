@@ -1,3 +1,4 @@
+import "@reach/dialog/styles.css";
 import '../global.scss';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';

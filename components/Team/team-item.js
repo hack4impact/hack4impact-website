@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import PropTypes from 'prop-types';
+import person from './item-interface';
 
 function Item({
   image,
@@ -26,11 +26,6 @@ function Item({
   )
 }
 
-Item.propTypes = {
-  image: PropTypes.string,
-  name: PropTypes.string,
-  role: PropTypes.string,
-  onClick: PropTypes.onClick,
-}
+Item.propTypes = person;
 
 export default Item;

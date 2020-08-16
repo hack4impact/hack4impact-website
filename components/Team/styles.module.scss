@@ -32,9 +32,10 @@
   }
 }
 
-.container::after {
-  content: '';
-  padding-right: 0.02px; /* smallest size that is cross browser */
+.close {
+  float: right;
+  font-size: 20px;
+  color: $neutral;
 }
 
 .item_wrapper {
@@ -68,5 +69,24 @@
   @include screen('tablet') {
     height: 180px;
     width: 180px;
+  }
+}
+
+.profile {
+  width: 100%;
+  height: auto;
+  @include screen("phablet") {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.card_name {
+  margin-bottom: 8px;
+}
+
+.links {
+  a {
+    margin-right: 12px;
   }
 }

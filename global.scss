@@ -56,3 +56,10 @@ a {
     text-decoration: underline;
   }
 }
+
+[data-reach-dialog-content] {
+  width: calc(100% - 12px);
+  @include screen("tablet") {
+    width: 500px;
+  }
+}
