@@ -8,7 +8,7 @@ function Item({
   onClick,
 }) {
   return (
-    <div
+    <li
       className={styles.item_wrapper}
       onClick={onClick}
       role="presentation"
@@ -22,7 +22,7 @@ function Item({
       <br />
       <b>{name}</b>
       <div>{role}</div>
-    </div>
+    </li>
   )
 }
 

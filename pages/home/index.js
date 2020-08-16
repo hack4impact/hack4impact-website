@@ -52,6 +52,26 @@ const Home = () => (
             name: 'Kitten Yang',
             role: 'Principal Meow',
           },
+          {
+            image: 'http://placekitten.com/g/300/300',
+            name: 'Kitten Yang',
+            role: 'Principal Meow',
+          },
+          {
+            image: 'http://placekitten.com/g/300/300',
+            name: 'Kitten Yang',
+            role: 'Principal Meow',
+          },
+          {
+            image: 'http://placekitten.com/g/300/300',
+            name: 'Kitten Yang',
+            role: 'Principal Meow',
+          },
+          {
+            image: 'http://placekitten.com/g/300/300',
+            name: 'Kitten Yang',
+            role: 'Principal Meow',
+          },
         ]}
         infinite
       />

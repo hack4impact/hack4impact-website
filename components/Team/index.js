@@ -8,14 +8,14 @@ function Team({
   items,
 }) {
   return(
-    <div className={classNames(styles.container, {
+    <ul className={classNames(styles.container, {
       [styles.infinite]: infinite,
       [styles.wrap]: !infinite,
     })}>
       {
         items.map((item, i) => <Item {...item} onClick={() => alert('showModal')}/>)
       }
-    </div>
+    </ul>
   )
 }
 
