@@ -4,6 +4,7 @@ import Team from '../../components/Team';
 import ChapterTable from '../../components/ChapterTable';
 import styles from './styles.module.scss';
 import Container from '../../components/Container';
+import Project from '../../components/Project';
 
 function ExampleComponent({ name }) {
   return (
@@ -11,12 +12,35 @@ function ExampleComponent({ name }) {
   )
 }
 
+const ExampleProjects = [
+  {
+    image: 'http://placekitten.com/g/1000/600',
+    title: 'Website',
+    tags: ['Kitten', 'Kat', 'Kitty Kat Kat'],
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
+    link: 'https://www.w3schools.com/',
+  },
+  {
+    image: 'http://placekitten.com/g/1000/600',
+    title: 'Website',
+    tags: ['Kitten', 'Kat', 'Kitty Kat Kat','Kitten', 'Kat', 'Kitty Kat Kat','Kitten', 'Kat', 'Kitty Kat Kat'],
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
+    link: 'https://www.w3schools.com/',
+  }
+]
+
 const Home = () => (
   <>
     <Head>
       <title>Hack4Impact Home</title>
     </Head>
     <main>
+      <Container>
+        <h2>Featured Projects</h2>
+        {
+          ExampleProjects.map((item) => <Project {...item} />)
+        }
+      </Container>
       <Container>
         <h2>Our Chapters</h2>
         <ChapterTable
@@ -48,7 +72,7 @@ const Home = () => (
             name: 'Kitten Yang',
             role: 'Principal Meow',
             description: 'Optional Description. Not everyone will have one, but some will. This is just like Hack4Impact’s current website!',
-            email: 'www.google.com',
+            email: 'https://www.w3schools.com/',
           },
           {
             image: 'http://placekitten.com/g/300/300',
@@ -60,17 +84,17 @@ const Home = () => (
             name: 'Kitten Yang',
             role: 'Principal Meow',
             description: 'Optional Description. Not everyone will have one, but some will. This is just like Hack4Impact’s current website!',
-            email: 'www.google.com',
-            linkedin: 'www.google.com',
+            email: 'https://www.w3schools.com/',
+            linkedin: 'https://www.w3schools.com/',
           },
           {
             image: 'http://placekitten.com/g/300/300',
             name: 'Kitten Yang',
             role: 'Principal Meow',
             description: 'Optional Description. Not everyone will have one, but some will. This is just like Hack4Impact’s current website!',
-            email: 'www.google.com',
-            linkedin: 'www.google.com',
-            github: 'www.google.com',
+            email: 'https://www.w3schools.com/',
+            linkedin: 'https://www.w3schools.com/',
+            github: 'https://www.w3schools.com/',
           },
           {
             image: 'http://placekitten.com/g/300/300',
