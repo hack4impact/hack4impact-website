@@ -1,12 +1,14 @@
 @import '../../variables.scss';
 
+.footer_wrapper {
+  background-color: $background;
+}
+
 .footer_content {
+  @include container;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: $background;
-  padding-left: 12vw;
-  padding-right: 12vw;
   padding-bottom: 6vw;
   padding-top: 2vw;
 
