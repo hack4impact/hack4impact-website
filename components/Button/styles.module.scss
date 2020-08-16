@@ -1,0 +1,17 @@
+@import '../../variables.scss';
+
+.button {
+  color: $white;
+  background-color: $primary-dark;
+  padding: 16px 30px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: $border-radius;
+  text-decoration: none;
+  letter-spacing: 1px;
+  &:hover {
+    text-decoration: none;
+    background-color: lighten($color: $primary-dark, $amount: 5);
+  }
+}
