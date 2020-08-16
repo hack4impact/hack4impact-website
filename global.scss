@@ -57,9 +57,35 @@ a {
   }
 }
 
+// Modal
 [data-reach-dialog-content] {
   width: calc(100% - 12px);
   @include screen("tablet") {
     width: 500px;
+  }
+}
+
+/* Utility Classes */
+
+.contain {
+  @include container
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  &.spaced {
+    justify-content: space-between;
+  }
+  &.centered {
+    justify-content: center;
+  }
+  &.aligned {
+    align-items: center;
   }
 }
