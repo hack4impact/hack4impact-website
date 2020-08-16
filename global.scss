@@ -48,3 +48,11 @@ h3 {
 * {
   box-sizing: border-box;
 }
+
+a {
+  color: $accent;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
