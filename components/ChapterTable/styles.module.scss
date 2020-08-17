@@ -17,16 +17,16 @@
 
 .chapter_select {
   margin: 12px;
-  display:inline-block;
-  *display:inline;/* For IE7*/
-  *zoom:1;/* For IE7*/
-  vertical-align:top;
+  display: inline-block;
+  *display: inline; /* For IE7*/
+  *zoom: 1; /* For IE7*/
+  vertical-align: top;
   cursor: pointer;
   &.selected {
     border-bottom: solid 10px $accent;
   }
   &:focus {
-    outline:0;
+    outline: 0;
   }
 }
 

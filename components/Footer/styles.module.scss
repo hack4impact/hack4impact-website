@@ -25,7 +25,7 @@
     display: block;
     margin-top: 0px;
     margin-bottom: 12px;
-    color: #2E5987;
+    color: #2e5987;
   }
 
   a {
@@ -43,7 +43,7 @@
   flex-direction: row;
 
   a {
-    color: #2E5987;
+    color: #2e5987;
   }
 }
 
@@ -53,7 +53,7 @@
   margin-top: 16px;
 }
 
-.footer_link  {
+.footer_link {
   color: $black;
   padding-bottom: 12px;
 }
@@ -63,30 +63,25 @@
 }
 
 @media only screen and (max-width: 980px) {
-
   .link_list {
     margin-left: 64px;
   }
-
 }
 
 @media only screen and (max-width: 780px) {
-
   .right_content {
     display: flex;
     flex-direction: column;
   }
-
 }
 
 @media only screen and (max-width: 582px) {
-
   .link_list {
     margin-left: 0px;
   }
 
   .left_content {
-    padding-bottom: 32px
+    padding-bottom: 32px;
   }
 
   .footer_content {

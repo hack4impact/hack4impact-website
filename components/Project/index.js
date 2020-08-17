@@ -3,37 +3,31 @@ import styles from './styles.module.scss';
 
 function determineLinkName(link) {
   if (link.includes('github')) {
-    return "Visit GitHub";
+    return 'Visit GitHub';
   }
-  return "Visit Site";
+  return 'Visit Site';
 }
 
-function Project({
-  image,
-  title,
-  tags,
-  description,
-  link
-}) {
-  return(
+function Project({ image, title, tags, description, link }) {
+  return (
     <div className={styles.root}>
-      <img
-        className={styles.image}
-        src={image}
-        alt={title}
-      />
+      <img className={styles.image} src={image} alt={title} />
       <div>
         <b className={styles.title}>{title}</b>
         <div className={styles.tags}>
-          {
-            tags.map((item, i) => <div className={styles.tag}>{item}</div>)
-          }
+          {tags.map(tag => (
+            <div key={tag} className={styles.tag}>
+              {tag}
+            </div>
+          ))}
         </div>
         <p>{description}</p>
-        <a href={link} target="_blank">{determineLinkName(link)}</a>
+        <a href={link} target="_blank" rel="noreferrer">
+          {determineLinkName(link)}
+        </a>
       </div>
     </div>
-  )
+  );
 }
 
 Project.propTypes = {
@@ -42,6 +36,6 @@ Project.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string),
   description: PropTypes.string,
   link: PropTypes.string.isRequired,
-}
+};
 
 export default Project;
