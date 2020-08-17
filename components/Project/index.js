@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import project from './item-interface';
 
