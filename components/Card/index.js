@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import Button from '../Button';
+import DotShadow from '../DotShadow';
 
 function Card({ title, subtitle, description, href, buttonTitle, children }) {
   return (
     <div className={styles.card_root}>
+      <DotShadow height={320} width={280} className={styles.shadow} />
       <div className={styles.card_column}>
         <div className={styles.card_content}>
           <small>{subtitle}</small>
