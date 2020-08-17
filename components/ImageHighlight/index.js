@@ -4,7 +4,6 @@ import Accent from '../Accent';
 import styles from './styles.module.scss';
 
 function ImageHighlight({ children, height, width }) {
-  console.log(height);
   return (
     <div className={styles.root}>
       <div className={styles.dot_shadow}>
