@@ -22,8 +22,7 @@ function Team({ infinite, items }) {
         className={classNames(styles.container, {
           [styles.infinite]: infinite,
           [styles.wrap]: !infinite,
-        })}
-      >
+        })}>
         {items.map(item => (
           <Item
             {...item}
@@ -37,14 +36,8 @@ function Team({ infinite, items }) {
         <Dialog
           aria-label={`More info about ${current.name}`}
           isOpen={showDialog}
-          onDismiss={close}
-        >
-          <button
-            type="button"
-            className={styles.close}
-            onClick={close}
-            tabIndex="0"
-          >
+          onDismiss={close}>
+          <button type="button" className={styles.close} onClick={close} tabIndex="0">
             <FaTimes />
           </button>
           <Content {...current} />

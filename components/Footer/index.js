@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styles from './styles.module.scss';
 
@@ -8,7 +7,7 @@ function Footer() {
       <div className={styles.footer_content}>
         <div className={styles.left_content}>
           <h2>Contact Us</h2>
-          <p>Couldn't find what you're looking for?</p>
+          <p>Couldn&apos;t find what you&apos;re looking for?</p>
           <p>Contact us through email to get in touch!</p>
           <Link href="hello@hack4impact.org">
             <a href="hello@hack4impact.org" className={styles.footer_email}>

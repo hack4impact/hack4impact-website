@@ -59,8 +59,7 @@ const Home = () => (
             subtitle="WE MENTOR"
             description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
             href="/work"
-            buttonTitle="Current Chapters"
-          >
+            buttonTitle="Current Chapters">
             <FaNetworkWired />
           </Card>
           <Card
@@ -68,8 +67,7 @@ const Home = () => (
             subtitle="WE MENTOR"
             description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
             href="/work"
-            buttonTitle="Current Chapters"
-          >
+            buttonTitle="Current Chapters">
             <FaNetworkWired />
           </Card>
           <Card
@@ -77,8 +75,7 @@ const Home = () => (
             subtitle="WE MENTOR"
             description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
             href="/work"
-            buttonTitle="Current Chapters"
-          >
+            buttonTitle="Current Chapters">
             <FaNetworkWired />
           </Card>
         </div>
@@ -109,8 +106,7 @@ const Home = () => (
               logoUrl: 'http://placekitten.com/g/100/100',
               name: 'Kittenford',
             },
-          ]}
-        >
+          ]}>
           {selectedItem => <ExampleComponent {...selectedItem} />}
         </ChapterTable>
       </Container>

@@ -17,8 +17,7 @@ function ChapterTable({ items, children }) {
             className={classNames(styles.chapter_select, {
               [styles.selected]: selected === i,
             })}
-            tabIndex={i}
-          >
+            tabIndex={i}>
             <img src={item.logoUrl} alt={item.name} className={styles.logo} />
           </button>
         ))}
@@ -33,7 +32,7 @@ ChapterTable.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       logoUrl: PropTypes.string.isRequired,
-    }).isRequired
+    }).isRequired,
   ),
   children: PropTypes.func.isRequired,
 };

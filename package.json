@@ -1,38 +1,31 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@reach/dialog": "^0.10.5",
-    "babel-eslint": "^9.0.0",
-    "classnames": "^2.2.6",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-config-wesbos": "0.0.19",
-    "eslint-plugin-html": "^5.0.5",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "next": "9.5.1",
-    "prettier": "^1.19.1",
-    "prop-types": "^15.7.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-icons": "^3.10.0",
-    "sass": "^1.26.10"
-  },
-  "devDependencies": {},
-  "eslintConfig": {
-    "extends": [
-      "wesbos"
-    ]
-  }
+    "name": "my-app",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint --fix .",
+        "lint:format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    },
+    "dependencies": {
+        "@reach/dialog": "^0.10.5",
+        "classnames": "^2.2.6",
+        "next": "9.5.1",
+        "prop-types": "^15.7.2",
+        "react": "16.13.1",
+        "react-dom": "16.13.1",
+        "react-icons": "^3.10.0",
+        "sass": "^1.26.10"
+    },
+    "devDependencies": {
+        "eslint": "^7.7.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-jsx-a11y": "^6.3.1",
+        "eslint-plugin-prettier": "^3.1.4",
+        "eslint-plugin-react": "^7.20.6",
+        "eslint-plugin-react-hooks": "^4.0.8",
+        "prettier": "^1.19.1"
+    }
 }
