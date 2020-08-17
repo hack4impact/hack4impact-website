@@ -10,20 +10,22 @@
   white-space: nowrap;
   width: 100%;
   overflow-x: scroll;
+  border-bottom: solid 1px lightgray;
+  margin-bottom: 12px;
   .chapter_select:first-child {
     margin-left: 0;
   }
 }
 
 .chapter_select {
-  margin: 12px;
+  margin: 12px 12px 0 12px;
   display: inline-block;
   *display: inline; /* For IE7*/
   *zoom: 1; /* For IE7*/
   vertical-align: top;
   cursor: pointer;
   &.selected {
-    border-bottom: solid 10px $accent;
+    border-bottom: solid 5px $accent;
   }
   &:focus {
     outline: 0;

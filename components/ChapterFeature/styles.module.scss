@@ -1,0 +1,26 @@
+@import '../../variables.scss';
+
+.table_wrapper {
+  margin-left: -10vw;
+  margin-right: -10vw;
+  width: 100vw;
+  @include screen('desktop-wide') {
+    margin: 0;
+    max-width: $content-max-width;
+  }
+}
+
+.content {
+  padding-bottom: 30px;
+  @include screen('tablet') {
+    width: 40vw;
+  }
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+  @include screen('tablet') {
+    width: 300px;
+  }
+}
