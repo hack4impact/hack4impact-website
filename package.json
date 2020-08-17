@@ -33,6 +33,14 @@
   "eslintConfig": {
     "extends": [
       "wesbos"
-    ]
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "semi": true
+        }
+      ]
+    }
   }
 }
