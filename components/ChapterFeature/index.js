@@ -5,6 +5,7 @@ import ImageHighlight from '../ImageHighlight';
 import person from '../Team/dialog-content';
 import project from '../Project/item-interface';
 import styles from './styles.module.scss';
+import determineLinkName from '../../scripts/determineLinkName';
 
 const height = 200;
 const width = 260;
@@ -16,9 +17,11 @@ function ChapterFeature({ name, image, description, link, team, projects }) {
         <div className={styles.content}>
           <h3>{name}</h3>
           <p>{description}</p>
-          <a href={link} target="_blank" rel="noreferrer">
-            Visit Site
-          </a>
+          {link && (
+            <a href={link} target="_blank" rel="noreferrer">
+              {determineLinkName(link)}
+            </a>
+          )}
         </div>
         <div className={styles.image_wrap}>
           <ImageHighlight height={height} width={width}>
@@ -42,7 +45,7 @@ ChapterFeature.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string,
-  link: PropTypes.string.isRequired,
+  link: PropTypes.string,
   team: PropTypes.arrayOf(PropTypes.shape(person)),
   projects: PropTypes.arrayOf(PropTypes.shape(project)),
 };

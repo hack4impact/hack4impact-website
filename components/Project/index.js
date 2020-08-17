@@ -1,12 +1,6 @@
 import styles from './styles.module.scss';
 import project from './item-interface';
-
-function determineLinkName(link) {
-  if (link.includes('github')) {
-    return 'Visit GitHub';
-  }
-  return 'Visit Site';
-}
+import determineLinkName from '../../scripts/determineLinkName';
 
 function Project({ image, title, tags, description, link }) {
   return (
