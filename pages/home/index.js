@@ -1,35 +1,49 @@
 import Head from 'next/head';
-import Button from '../../components/Button';
+import PropTypes from 'prop-types';
+import { FaNetworkWired } from 'react-icons/fa';
+import styles from './styles.module.scss';
 import Team from '../../components/Team';
 import ChapterTable from '../../components/ChapterTable';
-import styles from './styles.module.scss';
 import Container from '../../components/Container';
 import Project from '../../components/Project';
 import Card from './Card';
-import { FaNetworkWired } from 'react-icons/fa'
 
 function ExampleComponent({ name }) {
-  return (
-    <h1>{name}</h1>
-  )
+  return <h1>{name}</h1>;
 }
+
+ExampleComponent.propTypes = {
+  name: PropTypes.string,
+};
 
 const ExampleProjects = [
   {
     image: 'http://placekitten.com/g/1000/600',
     title: 'Website',
     tags: ['Kitten', 'Kat', 'Kitty Kat Kat'],
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
     link: 'https://www.w3schools.com/',
   },
   {
     image: 'http://placekitten.com/g/1000/600',
     title: 'Website',
-    tags: ['Kitten', 'Kat', 'Kitty Kat Kat','Kitten', 'Kat', 'Kitty Kat Kat','Kitten', 'Kat', 'Kitty Kat Kat'],
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
+    tags: [
+      'Kitten',
+      'Kat',
+      'Kitty Kat Kat',
+      'Kitten',
+      'Kat',
+      'Kitty Kat Kat',
+      'Kitten',
+      'Kat',
+      'Kitty Kat Kat',
+    ],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
     link: 'https://www.w3schools.com/',
-  }
-]
+  },
+];
 
 const Home = () => (
   <>
@@ -41,29 +55,29 @@ const Home = () => (
         <h2>Our Initiatives</h2>
         <div className={styles.card_row}>
           <Card
-            title='Chapter Network'
-            subtitle='WE MENTOR'
-            description='We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started'
-            href='/work'
-            buttonTitle='Current Chapters'
+            title="Chapter Network"
+            subtitle="WE MENTOR"
+            description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
+            href="/work"
+            buttonTitle="Current Chapters"
           >
             <FaNetworkWired />
           </Card>
           <Card
-            title='Chapter Network'
-            subtitle='WE MENTOR'
-            description='We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started'
-            href='/work'
-            buttonTitle='Current Chapters'
+            title="Chapter Network"
+            subtitle="WE MENTOR"
+            description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
+            href="/work"
+            buttonTitle="Current Chapters"
           >
             <FaNetworkWired />
           </Card>
           <Card
-            title='Chapter Network'
-            subtitle='WE MENTOR'
-            description='We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started'
-            href='/work'
-            buttonTitle='Current Chapters'
+            title="Chapter Network"
+            subtitle="WE MENTOR"
+            description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
+            href="/work"
+            buttonTitle="Current Chapters"
           >
             <FaNetworkWired />
           </Card>
@@ -71,9 +85,9 @@ const Home = () => (
       </Container>
       <Container>
         <h2>Featured Projects</h2>
-        {
-          ExampleProjects.map((item) => <Project {...item} />)
-        }
+        {ExampleProjects.map(item => (
+          <Project {...item} />
+        ))}
       </Container>
       <Container>
         <h2>Our Chapters</h2>
@@ -94,9 +108,10 @@ const Home = () => (
             {
               logoUrl: 'http://placekitten.com/g/100/100',
               name: 'Kittenford',
-            }
-          ]}>
-            <ExampleComponent />
+            },
+          ]}
+        >
+          {selectedItem => <ExampleComponent {...selectedItem} />}
         </ChapterTable>
       </Container>
       <Team
@@ -105,7 +120,8 @@ const Home = () => (
             image: 'http://placekitten.com/g/300/300',
             name: 'Kitten Yang',
             role: 'Principal Meow',
-            description: 'Optional Description. Not everyone will have one, but some will. This is just like Hack4Impact’s current website!',
+            description:
+              'Optional Description. Not everyone will have one, but some will. This is just like Hack4Impact’s current website!',
             email: 'https://www.w3schools.com/',
           },
           {
@@ -117,7 +133,8 @@ const Home = () => (
             image: 'http://placekitten.com/g/300/300',
             name: 'Kitten Yang',
             role: 'Principal Meow',
-            description: 'Optional Description. Not everyone will have one, but some will. This is just like Hack4Impact’s current website!',
+            description:
+              'Optional Description. Not everyone will have one, but some will. This is just like Hack4Impact’s current website!',
             email: 'https://www.w3schools.com/',
             linkedin: 'https://www.w3schools.com/',
           },
@@ -125,7 +142,8 @@ const Home = () => (
             image: 'http://placekitten.com/g/300/300',
             name: 'Kitten Yang',
             role: 'Principal Meow',
-            description: 'Optional Description. Not everyone will have one, but some will. This is just like Hack4Impact’s current website!',
+            description:
+              'Optional Description. Not everyone will have one, but some will. This is just like Hack4Impact’s current website!',
             email: 'https://www.w3schools.com/',
             linkedin: 'https://www.w3schools.com/',
             github: 'https://www.w3schools.com/',
@@ -165,6 +183,6 @@ const Home = () => (
       />
     </main>
   </>
-)
+);
 
-export default Home
+export default Home;
