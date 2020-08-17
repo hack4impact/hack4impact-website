@@ -60,7 +60,7 @@ a {
 // Modal
 [data-reach-dialog-content] {
   width: calc(100% - 12px);
-  @include screen("tablet") {
+  @include screen('tablet') {
     width: 500px;
   }
 }
@@ -68,7 +68,7 @@ a {
 /* Utility Classes */
 
 .contain {
-  @include container
+  @include container;
 }
 
 .center {

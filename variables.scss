@@ -1,13 +1,13 @@
 /* Colours */
 
-$primary: #A6EDFC;          //Light Blue
-$secondary: #B0FFE9;        //Light Green
-$primary-dark: #172A3A;     //Dark Blue
-$background: #D7FDFF;       //Light Light Blue
-$accent: #001AFF;           //Stronk Blue, Listen there are a lot of blues ok?
-$black: #171717;            //Black
-$white: #ffffff;            //White
-$neutral: #8C8C8C;          //Gray
+$primary: #a6edfc; //Light Blue
+$secondary: #b0ffe9; //Light Green
+$primary-dark: #172a3a; //Dark Blue
+$background: #d7fdff; //Light Light Blue
+$accent: #001aff; //Stronk Blue, Listen there are a lot of blues ok?
+$black: #171717; //Black
+$white: #ffffff; //White
+$neutral: #8c8c8c; //Gray
 
 /* Font */
 
@@ -17,7 +17,7 @@ $h3: 28px;
 $h4: 20px;
 
 $font-family: 'HK Grotesk', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
 @mixin accentHeader {
   font-family: $font-family;
@@ -40,34 +40,34 @@ $border-width: 5px;
 
 $content-max-width: 1200px;
 $breakpoints: (
-    "phone":        400px,
-    "phone-wide":   480px,
-    "phablet":      560px,
-    "tablet-small": 640px,
-    "tablet":       768px,
-    "tablet-wide":  1024px,
-    "desktop":      1248px,
-    "desktop-wide": 1440px
+  'phone': 400px,
+  'phone-wide': 480px,
+  'phablet': 560px,
+  'tablet-small': 640px,
+  'tablet': 768px,
+  'tablet-wide': 1024px,
+  'desktop': 1248px,
+  'desktop-wide': 1440px,
 );
 
 @mixin screen($width, $type: min) {
-    @if map_has_key($breakpoints, $width) {
-        $width: map_get($breakpoints, $width);
-        @if $type == max {
-            $width: $width - 1px;
-        }
-        @media only screen and (#{$type}-width: $width) {
-            @content;
-        }
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
     }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
 }
 
 @mixin container {
-    margin-left: 10vw;
-    margin-right: 10vw;
-    @include screen("desktop-wide") {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: $content-max-width;
-    }
+  margin-left: 10vw;
+  margin-right: 10vw;
+  @include screen('desktop-wide') {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $content-max-width;
+  }
 }
