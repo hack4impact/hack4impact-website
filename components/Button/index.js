@@ -7,11 +7,12 @@ function Button ({
   href,
   className,
   id,
+  type,
 }) {
   return (<Link href={href}>
     <a
       id={id}
-      className={`${styles.button} ${className}`}
+      className={`${styles.button} ${className} ${styles[type]}`}
     >
       {children}
     </a>
@@ -23,6 +24,12 @@ Button.propTypes = {
   href: PropTypes.string,
   className: PropTypes.string,
   id: PropTypes.id,
+  type: PropTypes.string,
+}
+
+Button.defaultProps = {
+  href: "/",
+  type: "primary",
 }
 
 export default Button;
