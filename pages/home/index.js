@@ -5,6 +5,8 @@ import ChapterTable from '../../components/ChapterTable';
 import styles from './styles.module.scss';
 import Container from '../../components/Container';
 import Project from '../../components/Project';
+import Card from './Card';
+import { FaNetworkWired } from 'react-icons/fa'
 
 function ExampleComponent({ name }) {
   return (
@@ -35,6 +37,38 @@ const Home = () => (
       <title>Hack4Impact Home</title>
     </Head>
     <main>
+      <Container>
+        <h2>Our Initiatives</h2>
+        <div className={styles.card_row}>
+          <Card
+            title='Chapter Network'
+            subtitle='WE MENTOR'
+            description='We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started'
+            href='/work'
+            buttonTitle='Current Chapters'
+          >
+            <FaNetworkWired />
+          </Card>
+          <Card
+            title='Chapter Network'
+            subtitle='WE MENTOR'
+            description='We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started'
+            href='/work'
+            buttonTitle='Current Chapters'
+          >
+            <FaNetworkWired />
+          </Card>
+          <Card
+            title='Chapter Network'
+            subtitle='WE MENTOR'
+            description='We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started'
+            href='/work'
+            buttonTitle='Current Chapters'
+          >
+            <FaNetworkWired />
+          </Card>
+        </div>
+      </Container>
       <Container>
         <h2>Featured Projects</h2>
         {

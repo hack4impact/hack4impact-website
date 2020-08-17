@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styles from './styles.module.scss';
+import classNames from 'classnames';
 
 function Button ({
   children,
@@ -12,7 +13,7 @@ function Button ({
   return (<Link href={href}>
     <a
       id={id}
-      className={`${styles.button} ${className} ${styles[type]}`}
+      className={classNames(styles.button, className, styles[type])}
     >
       {children}
     </a>
