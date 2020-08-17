@@ -88,4 +88,7 @@ a {
   &.aligned {
     align-items: center;
   }
+  &.wrap {
+    flex-wrap: wrap;
+  }
 }
