@@ -20,7 +20,8 @@
     }
 
     li {
-      a, a:visited {
+      a,
+      a:visited {
         color: $black;
         text-decoration: none;
         padding-top: 20px;

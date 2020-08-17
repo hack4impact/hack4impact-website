@@ -1,48 +1,40 @@
-import styles from './styles.module.scss';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-const classNames = require('classnames');
+import classNames from 'classnames';
+import styles from './styles.module.scss';
 
-function ChapterTable({
-  items,
-  children,
-}) {
+function ChapterTable({ items, children }) {
   const [selected, setSelected] = useState(0);
 
   return (
-    <div className={styles.root}
-    >
+    <div className={styles.root}>
       <div className={styles.chapters}>
-        {
-          items.map((item, i) => (
-            <div 
-              onClick={() => setSelected(i)}
-              className={classNames(styles.chapter_select, {
-                [styles.selected]: selected === i
-              })}
-              role="button"
-              tabIndex={i}
-            >
-              <img
-                src={item.logoUrl}
-                alt={item.name}
-                className={styles.logo}
-              />
-            </div>
-          ))
-        }
+        {items.map((item, i) => (
+          <button
+            key={item.name}
+            type="button"
+            onClick={() => setSelected(i)}
+            className={classNames(styles.chapter_select, {
+              [styles.selected]: selected === i,
+            })}
+            tabIndex={i}>
+            <img src={item.logoUrl} alt={item.name} className={styles.logo} />
+          </button>
+        ))}
       </div>
-      {React.cloneElement(children, { ...items[selected] })}
+      {children(items[selected])}
     </div>
-  )
+  );
 }
 
 ChapterTable.propTypes = {
-  items: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    logoUrl: PropTypes.string.isRequired,
-  }).isRequired,
-  children: PropTypes.element.isRequired,
-}
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      logoUrl: PropTypes.string.isRequired,
+    }).isRequired,
+  ),
+  children: PropTypes.func.isRequired,
+};
 
 export default ChapterTable;

@@ -7,14 +7,14 @@
     overflow-x: scroll;
     white-space: nowrap;
     padding-left: 10vw;
-    @include screen("desktop-wide") {
+    @include screen('desktop-wide') {
       padding-left: calc(50% - 600px);
     }
     .item_wrapper {
-      display:inline-block;
-      *display:inline;/* For IE7*/
-      *zoom:1;/* For IE7*/
-      vertical-align:top;
+      display: inline-block;
+      *display: inline; /* For IE7*/
+      *zoom: 1; /* For IE7*/
+      vertical-align: top;
     }
   }
 
@@ -27,7 +27,7 @@
     flex-wrap: wrap;
   }
 
-  .item_wrapper{
+  .item_wrapper {
     margin-right: 20px;
   }
 }
@@ -48,9 +48,9 @@
     }
   }
   &:focus {
-    outline:0;
+    outline: 0;
   }
-  b { 
+  b {
     font-size: $h4;
   }
   b + div {
@@ -75,7 +75,7 @@
 .profile {
   width: 100%;
   height: auto;
-  @include screen("phablet") {
+  @include screen('phablet') {
     width: 300px;
     height: 300px;
   }
