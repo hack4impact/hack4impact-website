@@ -57,6 +57,11 @@ a {
   }
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
 // Modal
 [data-reach-dialog-content] {
   width: calc(100% - 12px);
