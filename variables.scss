@@ -16,12 +16,16 @@ $h2: 32px;
 $h3: 28px;
 $h4: 20px;
 
-$font-family: 'HK Grotesk', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-  Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$font-family: 'HK Grotesk', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+  Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
 @mixin accentHeader {
   font-family: $font-family;
   text-transform: uppercase;
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin: 10px 0;
 }
 
 /* Margins */
@@ -69,5 +73,22 @@ $breakpoints: (
     margin-left: auto;
     margin-right: auto;
     max-width: $content-max-width;
+  }
+}
+
+@mixin dotted-shadow($offset-top: 20px, $offset-left: -20px) {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: $offset-top;
+    left: $offset-left;
+    width: 100%;
+    height: 100%;
+    background-image: url('/svg/ben-day.svg');
+    background-size: 30px 30px;
+    background-repeat: repeat;
+    opacity: 0.15;
   }
 }
