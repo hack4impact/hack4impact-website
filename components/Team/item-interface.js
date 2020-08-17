@@ -10,6 +10,6 @@ const person = {
   email: PropTypes.string,
   website: PropTypes.string,
   description: PropTypes.string,
-}
+};
 
 export default person;
