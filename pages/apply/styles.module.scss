@@ -1,0 +1,21 @@
+@import '../../variables.scss';
+
+.switch_control {
+  display: flex;
+  flex-direction: column;
+  @include screen('tablet') {
+    flex-direction: row;
+  }
+  a {
+    font-weight: bold;
+    font-size: $h3;
+    color: $neutral;
+    margin-bottom: 8px;
+    .selected {
+      color: $accent;
+    }
+  }
+  a:first-child {
+    margin-right: 20px;
+  }
+}
