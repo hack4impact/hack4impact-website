@@ -6,7 +6,7 @@ import Team from '../../components/Team';
 import ChapterTable from '../../components/ChapterTable';
 import Container from '../../components/Container';
 import Project from '../../components/Project';
-import Card from '../../components/home/Card';
+import Card from '../../components/Card';
 
 function ExampleComponent({ name }) {
   return <h1>{name}</h1>;
@@ -86,7 +86,7 @@ const Home = () => (
       <Container>
         <h2>Featured Projects</h2>
         {ExampleProjects.map(item => (
-          <Project {...item} />
+          <Project key={item.title} {...item} />
         ))}
       </Container>
       <Container>
