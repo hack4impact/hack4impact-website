@@ -35,7 +35,7 @@ ChapterTable.propTypes = {
       logoUrl: PropTypes.string.isRequired,
     }).isRequired
   ),
-  children: PropTypes.element.isRequired,
+  children: PropTypes.func.isRequired,
 };
 
 export default ChapterTable;

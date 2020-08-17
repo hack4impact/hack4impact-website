@@ -2,12 +2,11 @@ import PropTypes from 'prop-types';
 import { Dialog } from '@reach/dialog';
 import { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import classNames from 'classnames';
 import Content from './dialog-content';
 import Item from './team-item';
 import styles from './styles.module.scss';
 import person from './item-interface';
-
-const classNames = require('classnames');
 
 function Team({ infinite, items }) {
   const [current, setCurrent] = useState(items[0]);
@@ -28,13 +27,18 @@ function Team({ infinite, items }) {
         {items.map(item => (
           <Item
             {...item}
+            key={item.name}
             onClick={() => {
               setShowDialog(true);
               setCurrent(item);
             }}
           />
         ))}
-        <Dialog isOpen={showDialog} onDismiss={close}>
+        <Dialog
+          aria-label={`More info about ${current.name}`}
+          isOpen={showDialog}
+          onDismiss={close}
+        >
           <button
             type="button"
             className={styles.close}
@@ -51,7 +55,7 @@ function Team({ infinite, items }) {
 }
 
 Team.propTypes = {
-  items: PropTypes.shape(person).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape(person).isRequired),
   infinite: PropTypes.bool,
 };
 
