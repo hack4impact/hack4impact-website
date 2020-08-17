@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Spacer from '../Spacer';
+import styles from './styles.module.scss';
 
 function Container({ children, className }) {
   return (
     <>
-      <section className={classNames('contain', className)}>{children}</section>
-      <Spacer />
+      <section className={classNames('contain', className, styles.root)}>{children}</section>
     </>
   );
 }
