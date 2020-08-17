@@ -5,7 +5,7 @@
   background: linear-gradient(180deg, rgba(215, 253, 255, 1) 0%, $primary 100%);
   margin-right: 35px;
   margin-bottom: 50px;
-  width: 280px;
+  width: 250px;
   height: 330px;
 }
 
@@ -36,8 +36,8 @@
 }
 
 .card_button {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
 }
 
 .shadow {

@@ -63,19 +63,19 @@ const Home = () => (
             <FaNetworkWired />
           </Card>
           <Card
-            title="Chapter Network"
+            title="Pro-bono Projects"
             subtitle="WE MENTOR"
             description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
             href="/work"
-            buttonTitle="Current Chapters">
+            buttonTitle="Current Projects">
             <FaNetworkWired />
           </Card>
           <Card
-            title="Chapter Network"
+            title="Chapter Resources"
             subtitle="WE MENTOR"
             description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
-            href="/work"
-            buttonTitle="Current Chapters">
+            href="/apply"
+            buttonTitle="Apply to the Team">
             <FaNetworkWired />
           </Card>
         </div>
