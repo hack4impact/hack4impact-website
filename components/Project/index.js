@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
+import project from './item-interface';
 
 function determineLinkName(link) {
   if (link.includes('github')) {
@@ -30,12 +31,6 @@ function Project({ image, title, tags, description, link }) {
   );
 }
 
-Project.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string),
-  description: PropTypes.string,
-  link: PropTypes.string.isRequired,
-};
+Project.propTypes = project;
 
 export default Project;
