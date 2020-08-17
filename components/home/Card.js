@@ -1,15 +1,8 @@
-import styles from './styles.module.scss';
 import PropTypes from 'prop-types';
-import Button from '../../components/Button';
+import styles from './styles.module.scss';
+import Button from '../Button';
 
-function Card ({
-  title,
-  subtitle,
-  description,
-  href,
-  buttonTitle,
-  children,
-}) {
+function Card({ title, subtitle, description, href, buttonTitle, children }) {
   return (
     <div className={styles.card_root}>
       <div className={styles.card_column}>
@@ -18,18 +11,13 @@ function Card ({
           <h3 style={{ marginTop: 12 }}>{title}</h3>
           <p>{description}</p>
         </div>
-        <Button 
-          href={href}
-          className={styles.card_button}
-        >
-          { buttonTitle }
+        <Button href={href} className={styles.card_button}>
+          {buttonTitle}
         </Button>
       </div>
-      <div className={styles.card_icon}>
-        {children}
-      </div>
+      <div className={styles.card_icon}>{children}</div>
     </div>
-  )
+  );
 }
 
 Card.propTypes = {
@@ -39,6 +27,6 @@ Card.propTypes = {
   href: PropTypes.string.isRequired,
   buttonTitle: PropTypes.string.isRequired,
   children: PropTypes.any,
-}
+};
 
 export default Card;

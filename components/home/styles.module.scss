@@ -1,13 +1,8 @@
 @import '../../variables.scss';
 
-.heading {
-  text-align: center;
-  color: red;
-}
-
 .card_root {
   position: relative;
-  background: linear-gradient(180deg, rgba(215,253,255,1) 0%, $primary 100%);
+  background: linear-gradient(180deg, rgba(215, 253, 255, 1) 0%, $primary 100%);
   margin-right: 35px;
   margin-bottom: 50px;
   width: 250px;

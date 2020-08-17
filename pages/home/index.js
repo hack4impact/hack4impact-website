@@ -6,7 +6,7 @@ import Team from '../../components/Team';
 import ChapterTable from '../../components/ChapterTable';
 import Container from '../../components/Container';
 import Project from '../../components/Project';
-import Card from './Card';
+import Card from '../../components/home/Card';
 
 function ExampleComponent({ name }) {
   return <h1>{name}</h1>;
