@@ -2,8 +2,8 @@ import classNames from 'classnames';
 import styles from './styles.module.scss';
 
 interface Props {
-  children: any,
-  className: string,
+  children: any;
+  className: string;
 }
 
 function Container({ children, className }: Props) {

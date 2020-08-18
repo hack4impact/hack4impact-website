@@ -1,8 +1,8 @@
 import styles from './styles.module.scss';
 
 interface Props {
-  title: string,
-  children: any,
+  title: string;
+  children: any;
 }
 
 function Header({ title, children }: Props) {
