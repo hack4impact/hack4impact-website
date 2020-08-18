@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 import project from './item-interface';
 import determineLinkName from '../../../scripts/determineLinkName';
 
-function Project({ image, title, tags, description, link }) {
+function Project({ image, title, tags, description, link }: project) {
   return (
     <div className={styles.root}>
       <img className={styles.image} src={image} alt={title} />
@@ -23,7 +23,5 @@ function Project({ image, title, tags, description, link }) {
     </div>
   );
 }
-
-Project.propTypes = project;
 
 export default Project;
