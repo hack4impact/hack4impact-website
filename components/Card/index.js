@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import Button from '../Button';
-import HoverShinyEffect from '../HoverShinyEffect';
 
 function Card({ title, subtitle, description, href, buttonTitle, children }) {
   return (
@@ -15,7 +14,6 @@ function Card({ title, subtitle, description, href, buttonTitle, children }) {
       </div>
       <Button href={href} className={styles.card_button}>
         {buttonTitle}
-        <HoverShinyEffect />
       </Button>
       <div className={styles.card_icon}>{children}</div>
     </div>
