@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Team from '../Team';
 import Project from '../Project';
 import ImageHighlight from '../ImageHighlight';
-import person from '../Team/dialog-content';
+import person from '../Team/item-interface';
 import project from '../Project/item-interface';
 import styles from './styles.module.scss';
 import determineLinkName from '../../scripts/determineLinkName';
