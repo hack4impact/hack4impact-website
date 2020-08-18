@@ -1,14 +1,14 @@
 import styles from './styles.module.scss';
 import Button from '../../../shared/Button';
 
-interface Props {
+type Props = {
   title: string;
   subtitle: string;
   description: string;
   href: string;
   buttonTitle: string;
   children: React.ReactNode;
-}
+};
 
 function Card({ title, subtitle, description, href, buttonTitle, children }: Props) {
   return (

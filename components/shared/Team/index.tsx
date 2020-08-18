@@ -5,12 +5,24 @@ import classNames from 'classnames';
 import Content from './dialog-content';
 import Item from './team-item';
 import styles from './styles.module.scss';
-import PersonInterface from './item-interface';
 
-interface Props {
-  items: PersonInterface[];
+export type PersonType = {
+  image: string;
+  name: string;
+  role?: string;
+  school?: string;
+  linkedin?: string;
+  github?: string;
+  email?: string;
+  website?: string;
+  description?: string;
+  onClick?: () => void;
+};
+
+type Props = {
+  items: PersonType[];
   infinite: boolean;
-}
+};
 
 function Team({ infinite, items }: Props) {
   const [current, setCurrent] = useState(items[0]);

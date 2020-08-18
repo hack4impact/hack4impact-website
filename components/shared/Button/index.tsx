@@ -3,14 +3,14 @@ import classNames from 'classnames';
 import styles from './styles.module.scss';
 import HoverShinyEffect from '../HoverShinyEffect';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
   href?: string;
   className?: string;
   id?: string;
   type?: string;
   external?: boolean;
-}
+};
 
 function Button({
   children,

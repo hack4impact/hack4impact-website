@@ -1,9 +1,9 @@
 import styles from './styles.module.scss';
 
-interface Props {
+type Props = {
   title: string;
   children: React.ReactNode;
-}
+};
 
 function Header({ title, children }: Props) {
   return (

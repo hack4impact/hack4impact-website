@@ -1,10 +1,10 @@
 import { FaQuestion } from 'react-icons/fa';
 import styles from './styles.module.scss';
 
-interface Props {
+type Props = {
   question: string;
   answer: string;
-}
+};
 
 function FAQCell({ question, answer }: Props) {
   return (

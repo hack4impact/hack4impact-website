@@ -2,12 +2,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './styles.module.scss';
 
-interface NavLinkProps {
+type NavLinkProps = {
   children: React.ReactNode;
   href: string;
   activeRoute: string;
   referenceRoute?: string;
-}
+};
 
 function NavLink({ children, href, activeRoute, referenceRoute }: NavLinkProps) {
   return (

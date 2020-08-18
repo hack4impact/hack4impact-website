@@ -1,10 +1,10 @@
 import styles from './styles.module.scss';
 import classNames from 'classnames';
 
-interface Props {
+type Props = {
   size?: number;
   className?: string;
-}
+};
 
 function Accent({ size = 18, className }: Props) {
   return (

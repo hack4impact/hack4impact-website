@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
   className?: string;
-}
+};
 
 function Container({ children, className }: Props) {
   return (

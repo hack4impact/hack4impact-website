@@ -1,11 +1,11 @@
 import Accent from '../Accent';
 import styles from './styles.module.scss';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
   height: number;
   width: number;
-}
+};
 
 function ImageHighlight({ children, height, width }: Props) {
   return (

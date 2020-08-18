@@ -2,15 +2,15 @@ import { useState } from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 
-interface Chapter {
+type Chapter = {
   name: string;
   logoUrl: string;
-}
+};
 
-interface Props {
+type Props = {
   items: Chapter[];
   children: (chapter: Chapter) => React.ReactNode;
-}
+};
 
 function ChapterTable({ items, children }: Props) {
   const [selected, setSelected] = useState(0);
