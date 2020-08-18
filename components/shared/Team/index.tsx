@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { Dialog } from '@reach/dialog';
 import { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
@@ -6,9 +5,26 @@ import classNames from 'classnames';
 import Content from './dialog-content';
 import Item from './team-item';
 import styles from './styles.module.scss';
-import person from './item-interface';
 
-function Team({ infinite, items }) {
+export type PersonType = {
+  image: string;
+  name: string;
+  role?: string;
+  school?: string;
+  linkedin?: string;
+  github?: string;
+  email?: string;
+  website?: string;
+  description?: string;
+  onClick?: () => void;
+};
+
+type Props = {
+  items: PersonType[];
+  infinite: boolean;
+};
+
+function Team({ infinite, items }: Props) {
   const [current, setCurrent] = useState(items[0]);
   const [showDialog, setShowDialog] = useState(false);
 
@@ -37,7 +53,7 @@ function Team({ infinite, items }) {
           aria-label={`More info about ${current.name}`}
           isOpen={showDialog}
           onDismiss={close}>
-          <button type="button" className={styles.close} onClick={close} tabIndex="0">
+          <button type="button" className={styles.close} onClick={close}>
             <FaTimes />
           </button>
           <Content {...current} />
@@ -46,10 +62,5 @@ function Team({ infinite, items }) {
     </>
   );
 }
-
-Team.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape(person).isRequired),
-  infinite: PropTypes.bool,
-};
 
 export default Team;

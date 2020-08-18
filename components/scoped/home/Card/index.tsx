@@ -1,8 +1,16 @@
-import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import Button from '../../../shared/Button';
 
-function Card({ title, subtitle, description, href, buttonTitle, children }) {
+type Props = {
+  title: string;
+  subtitle: string;
+  description: string;
+  href: string;
+  buttonTitle: string;
+  children: React.ReactNode;
+};
+
+function Card({ title, subtitle, description, href, buttonTitle, children }: Props) {
   return (
     <div className={styles.card_root}>
       <div className={styles.card_content}>
@@ -19,14 +27,5 @@ function Card({ title, subtitle, description, href, buttonTitle, children }) {
     </div>
   );
 }
-
-Card.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  buttonTitle: PropTypes.string.isRequired,
-  children: PropTypes.any,
-};
 
 export default Card;

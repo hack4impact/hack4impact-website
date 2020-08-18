@@ -1,8 +1,15 @@
 import styles from './styles.module.scss';
-import project from './item-interface';
 import determineLinkName from '../../../scripts/determineLinkName';
 
-function Project({ image, title, tags, description, link }) {
+export type ProjectType = {
+  image: string;
+  title: string;
+  tags?: string[];
+  description?: string;
+  link: string;
+};
+
+function Project({ image, title, tags, description, link }: ProjectType) {
   return (
     <div className={styles.root}>
       <img className={styles.image} src={image} alt={title} />
@@ -23,7 +30,5 @@ function Project({ image, title, tags, description, link }) {
     </div>
   );
 }
-
-Project.propTypes = project;
 
 export default Project;

@@ -1,10 +1,10 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 
 function HoverShinyEffect() {
   const containerRef = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     function mouseMoveEvent(e) {
       const { x, y } = containerRef.current.getBoundingClientRect();
       console.log(e);

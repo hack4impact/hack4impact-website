@@ -1,16 +1,23 @@
-import PropTypes from 'prop-types';
 import Team from '../../../shared/Team';
-import Project from '../../../shared/Project';
+import Project, { ProjectType } from '../../../shared/Project';
 import ImageHighlight from '../../../shared/ImageHighlight';
-import person from '../../../shared/Team/item-interface';
-import project from '../../../shared/Project/item-interface';
+import { PersonType } from '../../../shared/Team';
 import styles from './styles.module.scss';
 import determineLinkName from '../../../../scripts/determineLinkName';
 
 const height = 200;
 const width = 260;
 
-function ChapterFeature({ name, image, description, link, team, projects }) {
+type Props = {
+  name: string;
+  image: string;
+  description: string;
+  link: string;
+  team: PersonType[];
+  projects: ProjectType[];
+};
+
+function ChapterFeature({ name, image, description, link, team, projects }: Props) {
   return (
     <div style={{ marginTop: 20 }}>
       <div className="row spaced aligned wrap">
@@ -40,14 +47,5 @@ function ChapterFeature({ name, image, description, link, team, projects }) {
     </div>
   );
 }
-
-ChapterFeature.propTypes = {
-  name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  link: PropTypes.string,
-  team: PropTypes.arrayOf(PropTypes.shape(person)),
-  projects: PropTypes.arrayOf(PropTypes.shape(project)),
-};
 
 export default ChapterFeature;

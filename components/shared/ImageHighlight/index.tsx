@@ -1,8 +1,13 @@
-import PropType from 'prop-types';
 import Accent from '../Accent';
 import styles from './styles.module.scss';
 
-function ImageHighlight({ children, height, width }) {
+type Props = {
+  children: React.ReactNode;
+  height: number;
+  width: number;
+};
+
+function ImageHighlight({ children, height, width }: Props) {
   return (
     <div className={styles.root}>
       {children}
@@ -13,11 +18,5 @@ function ImageHighlight({ children, height, width }) {
     </div>
   );
 }
-
-ImageHighlight.propTypes = {
-  children: PropType.element,
-  height: PropType.number,
-  width: PropType.number,
-};
 
 export default ImageHighlight;

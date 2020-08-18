@@ -1,8 +1,12 @@
-import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import classNames from 'classnames';
 
-function Accent({ size, className }) {
+type Props = {
+  size?: number;
+  className?: string;
+};
+
+function Accent({ size = 18, className }: Props) {
   return (
     <div
       style={{ transform: `scale(${size / 18})` }}
@@ -10,14 +14,5 @@ function Accent({ size, className }) {
     />
   );
 }
-
-Accent.propTypes = {
-  size: PropTypes.number,
-  className: PropTypes.string,
-};
-
-Accent.defaultProps = {
-  size: 18,
-};
 
 export default Accent;

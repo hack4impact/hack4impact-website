@@ -1,9 +1,15 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './styles.module.scss';
-import PropTypes from 'prop-types';
 
-function NavLink({ children, href, activeRoute, referenceRoute }) {
+type NavLinkProps = {
+  children: React.ReactNode;
+  href: string;
+  activeRoute: string;
+  referenceRoute?: string;
+};
+
+function NavLink({ children, href, activeRoute, referenceRoute }: NavLinkProps) {
   return (
     <li
       className={
@@ -15,13 +21,6 @@ function NavLink({ children, href, activeRoute, referenceRoute }) {
     </li>
   );
 }
-
-NavLink.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  href: PropTypes.string,
-  activeRoute: PropTypes.string,
-  referenceRoute: PropTypes.string,
-};
 
 function Nav() {
   const router = useRouter();

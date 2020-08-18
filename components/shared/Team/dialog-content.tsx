@@ -1,7 +1,17 @@
 import styles from './styles.module.scss';
-import person from './item-interface';
+import { PersonType } from './';
 
-function Content({ image, name, role, school, linkedin, github, email, website, description }) {
+function Content({
+  image,
+  name,
+  role,
+  school,
+  linkedin,
+  github,
+  email,
+  website,
+  description,
+}: PersonType) {
   return (
     <>
       <img className={styles.profile} src={image} alt={name} />
@@ -34,7 +44,5 @@ function Content({ image, name, role, school, linkedin, github, email, website, 
     </>
   );
 }
-
-Content.propTypes = person;
 
 export default Content;

@@ -1,4 +1,4 @@
-function determineLinkName(link) {
+function determineLinkName(link: string) {
   if (link.includes('github')) {
     return 'Visit GitHub';
   }

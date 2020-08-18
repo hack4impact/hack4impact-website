@@ -1,11 +1,11 @@
 import '@reach/dialog/styles.css';
 import '../global.scss';
-import PropTypes from 'prop-types';
 import Nav from '../components/shared/Nav';
 import Footer from '../components/shared/Footer';
+import { AppProps } from 'next/app';
 
 // This default export is required in a new `pages/_app.js` file.
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Nav />
@@ -14,8 +14,3 @@ export default function MyApp({ Component, pageProps }) {
     </>
   );
 }
-
-MyApp.propTypes = {
-  Component: PropTypes.any,
-  pageProps: PropTypes.any,
-};

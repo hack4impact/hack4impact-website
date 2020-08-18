@@ -1,9 +1,30 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
+import { ProjectType } from '../../../shared/Project';
 
-function ChapterTable({ items, children }) {
+export type TeamType = {
+  image: string;
+  name: string;
+  role: string;
+};
+
+export type ChapterType = {
+  name: string;
+  logoUrl: string;
+  image: string;
+  description: string;
+  link: string;
+  team: TeamType[];
+  projects: ProjectType[];
+};
+
+type Props = {
+  items: ChapterType[];
+  children: (chapter: ChapterType) => React.ReactNode;
+};
+
+function ChapterTable({ items, children }: Props) {
   const [selected, setSelected] = useState(0);
 
   return (
@@ -26,15 +47,5 @@ function ChapterTable({ items, children }) {
     </div>
   );
 }
-
-ChapterTable.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      logoUrl: PropTypes.string.isRequired,
-    }).isRequired,
-  ),
-  children: PropTypes.func.isRequired,
-};
 
 export default ChapterTable;

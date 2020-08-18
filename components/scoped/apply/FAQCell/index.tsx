@@ -1,8 +1,12 @@
-import PropTypes from 'prop-types';
 import { FaQuestion } from 'react-icons/fa';
 import styles from './styles.module.scss';
 
-function FAQCell({ question, answer }) {
+type Props = {
+  question: string;
+  answer: string;
+};
+
+function FAQCell({ question, answer }: Props) {
   return (
     <div className={styles.root}>
       <div className={styles.icon}>
@@ -15,10 +19,5 @@ function FAQCell({ question, answer }) {
     </div>
   );
 }
-
-FAQCell.propTypes = {
-  question: PropTypes.string.isRequired,
-  answer: PropTypes.string.isRequired,
-};
 
 export default FAQCell;

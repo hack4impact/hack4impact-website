@@ -1,7 +1,11 @@
-import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 
-function Header({ title, children }) {
+type Props = {
+  title: string;
+  children?: React.ReactNode;
+};
+
+function Header({ title, children }: Props) {
   return (
     <>
       <div className={styles.content}>
@@ -12,10 +16,5 @@ function Header({ title, children }) {
     </>
   );
 }
-
-Header.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.any,
-};
 
 export default Header;
