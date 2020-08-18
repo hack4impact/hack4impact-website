@@ -1,3 +1,3 @@
-import Apply from '../index';
+import Apply from '../';
 
 export default Apply;

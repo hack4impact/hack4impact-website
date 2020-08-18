@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 
 type Props = {
   title: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 function Header({ title, children }: Props) {

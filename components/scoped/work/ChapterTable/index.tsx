@@ -1,15 +1,27 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
+import { ProjectType } from '../../../shared/Project';
 
-type Chapter = {
+export type TeamType = {
+  image: string;
+  name: string;
+  role: string;
+};
+
+export type ChapterType = {
   name: string;
   logoUrl: string;
+  image: string;
+  description: string;
+  link: string;
+  team: TeamType[];
+  projects: ProjectType[];
 };
 
 type Props = {
-  items: Chapter[];
-  children: (chapter: Chapter) => React.ReactNode;
+  items: ChapterType[];
+  children: (chapter: ChapterType) => React.ReactNode;
 };
 
 function ChapterTable({ items, children }: Props) {
