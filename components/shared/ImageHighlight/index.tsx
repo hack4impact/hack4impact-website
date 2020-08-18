@@ -2,7 +2,7 @@ import Accent from '../Accent';
 import styles from './styles.module.scss';
 
 interface Props {
-  children: any;
+  children?: any;
   height: number;
   width: number;
 }

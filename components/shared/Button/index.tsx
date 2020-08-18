@@ -4,15 +4,15 @@ import styles from './styles.module.scss';
 import HoverShinyEffect from '../HoverShinyEffect';
 
 interface Props {
-  children: any;
-  href: string;
-  className: string;
-  id: string;
-  type: string;
-  external: boolean;
+  children?: any;
+  href?: string;
+  className?: string;
+  id?: string;
+  type?: string;
+  external?: boolean;
 };
 
-function Button({ children, href = '/', className, id, type = 'primary', external }: Props) {
+function Button({ children, href = '/', className, id, type = 'primary', external = false }: Props) {
   if (external) {
     return (
       <a

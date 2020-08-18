@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 
 interface Props {
   title: string;
-  children: any;
+  children?: any;
 }
 
 function Header({ title, children }: Props) {
