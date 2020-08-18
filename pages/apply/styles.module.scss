@@ -11,7 +11,7 @@
     font-size: $h3;
     color: $neutral;
     margin-bottom: 8px;
-    .selected {
+    &.selected {
       color: $accent;
     }
   }
