@@ -3,7 +3,17 @@ import { useState } from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 
-function ChapterTable({ items, children }) {
+interface chapter {
+  name: string;
+  logoUrl: string;
+}
+
+interface Props {
+  items: [chapter];
+  children: any;
+}
+
+function ChapterTable({ items, children }: Props) {
   const [selected, setSelected] = useState(0);
 
   return (
@@ -26,15 +36,5 @@ function ChapterTable({ items, children }) {
     </div>
   );
 }
-
-ChapterTable.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      logoUrl: PropTypes.string.isRequired,
-    }).isRequired,
-  ),
-  children: PropTypes.func.isRequired,
-};
 
 export default ChapterTable;
