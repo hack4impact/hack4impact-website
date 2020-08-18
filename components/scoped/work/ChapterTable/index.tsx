@@ -1,16 +1,15 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 
-interface chapter {
+interface Chapter {
   name: string;
   logoUrl: string;
 }
 
 interface Props {
-  items: chapter[];
-  children: any;
+  items: Chapter[];
+  children: (chapter: Chapter) => React.ReactNode;
 }
 
 function ChapterTable({ items, children }: Props) {

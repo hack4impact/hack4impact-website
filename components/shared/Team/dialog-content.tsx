@@ -1,7 +1,17 @@
 import styles from './styles.module.scss';
 import PersonInterface from './item-interface';
 
-function Content({ image, name, role, school, linkedin, github, email, website, description }: PersonInterface) {
+function Content({
+  image,
+  name,
+  role,
+  school,
+  linkedin,
+  github,
+  email,
+  website,
+  description,
+}: PersonInterface) {
   return (
     <>
       <img className={styles.profile} src={image} alt={name} />

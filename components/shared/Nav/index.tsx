@@ -2,14 +2,14 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './styles.module.scss';
 
-interface Props {
-  children: any;
+interface NavLinkProps {
+  children: React.ReactNode;
   href: string;
   activeRoute: string;
   referenceRoute?: string;
 }
 
-function NavLink({ children, href, activeRoute, referenceRoute }: Props) {
+function NavLink({ children, href, activeRoute, referenceRoute }: NavLinkProps) {
   return (
     <li
       className={

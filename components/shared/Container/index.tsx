@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import styles from './styles.module.scss';
 
 interface Props {
-  children?: any;
+  children: React.ReactNode;
   className?: string;
 }
 

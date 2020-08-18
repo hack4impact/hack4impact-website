@@ -2,13 +2,13 @@ import styles from './styles.module.scss';
 import Button from '../../../shared/Button';
 
 interface Props {
-  title: string,
-  subtitle: string,
-  description: string,
-  href: string,
-  buttonTitle: string,
-  children: any,
-};
+  title: string;
+  subtitle: string;
+  description: string;
+  href: string;
+  buttonTitle: string;
+  children: React.ReactNode;
+}
 
 function Card({ title, subtitle, description, href, buttonTitle, children }: Props) {
   return (

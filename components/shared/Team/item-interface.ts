@@ -9,6 +9,6 @@ interface PersonInterface {
   website?: string;
   description?: string;
   onClick?: () => void;
-};
+}
 
 export default PersonInterface;

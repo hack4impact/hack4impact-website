@@ -4,7 +4,7 @@ import classNames from 'classnames';
 interface Props {
   size?: number;
   className?: string;
-};
+}
 
 function Accent({ size = 18, className }: Props) {
   return (

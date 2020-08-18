@@ -4,6 +4,6 @@ interface ProjectInterface {
   tags?: string[];
   description?: string;
   link: string;
-};
+}
 
 export default ProjectInterface;
