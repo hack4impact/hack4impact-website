@@ -7,7 +7,6 @@ function HoverShinyEffect() {
   useLayoutEffect(() => {
     function mouseMoveEvent(e) {
       const { x, y } = containerRef.current.getBoundingClientRect();
-      console.log(e);
       containerRef.current.style.setProperty('--px', e.clientX - x);
       containerRef.current.style.setProperty('--py', e.clientY - y);
     }
