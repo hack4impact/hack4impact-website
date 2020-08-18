@@ -2,10 +2,10 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { FaNetworkWired } from 'react-icons/fa';
 import styles from './styles.module.scss';
-import Container from '../../components/Container';
-import Project from '../../components/Project';
-import Card from '../../components/Card';
-import Button from '../../components/Button';
+import Container from '../../components/shared/Container';
+import Project from '../../components/shared/Project';
+import Card from '../../components/scoped/home/Card';
+import Button from '../../components/shared/Button';
 
 function ExampleComponent({ name }) {
   return <h1>{name}</h1>;
@@ -73,7 +73,7 @@ const Home = () => (
             title="Chapter Resources"
             subtitle="We share"
             description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
-            href="/apply"
+            href="/apply/chapter"
             buttonTitle="Apply to the Team">
             <FaNetworkWired />
           </Card>
@@ -86,7 +86,7 @@ const Home = () => (
         ))}
         <div className={styles.button_row}>
           <Button href="/work">See all chapters</Button>
-          <Button href="/apply" type="secondary">
+          <Button href="/apply/nonprofit" type="secondary">
             Propose your nonprofit project
           </Button>
         </div>
