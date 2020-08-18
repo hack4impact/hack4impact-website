@@ -19,3 +19,20 @@
     margin-right: 20px;
   }
 }
+
+.requirements {
+  padding-bottom: 30px;
+  @include screen('tablet') {
+    width: 40vw;
+  }
+}
+
+.image_wrap {
+  @include screen('tablet') {
+    margin-right: 20px;
+  }
+}
+
+.image {
+  object-fit: cover;
+}
