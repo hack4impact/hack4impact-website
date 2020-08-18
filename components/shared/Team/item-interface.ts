@@ -1,4 +1,4 @@
-interface person {
+interface PersonInterface {
   image: string;
   name: string;
   role?: string;
@@ -11,4 +11,4 @@ interface person {
   onClick?: () => void;
 };
 
-export default person;
+export default PersonInterface;

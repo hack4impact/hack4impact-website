@@ -1,8 +1,8 @@
 import Team from '../../../shared/Team';
 import Project from '../../../shared/Project';
 import ImageHighlight from '../../../shared/ImageHighlight';
-import person from '../../../shared/Team/item-interface';
-import project from '../../../shared/Project/item-interface';
+import PersonInterface from '../../../shared/Team/item-interface';
+import ProjectInterface from '../../../shared/Project/item-interface';
 import styles from './styles.module.scss';
 import determineLinkName from '../../../../scripts/determineLinkName';
 
@@ -14,8 +14,8 @@ interface Props {
   image: string;
   description: string;
   link: string;
-  team: [person];
-  projects: [project];
+  team: PersonInterface[];
+  projects: ProjectInterface[];
 }
 
 function ChapterFeature({ name, image, description, link, team, projects }: Props) {

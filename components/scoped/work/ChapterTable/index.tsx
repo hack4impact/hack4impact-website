@@ -9,7 +9,7 @@ interface chapter {
 }
 
 interface Props {
-  items: [chapter];
+  items: chapter[];
   children: any;
 }
 
