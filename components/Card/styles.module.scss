@@ -1,48 +1,50 @@
 @import '../../variables.scss';
 
 .card_root {
-  position: relative;
-  background: linear-gradient(180deg, rgba(215, 253, 255, 1) 0%, $primary 100%);
-  margin-right: 35px;
-  margin-bottom: 50px;
-  width: 250px;
-  height: 330px;
-}
-
-.card_column {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-}
 
-.card_content {
-  padding: 20px;
-}
+  background: linear-gradient(180deg, rgba(215, 253, 255, 1) 0%, $primary 100%);
+  margin-right: 35px;
+  margin-bottom: 50px;
+  max-width: 280px;
+  width: 100%;
 
-.card_icon {
-  height: 55px;
-  width: 55px;
-  border-radius: 50%;
-  background-color: $secondary;
-  box-shadow: -5px 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: -20px;
-  right: -10px;
-  font-size: 30px;
-}
+  @include dotted-shadow;
 
-.card_button {
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-}
+  .card_content {
+    padding: 20px;
+    margin-bottom: 30px;
 
-.shadow {
-  position: absolute;
-  bottom: -20px;
-  left: -20px;
-  z-index: -1;
+    hgroup {
+      h3 {
+        @include accentHeader;
+      }
+      h4 {
+        font-size: $h3;
+      }
+    }
+  }
+
+  .card_icon {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    background-color: $secondary;
+    box-shadow: -5px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    font-size: 30px;
+  }
+
+  .card_button {
+    font-size: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 }

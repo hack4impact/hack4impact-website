@@ -1,0 +1,30 @@
+.shiny_boi {
+  --px: 0;
+  --py: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  &:hover:after {
+    opacity: 0.2;
+  }
+
+  &:after {
+    content: '';
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s linear;
+    position: absolute;
+    width: 240px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #fff 40%, #fff 60%, transparent 100%);
+    opacity: 0;
+    z-index: 9999;
+    mix-blend-mode: screen;
+    transform: translateX(calc(var(--px) * 1px)) translateX(-50%);
+  }
+}

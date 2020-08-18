@@ -1,22 +1,20 @@
 import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import Button from '../Button';
-import DotShadow from '../DotShadow';
 
 function Card({ title, subtitle, description, href, buttonTitle, children }) {
   return (
     <div className={styles.card_root}>
-      <DotShadow height={320} width={250} className={styles.shadow} />
-      <div className={styles.card_column}>
-        <div className={styles.card_content}>
-          <small>{subtitle}</small>
-          <h3 style={{ marginTop: 12 }}>{title}</h3>
-          <p>{description}</p>
-        </div>
-        <Button href={href} className={styles.card_button}>
-          {buttonTitle}
-        </Button>
+      <div className={styles.card_content}>
+        <hgroup>
+          <h3>{subtitle}</h3>
+          <h4 style={{ marginTop: 12 }}>{title}</h4>
+        </hgroup>
+        <p>{description}</p>
       </div>
+      <Button href={href} className={styles.card_button}>
+        {buttonTitle}
+      </Button>
       <div className={styles.card_icon}>{children}</div>
     </div>
   );
