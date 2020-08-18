@@ -1,8 +1,8 @@
-import Header from '../../components/Header';
-import Container from '../../components/Container';
-import Project from '../../components/Project';
-import ChapterTable from '../../components/ChapterTable';
-import ChapterFeature from '../../components/ChapterFeature';
+import Header from '../../components/shared/Header';
+import Container from '../../components/shared/Container';
+import Project from '../../components/shared/Project';
+import ChapterTable from '../../components/scoped/work/ChapterTable';
+import ChapterFeature from '../../components/scoped/work/ChapterFeature';
 
 const exampleProjects = [
   {

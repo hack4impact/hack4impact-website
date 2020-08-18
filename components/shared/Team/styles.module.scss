@@ -1,0 +1,92 @@
+@import '../../../variables.scss';
+
+.container {
+  list-style: none;
+  padding-top: 12px;
+  &.infinite {
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-left: 10vw;
+    @include screen('desktop-wide') {
+      padding-left: calc(50% - 600px);
+    }
+    .item_wrapper {
+      display: inline-block;
+      *display: inline; /* For IE7*/
+      *zoom: 1; /* For IE7*/
+      vertical-align: top;
+    }
+  }
+
+  &.wrap {
+    @include container;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .item_wrapper {
+    margin-right: 20px;
+  }
+}
+
+.close {
+  float: right;
+  font-size: 20px;
+  color: $neutral;
+}
+
+.item_wrapper {
+  text-align: center;
+  margin-bottom: 18px;
+  cursor: pointer;
+  &:hover {
+    .image {
+      transform: scale(1.05);
+    }
+  }
+  &:focus {
+    outline: 0;
+  }
+  b {
+    font-size: $h4;
+  }
+  b + div {
+    margin-top: 6px;
+  }
+}
+
+.image {
+  border-radius: 50%;
+  border: solid $primary $border-width;
+  height: 130px;
+  width: 130px;
+  margin-bottom: 8px;
+  transition: transform 200ms;
+
+  @include screen('tablet') {
+    height: 180px;
+    width: 180px;
+  }
+}
+
+.profile {
+  width: 100%;
+  height: auto;
+  @include screen('phablet') {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.card_name {
+  margin-bottom: 8px;
+}
+
+.links {
+  a {
+    margin-right: 12px;
+  }
+}

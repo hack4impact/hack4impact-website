@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
-import Header from '../../components/Header';
-import ImageHighlight from '../../components/ImageHighlight';
-import Container from '../../components/Container';
-import Button from '../../components/Button';
+import Header from '../../components/shared/Header';
+import ImageHighlight from '../../components/shared/ImageHighlight';
+import Container from '../../components/shared/Container';
+import Button from '../../components/shared/Button';
 import styles from './styles.module.scss';
 import classNames from 'classnames';
-import FAQCell from '../../components/FAQCell';
+import FAQCell from '../../components/scoped/apply/FAQCell';
 
 const npRoute = '/apply/nonprofit';
 const chRoute = '/apply/chapter';

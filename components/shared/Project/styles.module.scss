@@ -1,0 +1,53 @@
+@import '../../../variables.scss';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  @include screen('tablet-wide') {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+}
+
+.image {
+  width: 100%;
+  max-height: 300px;
+  margin-bottom: 12px;
+  object-fit: cover;
+  border-radius: $border-radius;
+  border: solid $border-width $primary;
+  @include screen('tablet-wide') {
+    width: 400px;
+    max-height: 300px;
+    margin-right: 20px;
+    margin-bottom: 0;
+    object-fit: contain;
+  }
+}
+
+.title {
+  font-size: $h3;
+}
+
+.tags {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tag {
+  background-color: $secondary;
+  text-align: center;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  color: $primary-dark;
+  text-transform: uppercase;
+  margin-right: 12px;
+  margin-top: 6px;
+}

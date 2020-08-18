@@ -2,10 +2,10 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { FaNetworkWired } from 'react-icons/fa';
 import styles from './styles.module.scss';
-import Container from '../../components/Container';
-import Project from '../../components/Project';
-import Card from '../../components/Card';
-import Button from '../../components/Button';
+import Container from '../../components/shared/Container';
+import Project from '../../components/shared/Project';
+import Card from '../../components/scoped/home/Card';
+import Button from '../../components/shared/Button';
 
 function ExampleComponent({ name }) {
   return <h1>{name}</h1>;
