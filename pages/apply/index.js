@@ -5,6 +5,7 @@ import Container from '../../components/Container';
 import Button from '../../components/Button';
 import styles from './styles.module.scss';
 import classNames from 'classnames';
+import FAQCell from '../../components/FAQCell';
 
 const npRoute = '/apply/nonprofit';
 const chRoute = '/apply/chapter';
@@ -21,6 +22,11 @@ const pretendImContentful1 = {
   faq: [
     {
       question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit?',
+      answer:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel odio erat. Nullam vel risus nisi. Etiam sed nisi augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi a odio rutrum, feugiat elit quis, aliquam enim. Aliquam vel vehicula nisi, in venenatis nulla. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
+    },
+    {
+      question: 'Lorem ipsum dolor sit amet?',
       answer:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel odio erat. Nullam vel risus nisi. Etiam sed nisi augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi a odio rutrum, feugiat elit quis, aliquam enim. Aliquam vel vehicula nisi, in venenatis nulla. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
     },
@@ -75,6 +81,9 @@ function Apply() {
         </Container>
         <Container>
           <h2>{content.faqTitle}</h2>
+          {content.faq.map(item => (
+            <FAQCell key={item.question} {...item} />
+          ))}
         </Container>
       </div>
     </main>
