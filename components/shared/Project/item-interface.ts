@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 interface project {
   image: string;
   title: string;
