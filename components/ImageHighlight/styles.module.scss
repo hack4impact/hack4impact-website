@@ -1,12 +1,7 @@
-.root {
-  position: relative;
-}
+@import '../../variables.scss';
 
-.dot_shadow {
-  position: absolute;
-  z-index: -1;
-  left: -20px;
-  bottom: -20px;
+.root {
+  @include dotted-shadow;
 }
 
 .accent_wrapper {
