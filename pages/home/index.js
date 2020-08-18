@@ -55,7 +55,7 @@ const Home = () => (
         <div className={styles.card_row}>
           <Card
             title="Chapter Network"
-            subtitle="WE MENTOR"
+            subtitle="We mentor"
             description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
             href="/work"
             buttonTitle="Current Chapters">
@@ -63,7 +63,7 @@ const Home = () => (
           </Card>
           <Card
             title="Pro-bono Projects"
-            subtitle="WE MENTOR"
+            subtitle="We build"
             description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
             href="/work"
             buttonTitle="Current Projects">
@@ -71,7 +71,7 @@ const Home = () => (
           </Card>
           <Card
             title="Chapter Resources"
-            subtitle="WE MENTOR"
+            subtitle="We share"
             description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
             href="/apply"
             buttonTitle="Apply to the Team">
