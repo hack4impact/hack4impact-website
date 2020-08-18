@@ -10,9 +10,13 @@
     font-weight: bold;
     font-size: $h3;
     color: $neutral;
-    margin-bottom: 8px;
     &.selected {
       color: $accent;
+    }
+
+    margin-bottom: 20px;
+    @include screen('tablet') {
+      margin-bottom: 0;
     }
   }
   a:first-child {
