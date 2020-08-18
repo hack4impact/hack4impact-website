@@ -1,4 +1,4 @@
-interface project {
+interface ProjectInterface {
   image: string;
   title: string;
   tags?: [string];
@@ -6,4 +6,4 @@ interface project {
   link: string;
 };
 
-export default project;
+export default ProjectInterface;

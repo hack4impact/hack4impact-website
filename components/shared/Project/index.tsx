@@ -1,8 +1,8 @@
 import styles from './styles.module.scss';
-import project from './item-interface';
+import ProjectInterface from './item-interface';
 import determineLinkName from '../../../scripts/determineLinkName';
 
-function Project({ image, title, tags, description, link }: project) {
+function Project({ image, title, tags, description, link }: ProjectInterface) {
   return (
     <div className={styles.root}>
       <img className={styles.image} src={image} alt={title} />
