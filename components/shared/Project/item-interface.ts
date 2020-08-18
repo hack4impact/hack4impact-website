@@ -1,7 +1,7 @@
 interface ProjectInterface {
   image: string;
   title: string;
-  tags?: [string];
+  tags?: string[];
   description?: string;
   link: string;
 };
