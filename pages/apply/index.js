@@ -6,6 +6,7 @@ import Button from '../../components/shared/Button';
 import styles from './styles.module.scss';
 import classNames from 'classnames';
 import FAQCell from '../../components/scoped/apply/FAQCell';
+import Link from 'next/link';
 
 const npRoute = '/apply/nonprofit';
 const chRoute = '/apply/chapter';
@@ -56,12 +57,16 @@ function Apply() {
     <main>
       <Header title="Apply">
         <div className={styles.switch_control}>
-          <a className={classNames({ [styles.selected]: currentRoute === chRoute })} href={chRoute}>
-            For New Chapters
-          </a>
-          <a className={classNames({ [styles.selected]: currentRoute === npRoute })} href={npRoute}>
-            For Non Profits
-          </a>
+          <Link href={chRoute}>
+            <a className={classNames({ [styles.selected]: currentRoute === chRoute })}>
+              For New Chapters
+            </a>
+          </Link>
+          <Link href={npRoute}>
+            <a className={classNames({ [styles.selected]: currentRoute === npRoute })}>
+              For Non Profits
+            </a>
+          </Link>
         </div>
       </Header>
       <div style={{ marginTop: 20 }}>
