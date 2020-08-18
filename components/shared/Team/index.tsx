@@ -5,10 +5,10 @@ import classNames from 'classnames';
 import Content from './dialog-content';
 import Item from './team-item';
 import styles from './styles.module.scss';
-import person from './item-interface';
+import PersonInterface from './item-interface';
 
 interface Props {
-  items: [person];
+  items: PersonInterface[];
   infinite: boolean;
 }
 
