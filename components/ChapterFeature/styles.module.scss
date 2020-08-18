@@ -18,9 +18,5 @@
 }
 
 .image {
-  width: 100%;
   object-fit: cover;
-  @include screen('tablet') {
-    width: 300px;
-  }
 }
