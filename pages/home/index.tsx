@@ -5,6 +5,7 @@ import Container from '../../components/shared/Container';
 import Project from '../../components/shared/Project';
 import Card from '../../components/scoped/home/Card';
 import Button from '../../components/shared/Button';
+import Hero from '../../components/scoped/home/Hero';
 
 const ExampleProjects = [
   {
@@ -42,6 +43,7 @@ function Home() {
         <title>Hack4Impact Home</title>
       </Head>
       <main>
+        <Hero />
         <Container>
           <h2>Our Initiatives</h2>
           <div className={styles.card_row}>

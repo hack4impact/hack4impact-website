@@ -1,0 +1,168 @@
+@import '../../../../variables.scss';
+
+.root {
+  margin-top: -100px;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  @include screen('tablet') {
+    padding-top: 150px;
+    margin-bottom: 120px;
+    padding-bottom: 10vh;
+  }
+}
+
+.container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  z-index: 4;
+  @include screen('tablet') {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.content_wrapper {
+  width: 100%;
+  @include screen('tablet') {
+    max-width: 30vw;
+  }
+}
+
+.content {
+  h1 {
+    margin-top: 12px;
+    margin-bottom: 20px;
+    b {
+      z-index: 10;
+    }
+  }
+  p {
+    font-size: 22px;
+    margin-bottom: 80px;
+  }
+  .highlight {
+    position: absolute;
+    z-index: 9;
+    width: 250px;
+    left: -20px;
+    top: 0;
+    height: 60px;
+    transform: skew(-20deg);
+    border-radius: $border-radius;
+    background-color: rgba($white, 0.9);
+  }
+}
+
+.image {
+  background-image: url('http://placekitten.com/g/600/600');
+  object-fit: cover;
+  border-radius: 50%;
+  background-position: center;
+  transition: all 500ms;
+  margin-bottom: 20px;
+  width: 200px;
+  height: 200px;
+  @include screen('phone') {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  @include screen('tablet') {
+    width: 350px;
+    height: 350px;
+  }
+  @include screen('desktop') {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+.accent1, .accent2 {
+  height: 38px;
+  width: 38px;
+  border-width: 8px;
+}
+
+.accent1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(90deg) !important;
+}
+
+.accent2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(270deg) !important;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.b1 {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: -200px;
+  width: 400px;
+  @include screen('tablet') {
+    left: -160px;
+    width: 60%;
+  }
+  background: linear-gradient(
+    90deg,
+    lighten($primary, 10) 0%,
+    darken($primary, 10) 30%,
+    lighten($primary, 10) 30%,
+    $primary 100%,
+  );
+  transform: skew(-20deg, 0);
+  border-bottom-right-radius: 90px;
+  z-index: 3;
+}
+
+.b2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 100px);
+  width: 250px;
+  @include screen('tablet') {
+    left: -160px;
+    width: calc(60% + 50px);
+  }
+  background-image: url('../../../../public/svg/ben-day.svg');
+  background-size: 30px;
+  transform: skew(-20deg, 0);
+  opacity: 0.1;
+  z-index: 2;
+}
+
+.b3 {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  @include screen('tablet') {
+    left: 0;
+  }
+  height: calc(100% - 100px);
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    $secondary 0%,
+    lighten($secondary, 5) 100%,
+  );
+  transform: skew(-20deg, 0);
+  border-bottom-right-radius: 90px;
+  z-index: 1;
+}
