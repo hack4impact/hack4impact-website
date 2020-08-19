@@ -1,0 +1,30 @@
+.mission {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  .accent1 {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    transform: rotate(180deg) !important;
+  }
+  .accent2 {
+    position: absolute;
+    left: -20px;
+    bottom: -20px;
+  }
+}
+
+.orgs {
+  padding-left: 0;
+  li {
+    list-style: none;
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+}
+
+.affiliation {
+  height: 100px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+}
