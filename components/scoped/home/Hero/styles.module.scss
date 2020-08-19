@@ -65,12 +65,9 @@
   margin-bottom: 20px;
   width: 200px;
   height: 200px;
-  @include screen('phone') {
-    width: 300px;
-    height: 300px;
-    margin-bottom: 20px;
-  }
+  display: none;
   @include screen('tablet') {
+    display: block;
     width: 350px;
     height: 350px;
   }
