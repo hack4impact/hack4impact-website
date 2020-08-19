@@ -2,7 +2,7 @@
 
 .root {
   margin-top: -100px;
-  padding-top: 100px;
+  padding-top: 90px;
   padding-bottom: 30px;
   margin-bottom: 20px;
   @include screen('tablet') {
@@ -41,7 +41,10 @@
   }
   p {
     font-size: 22px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
+    @include screen('tablet') {
+      margin-bottom: 80px;
+    }
   }
   .highlight {
     position: absolute;
