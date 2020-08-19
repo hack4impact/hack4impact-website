@@ -3,6 +3,7 @@
 .root {
   height: 400px;
   margin-bottom: -100px;
+  overflow: hidden;
   @include screen('tablet') {
     margin-bottom: -80px;
   }
