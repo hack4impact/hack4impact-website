@@ -27,7 +27,10 @@ body {
 }
 
 h1 {
-  font-size: $h1;
+  font-size: $h1 - 10px;
+  @include screen('tablet') {
+    font-size: $h1;
+  }
 }
 h2 {
   font-size: $h2;
