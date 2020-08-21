@@ -1,5 +1,4 @@
 import Button from '../../../shared/Button';
-import Accent from '../../../shared/Accent';
 import Container from '../../../shared/Container';
 import styles from './styles.module.scss';
 
@@ -7,26 +6,25 @@ function Hero() {
   return (
     <div className={styles.root}>
       <Container className={styles.container}>
-        <div className={styles.content_wrapper}>
-          <div className={styles.content}>
-            WE ARE
-            <h1>
-              <div>
-                <b>Designers</b>
-                <div className={styles.highlight} />
-              </div>
-              for social change
-            </h1>
-            <p>
-              We create lasting and impactful social change, fostering the adoption of software as a
-              tool for social good.
-            </p>
-          </div>
+        <div className={styles.content}>
+          <h1>
+            <span className={styles.subheader}>We are</span>
+            <span className={styles.role_name}>Designers</span>
+            <span>for social change</span>
+          </h1>
+          <p>
+            We create lasting and impactful social change, fostering the adoption of software as a
+            tool for social good.
+          </p>
           <Button href="apply/nonprofit">Get involved</Button>
         </div>
-        <div className={styles.image}>
-          <Accent className={styles.accent1} />
-          <Accent className={styles.accent2} />
+        <div className={styles.image_container}>
+          <img
+            width="450"
+            height="450"
+            src="http://placekitten.com/g/600/600"
+            alt="A very cute kitty"
+          />
         </div>
       </Container>
       <div className={styles.background}>

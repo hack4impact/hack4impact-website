@@ -14,90 +14,74 @@
 
 .container {
   margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column-reverse;
   z-index: 4;
   @include screen('tablet') {
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
 }
 
-.content_wrapper {
-  width: 100%;
-  @include screen('tablet') {
-    max-width: 30vw;
-  }
-}
-
 .content {
+  flex: 1;
+  @include screen('tablet') {
+    max-width: 500px;
+  }
   h1 {
     margin-top: 12px;
     margin-bottom: 20px;
-    b {
-      z-index: 10;
+    span {
+      display: block;
+    }
+    .subheader {
+      @include accentHeader;
+      font-size: 24px;
+    }
+    .role_name {
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 250px;
+        left: -15px;
+        top: 0;
+        height: 1.2em;
+        transform: skew(-20deg);
+        border-radius: $border-radius;
+        background-color: rgba($white, 0.9);
+      }
     }
   }
   p {
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 50px;
     @include screen('tablet') {
       margin-bottom: 80px;
     }
   }
-  .highlight {
-    position: absolute;
-    z-index: 9;
-    width: 250px;
-    left: -20px;
-    top: 0;
-    height: 60px;
-    transform: skew(-20deg);
-    border-radius: $border-radius;
-    background-color: rgba($white, 0.9);
-  }
 }
 
-.image {
-  background-image: url('http://placekitten.com/g/600/600');
-  object-fit: cover;
-  border-radius: 50%;
-  background-position: center;
-  transition: all 500ms;
-  margin-bottom: 20px;
-  width: 200px;
-  height: 200px;
+.image_container {
+  margin-left: 50px;
   display: none;
-  @include screen('tablet') {
+  flex: 1;
+  max-width: 450px;
+  max-height: 450px;
+  @include screen('tablet-wide') {
     display: block;
-    width: 350px;
-    height: 350px;
   }
-  @include screen('desktop') {
-    width: 450px;
-    height: 450px;
+  img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
   }
-}
-
-.accent1, .accent2 {
-  height: 38px;
-  width: 38px;
-  border-width: 8px;
-}
-
-.accent1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: rotate(90deg) !important;
-}
-
-.accent2 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: rotate(270deg) !important;
+  &:before {
+    @include angle-bracket-accent('top-left');
+  }
+  &:after {
+    @include angle-bracket-accent('bottom-right');
+  }
 }
 
 .background {
@@ -124,7 +108,7 @@
     lighten($primary, 10) 0%,
     darken($primary, 10) 30%,
     lighten($primary, 10) 30%,
-    $primary 100%,
+    $primary 100%
   );
   transform: skew(-20deg, 0);
   border-bottom-right-radius: 90px;
@@ -157,11 +141,7 @@
   }
   height: calc(100% - 100px);
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    $secondary 0%,
-    lighten($secondary, 5) 100%,
-  );
+  background: linear-gradient(90deg, $secondary 0%, lighten($secondary, 5) 100%);
   transform: skew(-20deg, 0);
   border-bottom-right-radius: 90px;
   z-index: 1;
