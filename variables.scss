@@ -11,7 +11,7 @@ $neutral: #8c8c8c; //Gray
 
 /* Font */
 
-$h1: 45px;
+$h1: 52px;
 $h2: 32px;
 $h3: 28px;
 $h4: 20px;
@@ -26,6 +26,38 @@ $font-family: 'HK Grotesk', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   font-size: 14px;
   letter-spacing: 0.5px;
   margin: 10px 0;
+}
+
+@mixin angle-bracket-accent($quadrant: 'top-left', $size: 24px) {
+  content: '';
+  position: absolute;
+  height: $size;
+  width: $size;
+  border: solid $black calc(#{$size} / 4);
+  @if ($quadrant == 'top-left') {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+  @if ($quadrant == 'top-right') {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+  }
+  @if ($quadrant == 'bottom-right') {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+  @if ($quadrant == 'bottom-left') {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+  }
 }
 
 /* Margins */

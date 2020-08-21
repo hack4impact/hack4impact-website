@@ -3,6 +3,7 @@
 .navContainer {
   @include container;
   font-size: 20px;
+  z-index: 9999;
 
   ul {
     list-style: none;
