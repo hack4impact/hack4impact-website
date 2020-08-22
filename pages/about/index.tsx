@@ -2,7 +2,6 @@ import Header from '../../components/shared/Header';
 import Banner from '../../components/scoped/apply/Banner';
 import Container from '../../components/shared/Container';
 import styles from './styles.module.scss';
-import Accent from '../../components/shared/Accent';
 import Team from '../../components/shared/Team';
 
 import { exampleChapters } from '../work/dummyData';
@@ -14,24 +13,25 @@ function About() {
       <Banner />
       <Container>
         <h2>Our Mission</h2>
-        <p className={styles.mission}>
-          <Accent className={styles.accent1} />
-          <Accent className={styles.accent2} />
-          Hack4Impact exists for both nonprofits and students. We connect student software
-          developers with nonprofits and other socially responsible businesses to develop powerful
-          new tools for social change. This enables nonprofits to further their mission and better
-          engage their clients. We are committed to increasing awareness of technology’s potential
-          for good. We host speaker events and develop workshops for students, open to the entire
-          university community.
-          <br />
-          <br />
-          We envision a tech industry that emphasizes social impact as a core tenet of success. We
-          hope to see similar Hack4Impact-type chapters opening up across the country both in
-          academic institutions and professional communities. We envision more open-source projects,
-          more university courses, and more academic research being poured into the intersection
-          between social impact and software engineering. In addition, we envision Hack4Impact to be
-          a space for socially-responsible organizations to turn to for resources and education.
-        </p>
+        <div className={styles.mission}>
+          <p>
+            Hack4Impact exists for both nonprofits and students. We connect student software
+            developers with nonprofits and other socially responsible businesses to develop powerful
+            new tools for social change. This enables nonprofits to further their mission and better
+            engage their clients. We are committed to increasing awareness of technology’s potential
+            for good. We host speaker events and develop workshops for students, open to the entire
+            university community.
+          </p>
+          <p>
+            We envision a tech industry that emphasizes social impact as a core tenet of success. We
+            hope to see similar Hack4Impact-type chapters opening up across the country both in
+            academic institutions and professional communities. We envision more open-source
+            projects, more university courses, and more academic research being poured into the
+            intersection between social impact and software engineering. In addition, we envision
+            Hack4Impact to be a space for socially-responsible organizations to turn to for
+            resources and education.
+          </p>
+        </div>
       </Container>
       <section style={{ marginBottom: 100 }}>
         <h2 className="contain">Our Team</h2>

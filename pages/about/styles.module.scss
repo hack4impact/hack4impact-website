@@ -1,16 +1,15 @@
+@import '../../variables.scss';
+
 .mission {
-  margin-top: 50px;
-  margin-bottom: 20px;
-  .accent1 {
-    position: absolute;
-    right: -20px;
-    top: -20px;
-    transform: rotate(180deg) !important;
+  padding: 24px 0;
+  font-size: 20px;
+  &:before {
+    @include angle-bracket-accent('top-right', 18px);
+    right: -24px;
   }
-  .accent2 {
-    position: absolute;
-    left: -20px;
-    bottom: -20px;
+  &:after {
+    @include angle-bracket-accent('bottom-left', 18px);
+    left: -24px;
   }
 }
 
