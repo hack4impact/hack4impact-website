@@ -1,15 +1,15 @@
 @import '../../variables.scss';
 
 .mission {
-  padding: 24px 0;
   font-size: 20px;
+  padding: 12px 0;
   &:before {
     @include angle-bracket-accent('top-right', 18px);
     right: -24px;
   }
   &:after {
     @include angle-bracket-accent('bottom-left', 18px);
-    left: -24px;
+    left: -32px;
   }
 }
 
