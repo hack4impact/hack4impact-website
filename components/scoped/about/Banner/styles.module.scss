@@ -1,0 +1,50 @@
+@import '../../../../variables.scss';
+
+.root {
+  height: 400px;
+  margin-bottom: -100px;
+  overflow: hidden;
+  @include screen('tablet') {
+    margin-bottom: -80px;
+  }
+}
+
+.b1 {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 1;
+  border-bottom-left-radius: 90px;
+  @include screen('tablet') {
+    display: block;
+    right: calc(-57% + 75px);
+    transform: skew(-20deg);
+    img {
+      position: absolute;
+      left: -57px;
+      top: 0;
+      overflow-x: visible;
+      height: 100%;
+      min-width: 57vw;
+      transform: skew(20deg);
+      object-fit: cover;
+    }
+  }
+}
+
+.b2 {
+  position: absolute;
+  height: 70%;
+  width: 100%;
+  overflow: hidden;
+  background-image: linear-gradient(to right, rgba(lighten($primary, 10), 0.6), rgba($primary, 0.6)),
+    url('http://placekitten.com/g/1200/500');
+  background-size: cover;
+  @include screen('tablet') {
+    width: 57vw;
+  }
+}
