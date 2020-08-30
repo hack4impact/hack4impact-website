@@ -1,5 +1,5 @@
 import Header from '../../components/shared/Header';
-import Banner from '../../components/scoped/apply/Banner';
+import Banner from '../../components/scoped/about/Banner';
 import Container from '../../components/shared/Container';
 import styles from './styles.module.scss';
 import Team from '../../components/shared/Team';

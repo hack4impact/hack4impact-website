@@ -16,8 +16,7 @@
   width: 100%;
   top: 0;
   right: 0;
-  overflow-y: hidden;
-  overflow-x: visible;
+  overflow: hidden;
   z-index: 1;
   border-bottom-left-radius: 90px;
   @include screen('tablet') {
@@ -42,9 +41,8 @@
   height: 70%;
   width: 100%;
   overflow: hidden;
-  background-image:
-  linear-gradient(to right, rgba(lighten($primary, 10), 0.6), rgba($primary, 0.6)),
-  url('http://placekitten.com/g/1200/500');
+  background-image: linear-gradient(to right, rgba(lighten($primary, 10), 0.6), rgba($primary, 0.6)),
+    url('http://placekitten.com/g/1200/500');
   background-size: cover;
   @include screen('tablet') {
     width: 57vw;
