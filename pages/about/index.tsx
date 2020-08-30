@@ -4,7 +4,7 @@ import Container from '../../components/shared/Container';
 import styles from './styles.module.scss';
 import Team from '../../components/shared/Team';
 
-import { exampleChapters } from '../work/dummyData';
+import { exampleChapters } from '../../components/dummyData';
 
 function About() {
   return (

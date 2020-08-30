@@ -3,7 +3,7 @@ import Container from '../../components/shared/Container';
 import Project from '../../components/shared/Project';
 import ChapterTable from '../../components/scoped/work/ChapterTable';
 import ChapterFeature from '../../components/scoped/work/ChapterFeature';
-import { exampleChapters, exampleProjects } from './dummyData';
+import { exampleChapters, exampleProjects } from '../../components/dummyData';
 
 function Work() {
   return (

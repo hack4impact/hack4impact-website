@@ -1,5 +1,5 @@
-import { ChapterType } from '../../components/scoped/work/ChapterTable';
-import { ProjectType } from '../../components/shared/Project';
+import { ChapterType } from './scoped/work/ChapterTable';
+import { ProjectType } from './shared/Project';
 
 export const exampleProjects: ProjectType[] = [
   {
