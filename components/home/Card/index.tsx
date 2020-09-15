@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import Button from '../../../shared/Button';
+import Button from '@components/shared/Button';
 
 type Props = {
   title: string;

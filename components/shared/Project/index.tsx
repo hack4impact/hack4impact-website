@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import determineLinkName from '../../../scripts/determineLinkName';
+import determineLinkName from '@utils/determineLinkName';
 
 export type ProjectType = {
   image: string;

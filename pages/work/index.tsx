@@ -1,9 +1,9 @@
-import Header from '../../components/shared/Header';
-import Container from '../../components/shared/Container';
-import Project from '../../components/shared/Project';
-import ChapterTable from '../../components/scoped/work/ChapterTable';
-import ChapterFeature from '../../components/scoped/work/ChapterFeature';
-import { exampleChapters, exampleProjects } from '../../components/dummyData';
+import Header from '@components/shared/Header';
+import Container from '@components/shared/Container';
+import Project from '@components/shared/Project';
+import ChapterTable from '@components/work/ChapterTable';
+import ChapterFeature from '@components/work/ChapterFeature';
+import { exampleChapters, exampleProjects } from '@components/dummyData';
 
 function Work() {
   return (

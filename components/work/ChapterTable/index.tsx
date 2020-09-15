@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
-import { ProjectType } from '../../../shared/Project';
+import { ProjectType } from '@components/shared/Project';
 
 export type TeamType = {
   image: string;

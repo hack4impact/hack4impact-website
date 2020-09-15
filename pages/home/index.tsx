@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { FaNetworkWired } from 'react-icons/fa';
 import styles from './styles.module.scss';
-import Container from '../../components/shared/Container';
-import Project from '../../components/shared/Project';
-import Card from '../../components/scoped/home/Card';
-import Button from '../../components/shared/Button';
-import Hero from '../../components/scoped/home/Hero';
+import Container from '@components/shared/Container';
+import Project from '@components/shared/Project';
+import Card from '@components/home/Card';
+import Button from '@components/shared/Button';
+import Hero from '@components/home/Hero';
 
 const ExampleProjects = [
   {

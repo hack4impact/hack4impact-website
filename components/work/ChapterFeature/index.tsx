@@ -1,9 +1,9 @@
-import Team from '../../../shared/Team';
-import Project, { ProjectType } from '../../../shared/Project';
-import ImageHighlight from '../../../shared/ImageHighlight';
-import { PersonType } from '../../../shared/Team';
+import Team from '@components/shared/Team';
+import Project, { ProjectType } from '@components/shared/Project';
+import ImageHighlight from '@components/shared/ImageHighlight';
+import { PersonType } from '@components/shared/Team';
+import determineLinkName from '@utils/determineLinkName';
 import styles from './styles.module.scss';
-import determineLinkName from '../../../../scripts/determineLinkName';
 
 const height = 200;
 const width = 260;

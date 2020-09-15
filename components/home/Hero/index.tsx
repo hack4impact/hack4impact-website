@@ -1,5 +1,5 @@
-import Button from '../../../shared/Button';
-import Container from '../../../shared/Container';
+import Button from '@components/shared/Button';
+import Container from '@components/shared/Container';
 import styles from './styles.module.scss';
 
 function Hero() {
