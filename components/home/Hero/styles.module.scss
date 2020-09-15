@@ -5,6 +5,7 @@
   padding-top: 90px;
   padding-bottom: 30px;
   margin-bottom: 20px;
+  overflow: hidden;
   @include screen('tablet') {
     padding-top: 150px;
     margin-bottom: 120px;
@@ -15,6 +16,7 @@
 .container {
   margin-top: 30px;
   z-index: 4;
+
   @include screen('tablet') {
     display: flex;
     flex-direction: row;
@@ -128,7 +130,7 @@
     left: -160px;
     width: calc(60% + 50px);
   }
-  background-image: url('../../../../public/svg/ben-day.svg');
+  background-image: url('/public/svg/ben-day.svg');
   background-size: 30px;
   transform: skew(-20deg, 0);
   opacity: 0.1;
