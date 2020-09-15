@@ -1,5 +1,6 @@
 import styles from './styles.module.scss';
-import Button from '@components/shared/Button';
+import LinkButton from '@components/shared/LinkButton';
+import { IoMdArrowDropright as ArrowIcon } from 'react-icons/io';
 
 type Props = {
   title: string;
@@ -20,9 +21,10 @@ function Card({ title, subtitle, description, href, buttonTitle, children }: Pro
         </hgroup>
         <p>{description}</p>
       </div>
-      <Button href={href} className={styles.card_button}>
+      <LinkButton href={href} className={styles.card_button}>
         {buttonTitle}
-      </Button>
+        <ArrowIcon size={32} />
+      </LinkButton>
       <div className={styles.card_icon}>{children}</div>
     </div>
   );

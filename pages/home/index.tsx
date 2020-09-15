@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 import Container from '@components/shared/Container';
 import Project from '@components/shared/Project';
 import Card from '@components/home/Card';
-import Button from '@components/shared/Button';
+import LinkButton from '@components/shared/LinkButton';
 import Hero from '@components/home/Hero';
 
 const ExampleProjects = [
@@ -79,10 +79,10 @@ function Home() {
             <Project key={item.title} {...item} />
           ))}
           <div className={styles.button_row}>
-            <Button href="/work">See all chapters</Button>
-            <Button href="/apply/nonprofit" type="secondary">
+            <LinkButton href="/work">See all chapters</LinkButton>
+            <LinkButton href="/apply/nonprofit" type="secondary">
               Propose your nonprofit project
-            </Button>
+            </LinkButton>
           </div>
         </Container>
       </main>

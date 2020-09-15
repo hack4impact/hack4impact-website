@@ -3,19 +3,23 @@
 .card_root {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 
   background: linear-gradient(180deg, rgba(215, 253, 255, 1) 0%, $primary 100%);
-  margin-right: 35px;
   margin-bottom: 50px;
-  max-width: 280px;
+  max-width: 350px;
   width: 100%;
+
+  @include screen('tablet-small') {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
   @include dotted-shadow;
 
   .card_content {
     padding: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 
     hgroup {
       h3 {
@@ -43,7 +47,7 @@
   }
 
   .card_button {
-    font-size: 20px;
+    font-size: 24px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }

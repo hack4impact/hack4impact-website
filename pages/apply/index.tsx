@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import Header from '@components/shared/Header';
 import ImageHighlight from '@components/shared/ImageHighlight';
 import Container from '@components/shared/Container';
-import Button from '@components/shared/Button';
+import LinkButton from '@components/shared/LinkButton';
 import styles from './styles.module.scss';
 import classNames from 'classnames';
 import FAQCell from '@components/apply/FAQCell';
@@ -74,9 +74,9 @@ function Apply() {
           <div className={styles.requirements}>
             <h2>{"What you'll need"}</h2>
             <p style={{ marginBottom: 40 }}>{content.requirements}</p>
-            <Button href={content.requirementLink} external>
+            <LinkButton href={content.requirementLink} external>
               Application Here
-            </Button>
+            </LinkButton>
           </div>
           <div className={styles.image_wrap}>
             <ImageHighlight height={height} width={width}>

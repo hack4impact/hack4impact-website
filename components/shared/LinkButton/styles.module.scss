@@ -8,6 +8,11 @@
   border-radius: $border-radius;
   text-decoration: none;
   letter-spacing: 1px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   &:hover {
     text-decoration: none;
   }

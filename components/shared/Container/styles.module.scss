@@ -1,11 +1,17 @@
 @import '../../../variables.scss';
 
-  .root {
-   margin-bottom: 50px;
-   @include screen('tablet') {
-     margin-bottom: 100px;
-   }
-   @include screen('desktop-wide') {
-     margin-bottom: 150px;
-   }
- } 
+.root {
+  margin-bottom: 50px;
+  h2 {
+    text-align: center;
+  }
+  @include screen('tablet') {
+    margin-bottom: 100px;
+    h2 {
+      text-align: left;
+    }
+  }
+  @include screen('desktop-wide') {
+    margin-bottom: 150px;
+  }
+}

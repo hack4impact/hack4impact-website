@@ -1,4 +1,4 @@
-import Button from '@components/shared/Button';
+import LinkButton from '@components/shared/LinkButton';
 import Container from '@components/shared/Container';
 import styles from './styles.module.scss';
 
@@ -16,7 +16,7 @@ function Hero() {
             We create lasting and impactful social change, fostering the adoption of software as a
             tool for social good.
           </p>
-          <Button href="apply/nonprofit">Get involved</Button>
+          <LinkButton href="apply/nonprofit">Get involved</LinkButton>
         </div>
         <div className={styles.image_container}>
           <img

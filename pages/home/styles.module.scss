@@ -1,15 +1,10 @@
 @import '../../variables.scss';
 
 .card_row {
-  margin-right: auto;
-  margin-left: auto;
-  width: 250px;
-  @include screen('tablet-wide') {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .button_row {
