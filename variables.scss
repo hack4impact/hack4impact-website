@@ -17,6 +17,10 @@ $h3: 36px;
 $h4: 24px;
 $body: 20px;
 
+/* Nav bar */
+$nav-height: 80px;
+$nav-breakpoint: 1000px;
+
 $font-family: 'HK Grotesk', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
   Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
@@ -100,8 +104,8 @@ $breakpoints: (
 }
 
 @mixin container {
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 7vw;
+  margin-right: 7vw;
   @include screen('desktop-wide') {
     margin-left: auto;
     margin-right: auto;

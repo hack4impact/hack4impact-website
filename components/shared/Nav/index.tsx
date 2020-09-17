@@ -1,43 +1,37 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './styles.module.scss';
-import HoverShinyEffect from '../HoverShinyEffect';
 import classNames from 'classnames';
-
-type NavLinkProps = {
-  children: React.ReactNode;
-  href: string;
-  activeRoute: string;
-  referenceRoute?: string;
-};
-
-function NavLink({ children, href, activeRoute, referenceRoute }: NavLinkProps) {
-  return (
-    <li
-      className={classNames({
-        [styles.activeRoute]: activeRoute === href || activeRoute.includes(referenceRoute),
-      })}>
-      <Link href={href}>
-        <a>
-          {children}
-          <HoverShinyEffect color="#001aff" />
-        </a>
-      </Link>
-    </li>
-  );
-}
+import { useState, useEffect } from 'react';
+import MobileDropdownToggle from './MobileDropdownToggle';
+import NavLink from './NavLink';
 
 function Nav() {
   const router = useRouter();
   const activeRoute = router.pathname;
+  const [mobileNavOpened, setMobileNavOpened] = useState(false);
+
+  const toggleMobileNav = () => setMobileNavOpened(!mobileNavOpened);
+
+  // when active route changes, we probably clicked on a nav link
+  // in this case, collapse the nav dropdown for mobile users
+  useEffect(() => {
+    setMobileNavOpened(false);
+  }, [activeRoute]);
 
   return (
     <header>
-      <nav className={styles.navContainer}>
-        <ul>
-          <NavLink activeRoute={activeRoute} href="/">
-            <div className={styles.image}></div>
-          </NavLink>
+      <nav
+        className={classNames(styles.nav_container, {
+          [styles.nav_toggled]: mobileNavOpened,
+        })}>
+        <NavLink
+          activeRoute={activeRoute}
+          href="/"
+          className={styles.logo_link}
+          ariaLabel="Go to homepage">
+          <img width="275" height="53" src="/svg/logo.svg" alt="Hack4Impact logo" />
+        </NavLink>
+        <div className={styles.dropdown_link_container}>
           <NavLink activeRoute={activeRoute} href="/about">
             About Us
           </NavLink>
@@ -47,7 +41,9 @@ function Nav() {
           <NavLink activeRoute={activeRoute} href="/apply/nonprofit" referenceRoute="/apply">
             Apply
           </NavLink>
-        </ul>
+        </div>
+
+        <MobileDropdownToggle toggled={mobileNavOpened} onClick={toggleMobileNav} />
       </nav>
     </header>
   );
