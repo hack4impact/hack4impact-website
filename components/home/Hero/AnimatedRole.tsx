@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 
-const ANIM_INTERVAL = 3000;
+const ANIM_INTERVAL = 2250;
 const WIPE_ANIM_DURATION = 500;
 
 function AnimatedRole() {
-  const roles = ['Designers', 'Engineers', 'Activists', 'Humanitarians'];
+  const roles = ['Engineers', 'Designers', 'Activists', 'Humanitarians'];
   const [roleIndex, setRoleIndex] = useState(0);
   const textRef = useRef(null);
 
