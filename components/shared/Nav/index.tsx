@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './styles.module.scss';
+import HoverShinyEffect from '../HoverShinyEffect';
+import classNames from 'classnames';
 
 type NavLinkProps = {
   children: React.ReactNode;
@@ -12,11 +14,14 @@ type NavLinkProps = {
 function NavLink({ children, href, activeRoute, referenceRoute }: NavLinkProps) {
   return (
     <li
-      className={
-        activeRoute === href || activeRoute.includes(referenceRoute) ? styles.activeRoute : ''
-      }>
+      className={classNames({
+        [styles.activeRoute]: activeRoute === href || activeRoute.includes(referenceRoute),
+      })}>
       <Link href={href}>
-        <a>{children}</a>
+        <a>
+          {children}
+          <HoverShinyEffect color="#001aff" />
+        </a>
       </Link>
     </li>
   );
