@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Header from '@components/shared/Header';
 import ImageHighlight from '@components/shared/ImageHighlight';
@@ -55,6 +56,9 @@ function Apply() {
   const content = currentRoute === chRoute ? pretendImContentful1 : pretendImContentful2;
   return (
     <main>
+      <Head>
+        <title>Join Us</title>
+      </Head>
       <Header title="Apply">
         <div className={styles.switch_control}>
           <Link href={chRoute}>

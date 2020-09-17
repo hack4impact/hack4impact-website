@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Header from '@components/shared/Header';
 import Container from '@components/shared/Container';
 import Project from '@components/shared/Project';
@@ -8,6 +9,9 @@ import { exampleChapters, exampleProjects } from '@components/dummyData';
 function Work() {
   return (
     <main>
+      <Head>
+        <title>Our Work</title>
+      </Head>
       <Header title="Our Work" />
       <Container>
         <h2>National Initiatives</h2>

@@ -38,55 +38,53 @@ const ExampleProjects = [
 
 function Home() {
   return (
-    <>
+    <main style={{ marginTop: 0 }}>
       <Head>
-        <title>Hack4Impact Home</title>
+        <title>Hack4Impact</title>
       </Head>
-      <main style={{ marginTop: 0 }}>
-        <Hero />
-        <Container>
-          <h2>Our Initiatives</h2>
-          <div className={styles.card_row}>
-            <Card
-              title="Chapter Network"
-              subtitle="We mentor"
-              description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
-              href="/work"
-              buttonTitle="Current Chapters">
-              <FaNetworkWired />
-            </Card>
-            <Card
-              title="Pro-bono Projects"
-              subtitle="We build"
-              description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
-              href="/work"
-              buttonTitle="Current Projects">
-              <FaNetworkWired />
-            </Card>
-            <Card
-              title="Chapter Resources"
-              subtitle="We share"
-              description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
-              href="/apply/chapter"
-              buttonTitle="Apply to the Team">
-              <FaNetworkWired />
-            </Card>
-          </div>
-        </Container>
-        <Container>
-          <h2>Featured Projects</h2>
-          {ExampleProjects.map(item => (
-            <Project key={item.title} {...item} />
-          ))}
-          <div className={styles.button_row}>
-            <LinkButton href="/work">See all chapters</LinkButton>
-            <LinkButton href="/apply/nonprofit" type="secondary">
-              Propose your nonprofit project
-            </LinkButton>
-          </div>
-        </Container>
-      </main>
-    </>
+      <Hero />
+      <Container>
+        <h2>Our Initiatives</h2>
+        <div className={styles.card_row}>
+          <Card
+            title="Chapter Network"
+            subtitle="We mentor"
+            description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
+            href="/work"
+            buttonTitle="Current Chapters">
+            <FaNetworkWired />
+          </Card>
+          <Card
+            title="Pro-bono Projects"
+            subtitle="We build"
+            description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
+            href="/work"
+            buttonTitle="Current Projects">
+            <FaNetworkWired />
+          </Card>
+          <Card
+            title="Chapter Resources"
+            subtitle="We share"
+            description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
+            href="/apply/chapter"
+            buttonTitle="Apply to the Team">
+            <FaNetworkWired />
+          </Card>
+        </div>
+      </Container>
+      <Container>
+        <h2>Featured Projects</h2>
+        {ExampleProjects.map(item => (
+          <Project key={item.title} {...item} />
+        ))}
+        <div className={styles.button_row}>
+          <LinkButton href="/work">See all chapters</LinkButton>
+          <LinkButton href="/apply/nonprofit" type="secondary">
+            Propose your nonprofit project
+          </LinkButton>
+        </div>
+      </Container>
+    </main>
   );
 }
 

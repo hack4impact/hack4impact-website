@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Header from '@components/shared/Header';
 import Banner from '@components/about/Banner';
 import Container from '@components/shared/Container';
@@ -9,6 +10,9 @@ import { exampleChapters } from '@components/dummyData';
 function About() {
   return (
     <main>
+      <Head>
+        <title>About Us</title>
+      </Head>
       <Header title="About" />
       <Banner />
       <Container>
