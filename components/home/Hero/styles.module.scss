@@ -53,7 +53,7 @@
       display: inline-block;
 
       &:before,
-      &:after {
+      .wipe_anim {
         content: '';
         position: absolute;
         top: 0;
@@ -70,7 +70,7 @@
         z-index: -1;
       }
 
-      &:after {
+      .wipe_anim {
         transform: scaleX(0);
         background-color: #90e2f7;
       }

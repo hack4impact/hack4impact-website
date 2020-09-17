@@ -9,10 +9,14 @@ function AnimatedRole() {
   const [roleIndex, setRoleIndex] = useState(0);
   const textRef = useRef(null);
 
+  // would use a pseudo-element instead,
+  // but Safari currently doesn't support animating the ::after property
+  const wipeRef = useRef(null);
+
   useEffect(() => {
-    if (textRef && textRef.current) {
+    if (textRef?.current && wipeRef?.current) {
       textRef.current.style.setProperty('--width', textRef.current.clientWidth);
-      textRef.current.animate(
+      wipeRef.current.animate(
         [
           { transform: 'skew(-20deg) scaleX(0)', transformOrigin: 'left' },
           {
@@ -29,7 +33,6 @@ function AnimatedRole() {
           duration: WIPE_ANIM_DURATION,
           delay: ANIM_INTERVAL - WIPE_ANIM_DURATION / 2,
           easing: 'ease-in-out',
-          pseudoElement: '::after',
         },
       );
     }
@@ -46,6 +49,7 @@ function AnimatedRole() {
   return (
     <span ref={textRef} className={styles.role_name}>
       {roles[roleIndex]}
+      <span ref={wipeRef} className={styles.wipe_anim}></span>
     </span>
   );
 }
