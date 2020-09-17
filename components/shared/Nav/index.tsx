@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { useState, useEffect } from 'react';
 import MobileDropdownToggle from './MobileDropdownToggle';
 import NavLink from './NavLink';
+import useHasScrolledDown from '@utils/useHasScrolledDown';
 
 function Nav() {
   const router = useRouter();
@@ -18,8 +19,13 @@ function Nav() {
     setMobileNavOpened(false);
   }, [activeRoute]);
 
+  const hasScrolledDown = useHasScrolledDown();
+
   return (
-    <header>
+    <header
+      className={classNames(styles.header, {
+        [styles.with_background]: hasScrolledDown,
+      })}>
       <nav
         className={classNames(styles.nav_container, {
           [styles.nav_toggled]: mobileNavOpened,

@@ -1,23 +1,36 @@
 @import '../../../variables.scss';
 
-.nav_container {
+.header {
+  transition: background-color 0.3s;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: $nav-height;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+
+  &.with_background {
+    background-color: rgba(white, 0.8);
+    backdrop-filter: blur(8px);
+  }
+}
+
+.nav_container {
+  width: 100%;
 
   @include container;
   font-size: 20px;
-  z-index: 9999;
 
-  display: flex;
-  align-items: center;
+  display: inherit;
+  align-items: inherit;
 
   .logo_link {
     margin-right: auto;
 
     img {
+      vertical-align: middle;
       height: 40px;
       z-index: 9999;
       width: auto;
