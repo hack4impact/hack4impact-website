@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import MobileDropdownToggle from './MobileDropdownToggle';
 import NavLink from './NavLink';
 import useHasScrolledDown from '@utils/useHasScrolledDown';
+import HoverShinyEffect from '../HoverShinyEffect';
 
 function Nav() {
   const router = useRouter();
@@ -47,6 +48,9 @@ function Nav() {
           <NavLink activeRoute={activeRoute} href="/apply/nonprofit" referenceRoute="/apply">
             Apply
           </NavLink>
+          <a href="mailto:contact@hack4impact.org">
+            Contact Us <HoverShinyEffect color="#001aff" />
+          </a>
         </div>
 
         <MobileDropdownToggle toggled={mobileNavOpened} onClick={toggleMobileNav} />
