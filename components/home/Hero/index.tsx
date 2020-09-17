@@ -1,6 +1,7 @@
 import LinkButton from '@components/shared/LinkButton';
 import Container from '@components/shared/Container';
 import styles from './styles.module.scss';
+import AnimatedRole from './AnimatedRole';
 
 function Hero() {
   return (
@@ -9,14 +10,16 @@ function Hero() {
         <div className={styles.content}>
           <h1>
             <span className={styles.subheader}>We are</span>
-            <span className={styles.role_name}>Designers</span>
+            <AnimatedRole />
             <span>for social change</span>
           </h1>
           <p>
             We create lasting and impactful social change, fostering the adoption of software as a
             tool for social good.
           </p>
-          <LinkButton href="apply/nonprofit">Get involved</LinkButton>
+          <LinkButton className={styles.cta} href="apply/nonprofit">
+            Get involved
+          </LinkButton>
         </div>
         <div className={styles.image_container}>
           <img

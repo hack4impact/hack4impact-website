@@ -23,6 +23,12 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .cta {
+    display: inline-block;
+    font-size: 24px;
+    padding: 15px 40px;
+  }
 }
 
 .content {
@@ -44,17 +50,29 @@
       }
     }
     .role_name {
-      &:before {
+      display: inline-block;
+
+      &:before,
+      &:after {
         content: '';
         position: absolute;
-        z-index: -1;
-        width: 5em;
-        left: -15px;
         top: 0;
+        left: -15px;
         height: 1.2em;
+        width: calc(var(--width, 0) * 1px + 0.5em);
         transform: skew(-20deg);
         border-radius: $border-radius;
-        background-color: rgba($white, 0.9);
+        background-color: $white;
+        transition: width 0.1s;
+      }
+
+      &:before {
+        z-index: -1;
+      }
+
+      &:after {
+        transform: scaleX(0);
+        background-color: #90e2f7;
       }
     }
   }
