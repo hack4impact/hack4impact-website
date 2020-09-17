@@ -1,15 +1,18 @@
 import { useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 
-function HoverShinyEffect() {
+type Props = {
+  color?: string;
+};
+
+function HoverShinyEffect({ color }: Props) {
   const containerRef = useRef(null);
 
   useEffect(() => {
     function mouseMoveEvent(e) {
-      const { x, y } = containerRef.current.getBoundingClientRect();
-      console.log(e);
+      const { x } = containerRef.current.getBoundingClientRect();
       containerRef.current.style.setProperty('--px', e.clientX - x);
-      containerRef.current.style.setProperty('--py', e.clientY - y);
+      color && containerRef.current.style.setProperty('--color', color);
     }
     containerRef.current.addEventListener('mousemove', mouseMoveEvent);
 

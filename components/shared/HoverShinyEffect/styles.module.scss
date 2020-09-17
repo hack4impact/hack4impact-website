@@ -1,6 +1,6 @@
 .shiny_boi {
   --px: 0;
-  --py: 0;
+  border-radius: inherit;
   position: absolute;
   top: 0;
   left: 0;
@@ -13,6 +13,7 @@
   }
 
   &:after {
+    --bgColor: var(--color, rgba(255, 255, 255, 0.5));
     content: '';
     pointer-events: none;
     top: 0;
@@ -21,10 +22,15 @@
     position: absolute;
     width: 240px;
     height: 100%;
-    background: linear-gradient(90deg, transparent, #fff 40%, #fff 60%, transparent 100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--bgColor) 45%,
+      var(--bgColor) 55%,
+      transparent 100%
+    );
     opacity: 0;
     z-index: 9999;
-    mix-blend-mode: screen;
     transform: translateX(calc(var(--px) * 1px)) translateX(-50%);
   }
 }
