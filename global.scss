@@ -26,8 +26,12 @@ body {
   color: $black;
 }
 
+main {
+  margin-top: $nav-height;
+}
+
 h1 {
-  font-size: $h2;
+  font-size: 44px;
   @include screen('tablet') {
     font-size: $h1;
   }

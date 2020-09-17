@@ -42,7 +42,7 @@ function Home() {
       <Head>
         <title>Hack4Impact Home</title>
       </Head>
-      <main>
+      <main style={{ marginTop: 0 }}>
         <Hero />
         <Container>
           <h2>Our Initiatives</h2>
