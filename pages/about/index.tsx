@@ -4,10 +4,40 @@ import Banner from '@components/about/Banner';
 import Container from '@components/shared/Container';
 import styles from './styles.module.scss';
 import Team from '@components/shared/Team';
-
+import fetchContent from '@utils/fetchContent';
 import { exampleChapters } from '@components/dummyData';
+import ExecMember from '@utils/contentTypes/ExecMember';
 
-function About() {
+type Props = {
+  execMembers: ExecMember[];
+};
+
+export async function getStaticProps() {
+  const { executiveBoardMemberCollection } = await fetchContent(`
+  {
+    executiveBoardMemberCollection {
+      items {
+        name
+        title
+        description {
+          json
+        }
+        photo {
+          url
+        }
+        linkedIn
+      }
+    }
+  }
+  `);
+  return {
+    props: {
+      execMembers: executiveBoardMemberCollection.items,
+    },
+  };
+}
+
+function About({ execMembers }: Props) {
   return (
     <main>
       <Head>
@@ -41,6 +71,15 @@ function About() {
         <h2 className="contain">Our Team</h2>
         <Team items={exampleChapters[0].team} infinite />
       </section>
+      <Container>
+        <h2>Exec Board</h2>
+        {execMembers.map(({ name, title }) => (
+          <article key={name}>
+            <h3>{name}</h3>
+            <p>{title}</p>
+          </article>
+        ))}
+      </Container>
       <Container>
         <h2>Our Affiliations</h2>
         <div className="row wrap">
