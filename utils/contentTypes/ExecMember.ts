@@ -1,14 +1,10 @@
-import { Document } from '@contentful/rich-text-types';
+import { Image, RichText } from './generic';
 
 type ExecMember = {
   name: string;
   title: string;
-  description: {
-    json: Document;
-  };
-  photo: {
-    url: string;
-  };
+  description: RichText;
+  photo: Image;
   linkedIn: string;
 };
 

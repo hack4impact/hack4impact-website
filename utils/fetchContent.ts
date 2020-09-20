@@ -3,7 +3,8 @@ const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 
 // Want to figure out how to structure your query?
 // Go download GraphiQL and enter the URL in the fetch call below!
-// From here, you'll be able to explore all of the existing Content
+// (just don't forget to add the authorization header)
+// From here, you'll be able to explore all of the existing content
 // https://www.electronjs.org/apps/graphiql
 export async function fetchContent(query: string) {
   try {
