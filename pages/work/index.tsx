@@ -7,12 +7,14 @@ import ChapterFeature from '@components/work/ChapterFeature';
 import { exampleChapters, exampleProjects } from '@components/dummyData';
 import fetchContent from '@utils/fetchContent';
 import Project from '@utils/contentTypes/Project';
+import Chapter from '@utils/contentTypes/Chapter';
 
 type Props = {
   nationalInitiatives: Project[];
+  chapters: Chapter[];
 };
 
-function Work({ nationalInitiatives }: Props) {
+function Work({ nationalInitiatives, chapters }: Props) {
   return (
     <main>
       <Head>
@@ -25,12 +27,12 @@ function Work({ nationalInitiatives }: Props) {
           <ProjectView key={item.name} {...item} />
         ))}
       </Container>
-      {/* <Container>
+      <Container>
         <h2>Our Chapters</h2>
-        <ChapterTable items={exampleChapters}>
+        <ChapterTable items={chapters}>
           {selectedItem => <ChapterFeature {...selectedItem} />}
         </ChapterTable>
-      </Container> */}
+      </Container>
     </main>
   );
 }
@@ -38,22 +40,26 @@ function Work({ nationalInitiatives }: Props) {
 export default Work;
 
 export async function getStaticProps() {
+  const projectQuery = `
+    items {
+      photo {
+        url
+        description
+      }
+      name
+      tags
+      description {
+        json
+      }
+      link
+      type
+    }
+  `;
+
   const { nationalInitiatives, chapters } = await fetchContent(`
   {
-    nationalInitiatives: projectCollection(where: {type: "National Initiative"}) {
-      items {
-        photo {
-          url
-          description
-        }
-        name
-        tags
-        description {
-          json
-        }
-        link
-        type
-      }
+    nationalInitiatives: projectCollection(limit: 2, where: {type: "National Initiative"}) {
+      ${projectQuery}
     }
     chapters: chapterCollection {
       items {
@@ -71,6 +77,9 @@ export async function getStaticProps() {
           url
           description
         }
+        projects: projectsCollection(limit: 2) {
+          ${projectQuery}
+        }
       }
     }
   }
@@ -78,6 +87,7 @@ export async function getStaticProps() {
   return {
     props: {
       nationalInitiatives: nationalInitiatives.items,
+      chapters: chapters.items,
     },
   };
 }

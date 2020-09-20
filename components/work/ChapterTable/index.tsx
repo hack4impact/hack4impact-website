@@ -1,28 +1,12 @@
 import { useState, useRef } from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
-import { ProjectType } from '@components/shared/Project';
 import VisuallyHidden from '@reach/visually-hidden';
-
-export type TeamType = {
-  image: string;
-  name: string;
-  role: string;
-};
-
-export type ChapterType = {
-  name: string;
-  logoUrl: string;
-  image: string;
-  description: string;
-  link: string;
-  team: TeamType[];
-  projects: ProjectType[];
-};
+import Chapter from '@utils/contentTypes/Chapter';
 
 type Props = {
-  items: ChapterType[];
-  children: (chapter: ChapterType) => React.ReactNode;
+  items: Chapter[];
+  children: (chapter: Chapter) => React.ReactNode;
 };
 
 function ChapterTable({ items, children }: Props) {
@@ -53,15 +37,20 @@ function ChapterTable({ items, children }: Props) {
     <div className={styles.root}>
       <div className={styles.chapter_select_ribbon}>
         <div className={styles.chapter_select_option_container} ref={selectRibbonRef}>
-          {items.map((item, index) => (
+          {items.map(({ name, universityLogo }, index) => (
             <button
-              key={item.name}
+              key={name}
               onClick={e => onSelect(e, index)}
               className={classNames(styles.chapter_select_option, {
                 [styles.selected]: selected === index,
               })}>
-              <img src={item.logoUrl} alt={item.name} height="50" width="50" />
-              <VisuallyHidden>{item.name}</VisuallyHidden>
+              <img
+                src={universityLogo.url}
+                alt={universityLogo.description}
+                height="50"
+                width="50"
+              />
+              <VisuallyHidden>{name}</VisuallyHidden>
             </button>
           ))}
         </div>
