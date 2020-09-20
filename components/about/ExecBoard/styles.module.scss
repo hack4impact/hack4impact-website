@@ -1,0 +1,84 @@
+@import '../../../variables.scss';
+
+@mixin img-styles() {
+  border-radius: 50%;
+  border: solid $primary $border-width;
+}
+
+.member_container {
+  text-align: center;
+  max-width: 250px;
+
+  h3 {
+    font-size: $h4;
+    margin: 0;
+  }
+
+  img {
+    @include img-styles;
+    height: 130px;
+    width: 130px;
+    margin-bottom: 8px;
+
+    @include screen('tablet') {
+      height: 180px;
+      width: 180px;
+    }
+  }
+  .about_button {
+    width: 100%;
+    font-size: $body;
+    font-family: inherit;
+    cursor: pointer;
+    color: $accent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+}
+
+.modal_content {
+  padding: 3vmin;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .close_button_container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  img {
+    @include img-styles;
+  }
+  hgroup {
+    text-align: center;
+    h1 {
+      font-size: $h3;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: $body;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+  }
+  a,
+  a:visited {
+    font-weight: bold;
+    color: $accent;
+    margin-bottom: 24px;
+  }
+  div {
+    line-height: 1.3;
+  }
+}
+
+.modal_backdrop {
+  background: rgba($primary-dark, 0.5);
+  backdrop-filter: blur(8px);
+}

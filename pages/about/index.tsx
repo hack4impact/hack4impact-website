@@ -3,10 +3,9 @@ import Header from '@components/shared/Header';
 import Banner from '@components/about/Banner';
 import Container from '@components/shared/Container';
 import styles from './styles.module.scss';
-import Team from '@components/shared/Team';
 import fetchContent from '@utils/fetchContent';
-import { exampleChapters } from '@components/dummyData';
 import ExecMember from '@utils/contentTypes/ExecMember';
+import ExecBoard from '@components/about/ExecBoard';
 
 type Props = {
   execMembers: ExecMember[];
@@ -67,19 +66,7 @@ function About({ execMembers }: Props) {
           </p>
         </div>
       </Container>
-      <section style={{ marginBottom: 100 }}>
-        <h2 className="contain">Our Team</h2>
-        <Team items={exampleChapters[0].team} infinite />
-      </section>
-      <Container>
-        <h2>Exec Board</h2>
-        {execMembers.map(({ name, title }) => (
-          <article key={name}>
-            <h3>{name}</h3>
-            <p>{title}</p>
-          </article>
-        ))}
-      </Container>
+      <ExecBoard execMembers={execMembers} />
       <Container>
         <h2>Our Affiliations</h2>
         <div className="row wrap">
