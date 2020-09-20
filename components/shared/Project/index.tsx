@@ -1,20 +1,14 @@
 import styles from './styles.module.scss';
 import determineLinkName from '@utils/determineLinkName';
+import Project from '@utils/contentTypes/Project';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
-export type ProjectType = {
-  image: string;
-  title: string;
-  tags?: string[];
-  description?: string;
-  link: string;
-};
-
-function Project({ image, title, tags, description, link }: ProjectType) {
+function ProjectView({ photo, name, tags, description, link }: Project) {
   return (
     <div className={styles.root}>
-      <img className={styles.image} src={image} alt={title} />
-      <div>
-        <b className={styles.title}>{title}</b>
+      <img className={styles.image} src={photo.url} alt={photo.description} />
+      <div className={styles.text_container}>
+        <b className={styles.title}>{name}</b>
         <div className={styles.tags}>
           {tags.map(tag => (
             <div key={tag} className={styles.tag}>
@@ -22,7 +16,7 @@ function Project({ image, title, tags, description, link }: ProjectType) {
             </div>
           ))}
         </div>
-        <p>{description}</p>
+        <div dangerouslySetInnerHTML={{ __html: documentToHtmlString(description.json) }}></div>
         <a href={link} target="_blank" rel="noreferrer">
           {determineLinkName(link)}
         </a>
@@ -31,4 +25,4 @@ function Project({ image, title, tags, description, link }: ProjectType) {
   );
 }
 
-export default Project;
+export default ProjectView;
