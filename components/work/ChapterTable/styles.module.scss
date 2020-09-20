@@ -5,41 +5,31 @@
   flex-direction: column;
 }
 
-.chapters {
-  overflow-x: scroll;
-  white-space: nowrap;
+.chapter_select_ribbon {
   width: 100%;
-  overflow-x: scroll;
+  white-space: nowrap;
   border-bottom: solid 1px lightgray;
   margin-bottom: 12px;
-  .chapter_select:first-child {
-    margin-left: 0;
-  }
-}
+  overflow: hidden;
 
-.chapter_select {
-  margin: 12px 12px 0 12px;
-  display: inline-block;
-  *display: inline; /* For IE7*/
-  *zoom: 1; /* For IE7*/
-  vertical-align: top;
-  cursor: pointer;
-  &.selected {
-    border-bottom: solid 5px $accent;
-  }
-  &:focus {
-    outline: 0;
-  }
-}
+  .chapter_select_option_container {
+    transition: transform 0.3s;
 
-.logo {
-  width: 65px;
-  height: 65px;
-  object-fit: contain;
-}
-
-.highlight {
-  background-color: $accent;
-  width: 65px;
-  height: 10px;
+    .chapter_select_option {
+      box-sizing: content-box;
+      transition: background-color 0.2s;
+      padding: 10px 20px;
+      &.selected {
+        border-bottom: solid 5px $accent;
+      }
+      &:focus,
+      &:hover {
+        outline: 0;
+        background-color: rgba($primary-dark, 0.2);
+      }
+    }
+    .chapter_select_option:first-child {
+      margin-left: 0;
+    }
+  }
 }
