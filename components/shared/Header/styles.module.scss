@@ -17,6 +17,7 @@
 
 .divider {
   position: sticky;
+  z-index: 2;
   top: $nav-height;
   width: 100%;
   height: 10px;
