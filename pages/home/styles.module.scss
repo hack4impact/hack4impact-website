@@ -14,8 +14,11 @@
   margin-bottom: 52px;
   a {
     margin-bottom: 8px;
-  }
-  a:first-child {
-    margin-right: 20px;
+    width: 100%;
+
+    @include screen('tablet') {
+      width: auto;
+      margin-right: 20px;
+    }
   }
 }

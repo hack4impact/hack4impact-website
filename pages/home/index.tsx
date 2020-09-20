@@ -2,41 +2,18 @@ import Head from 'next/head';
 import { FaNetworkWired } from 'react-icons/fa';
 import styles from './styles.module.scss';
 import Container from '@components/shared/Container';
-import Project from '@components/shared/Project';
+import ProjectView from '@components/shared/Project';
 import Card from '@components/home/Card';
 import LinkButton from '@components/shared/LinkButton';
 import Hero from '@components/home/Hero';
+import fetchContent from '@utils/fetchContent';
+import Project from '@utils/contentTypes/Project';
 
-const ExampleProjects = [
-  {
-    image: 'http://placekitten.com/g/1000/600',
-    title: 'Website',
-    tags: ['Kitten', 'Kat', 'Kitty Kat Kat'],
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
-    link: 'https://www.w3schools.com/',
-  },
-  {
-    image: 'http://placekitten.com/g/1000/600',
-    title: 'Website',
-    tags: [
-      'Kitten',
-      'Kat',
-      'Kitty Kat Kat',
-      'Kitten',
-      'Kat',
-      'Kitty Kat Kat',
-      'Kitten',
-      'Kat',
-      'Kitty Kat Kat',
-    ],
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
-    link: 'https://www.w3schools.com/',
-  },
-];
+type Props = {
+  featuredProjects: Project[];
+};
 
-function Home() {
+function Home({ featuredProjects }: Props) {
   return (
     <main style={{ marginTop: 0 }}>
       <Head>
@@ -74,8 +51,8 @@ function Home() {
       </Container>
       <Container>
         <h2>Featured Projects</h2>
-        {ExampleProjects.map(item => (
-          <Project key={item.title} {...item} />
+        {featuredProjects.map(item => (
+          <ProjectView key={item.name} {...item} />
         ))}
         <div className={styles.button_row}>
           <LinkButton href="/work">See all chapters</LinkButton>
@@ -89,3 +66,29 @@ function Home() {
 }
 
 export default Home;
+
+export async function getStaticProps() {
+  const { projectCollection } = await fetchContent(`
+  {
+    projectCollection(limit: 3, where: {featuredOnHomePage: true}) {
+      items {
+        photo {
+          url
+          description
+        }
+        name
+        tags
+        description {
+          json
+        }
+        link
+      }
+    }
+  }
+  `);
+  return {
+    props: {
+      featuredProjects: projectCollection.items,
+    },
+  };
+}
