@@ -20,17 +20,19 @@ function ExecBoard({ execMembers }: Props) {
   return (
     <Container>
       <h2>Exec Board</h2>
-      {execMembers.map(({ name, title, photo }, index) => (
-        <article key={name} className={styles.member_container}>
-          <img src={photo.url} alt={photo.description} />
-          <h3>{name}</h3>
-          <p>{title}</p>
-          <button className={styles.about_button} onClick={() => openAboutModal(index)}>
-            About me <ArrowIcon size={32} />
-            <HoverShinyEffect color="blue" />
-          </button>
-        </article>
-      ))}
+      <div className={styles.list_container}>
+        {execMembers.map(({ name, title, photo }, index) => (
+          <article key={name} className={styles.member_container}>
+            <img src={photo.url} alt={photo.description} />
+            <h3>{name}</h3>
+            <p>{title}</p>
+            <button className={styles.about_button} onClick={() => openAboutModal(index)}>
+              About me <ArrowIcon size={28} />
+              <HoverShinyEffect color="blue" />
+            </button>
+          </article>
+        ))}
+      </div>
       <AboutMeModal
         execMember={execMembers[selectedExecMember]}
         isOpen={modalOpened}

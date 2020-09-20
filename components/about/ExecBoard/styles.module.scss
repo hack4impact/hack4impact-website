@@ -5,37 +5,67 @@
   border: solid $primary $border-width;
 }
 
-.member_container {
-  text-align: center;
-  max-width: 250px;
+.list_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 140px);
+  justify-content: center;
+  gap: 48px 36px;
 
-  h3 {
-    font-size: $h4;
-    margin: 0;
+  @include screen('tablet-small') {
+    grid-template-columns: repeat(auto-fill, 250px);
   }
 
-  img {
-    @include img-styles;
-    height: 130px;
-    width: 130px;
-    margin-bottom: 8px;
-
-    @include screen('tablet') {
-      height: 180px;
-      width: 180px;
-    }
-  }
-  .about_button {
-    width: 100%;
-    font-size: $body;
-    font-family: inherit;
-    cursor: pointer;
-    color: $accent;
+  .member_container {
+    text-align: center;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    border-radius: $border-radius;
-    overflow: hidden;
+    font-size: 16px;
+
+    h3 {
+      font-size: $body;
+      margin: 0;
+    }
+    p {
+      font-size: inherit;
+    }
+    img {
+      @include img-styles;
+      height: 130px;
+      width: 130px;
+      margin-bottom: 8px;
+    }
+    .about_button {
+      margin-top: auto;
+      width: 100%;
+      font-size: inherit;
+      font-family: inherit;
+      cursor: pointer;
+      color: $accent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: $border-radius;
+      overflow: hidden;
+
+      svg {
+        margin-right: -6px;
+      }
+    }
+
+    @include screen('tablet-small') {
+      font-size: $body;
+      h3 {
+        font-size: $h4;
+      }
+      img {
+        height: 180px;
+        width: 180px;
+      }
+      .about_button {
+        font-size: $body;
+      }
+    }
   }
 }
 
