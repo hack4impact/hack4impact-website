@@ -22,6 +22,10 @@
     align-items: center;
     font-size: 16px;
 
+    &:hover > img {
+      transform: scale(1.1);
+    }
+
     h3 {
       font-size: $body;
       margin: 0;
@@ -31,6 +35,7 @@
     }
     img {
       @include img-styles;
+      transition: transform 0.3s;
       height: 130px;
       width: 130px;
       margin-bottom: 8px;
@@ -40,7 +45,6 @@
       width: 100%;
       font-size: inherit;
       font-family: inherit;
-      cursor: pointer;
       color: $accent;
       display: flex;
       justify-content: center;

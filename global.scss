@@ -70,8 +70,11 @@ a {
 }
 
 button {
+  font-family: inherit;
+  font-size: inherit;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 // Modal

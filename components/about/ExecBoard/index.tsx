@@ -4,7 +4,6 @@ import styles from './styles.module.scss';
 import { useState } from 'react';
 import AboutMeModal from './AboutMeModal';
 import { IoMdArrowDropright as ArrowIcon } from 'react-icons/io';
-import HoverShinyEffect from '@components/shared/HoverShinyEffect';
 
 type Props = {
   execMembers: ExecMember[];
@@ -22,15 +21,18 @@ function ExecBoard({ execMembers }: Props) {
       <h2>Exec Board</h2>
       <div className={styles.list_container}>
         {execMembers.map(({ name, title, photo }, index) => (
-          <article key={name} className={styles.member_container}>
+          <button
+            className={styles.member_container}
+            key={name}
+            aria-label={`Learn more about ${name}`}
+            onClick={() => openAboutModal(index)}>
             <img src={photo.url} alt={photo.description} />
             <h3>{name}</h3>
             <p>{title}</p>
-            <button className={styles.about_button} onClick={() => openAboutModal(index)}>
+            <p aria-hidden={true} className={styles.about_button}>
               About me <ArrowIcon size={28} />
-              <HoverShinyEffect color="blue" />
-            </button>
-          </article>
+            </p>
+          </button>
         ))}
       </div>
       <AboutMeModal
