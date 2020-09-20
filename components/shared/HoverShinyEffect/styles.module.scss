@@ -8,8 +8,10 @@
   bottom: 0;
   overflow: hidden;
 
-  &:hover:after {
-    opacity: 0.2;
+  @media (hover: hover) {
+    &:hover:after {
+      opacity: 0.2;
+    }
   }
 
   &:after {
