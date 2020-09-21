@@ -4,7 +4,6 @@ import Container from '@components/shared/Container';
 import ProjectView from '@components/shared/Project';
 import ChapterTable from '@components/work/ChapterTable';
 import ChapterFeature from '@components/work/ChapterFeature';
-import { exampleChapters, exampleProjects } from '@components/dummyData';
 import fetchContent from '@utils/fetchContent';
 import Project from '@utils/contentTypes/Project';
 import Chapter from '@utils/contentTypes/Chapter';
