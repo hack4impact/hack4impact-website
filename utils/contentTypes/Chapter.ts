@@ -1,4 +1,4 @@
-import { Image } from './generic';
+import { Image, Collection } from './generic';
 import Project from './Project';
 
 export type ProjectType = 'National Initiative' | 'Chapter Project';
@@ -8,13 +8,12 @@ type Chapter = {
   name: string;
   location: string;
   email: string;
-  websiteLink: string;
-  socialMediaLink: string;
-  codeRepoLink: string;
+  websiteLink?: string;
+  socialMediaLink?: string;
+  socialMediaLinkType?: string;
+  codeRepoLink?: string;
   photo: Image;
-  projects: {
-    items: Project[];
-  };
+  projects?: Collection<Project>;
 };
 
 export default Chapter;

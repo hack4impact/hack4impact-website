@@ -9,3 +9,7 @@ export type Image = {
   name?: string;
   description?: string;
 };
+
+export type Collection<T> = {
+  items: T[];
+};

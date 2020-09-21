@@ -10,22 +10,72 @@
     @include screen('tablet') {
       flex-direction: row;
       justify-content: space-between;
+      align-items: flex-start;
     }
 
     .text_content {
       flex: 1;
+      h3 {
+        margin-bottom: 10px;
+      }
 
-      .contact {
-        color: $accent;
-        font-weight: bold;
+      .subheading {
+        font-size: 24px;
+        margin-bottom: 40px;
+        .contact {
+          margin-left: 10px;
+          color: $accent;
+          font-weight: bold;
+        }
+      }
+
+      .links {
+        list-style: none;
+        padding: 0;
       }
     }
 
     .image {
       max-width: 500px;
-
       @include screen('tablet') {
+        max-width: 40%;
+        align-self: flex-end;
+      }
+      @include screen('tablet-wide') {
         max-width: 50%;
+      }
+    }
+  }
+}
+
+.about_link {
+  font-size: $body;
+  font-weight: bold;
+  margin-bottom: 20px;
+  a,
+  a:visited {
+    color: $black;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 40px;
+      height: 40px;
+      padding: 5px;
+      margin-right: 20px;
+      fill: white;
+      background: $accent;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      color: $accent;
+      text-decoration: none;
+
+      svg {
+        transform: scale(1.1);
       }
     }
   }

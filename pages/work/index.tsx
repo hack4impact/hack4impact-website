@@ -71,6 +71,7 @@ export async function getStaticProps() {
         email
         websiteLink
         socialMediaLink
+        socialMediaLinkType
         codeRepoLink
         photo {
           url
