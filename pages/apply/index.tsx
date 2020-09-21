@@ -83,9 +83,13 @@ function Apply() {
             </LinkButton>
           </div>
           <div className={styles.image_wrap}>
-            <ImageHighlight height={height} width={width}>
-              <img src={content.image} alt="" style={{ height, width }} className={styles.image} />
-            </ImageHighlight>
+            <ImageHighlight
+              src={content.image}
+              alt=""
+              height={height}
+              width={width}
+              className={styles.image}
+            />
           </div>
         </Container>
         <Container>
