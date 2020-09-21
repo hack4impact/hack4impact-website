@@ -1,22 +1,32 @@
 @import '../../../variables.scss';
 
-.table_wrapper {
-  margin-left: -10vw;
-  margin-right: -10vw;
-  width: 100vw;
-  @include screen('desktop-wide') {
-    margin: 0;
-    max-width: $content-max-width;
-  }
-}
+.root {
+  .about_chapter_container {
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
 
-.content {
-  padding-bottom: 30px;
-  @include screen('tablet') {
-    width: 40vw;
-  }
-}
+    @include screen('tablet') {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
-.image {
-  object-fit: cover;
+    .text_content {
+      flex: 1;
+
+      .contact {
+        color: $accent;
+        font-weight: bold;
+      }
+    }
+
+    .image {
+      max-width: 500px;
+
+      @include screen('tablet') {
+        max-width: 50%;
+      }
+    }
+  }
 }

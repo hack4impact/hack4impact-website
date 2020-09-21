@@ -1,24 +1,19 @@
 @import '../../../variables.scss';
 
-.root {
-  @include dotted-shadow;
-}
+.angle_bracket_wrapper {
+  padding: 24px;
+  &::before {
+    @include angle-bracket-accent('top-right');
+  }
+  &::after {
+    @include angle-bracket-accent('bottom-left');
+  }
+  .shadow_wrapper {
+    @include dotted-shadow;
 
-.accent_wrapper {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-}
-
-.accent_1 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.accent_2 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: rotate(180deg) !important;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
 }

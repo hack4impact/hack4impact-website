@@ -1,19 +1,15 @@
-import Accent from '../Accent';
 import styles from './styles.module.scss';
+import classNames from 'classnames';
 
-type Props = {
-  children: React.ReactNode;
-  height: number;
-  width: number;
+type Props = React.ImgHTMLAttributes<null> & {
+  className?: string;
 };
 
-function ImageHighlight({ children, height, width }: Props) {
+function ImageHighlight({ src = '', alt = '', className = '', ...props }: Props) {
   return (
-    <div className={styles.root}>
-      {children}
-      <div className={styles.accent_wrapper} style={{ height: height + 20, width: width + 20 }}>
-        <Accent className={styles.accent_1} />
-        <Accent className={styles.accent_2} />
+    <div className={classNames(styles.angle_bracket_wrapper, className)}>
+      <div className={styles.shadow_wrapper}>
+        <img src={src} alt={alt} {...props} />
       </div>
     </div>
   );
