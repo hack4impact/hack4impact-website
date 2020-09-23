@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Container from '@components/shared/Container';
 import { FaBullseye } from 'react-icons/fa';
 import styles from './styles.module.scss';
@@ -35,35 +35,48 @@ const values = [
       'Organizational roles do not determine the value of an idea: great ideas can come from anyone and anywhere. We grow because we are always trying something new.',
     color: '#00C3AC',
   },
-  // {
-  //   title: 'Develop with care',
-  //   description:
-  //     'Organizational roles do not determine the value of an idea: great ideas can come from anyone and anywhere. We grow because we are always trying something new.',
-  //   color: '#0037C3',
-  // },
 ];
 
 function Values() {
   const [selected, setSelected] = useState(2);
   const [displayValues, setDisplayValues] = useState([]);
   const [moveToNext, setMoveToNext] = useState(false);
+  const autoScrollInterval = useRef(null);
 
   useEffect(() => {
     setDisplayValues(values);
 
-    const carouselInterval = setInterval(() => {
+    autoScrollInterval.current = setInterval(() => {
       setMoveToNext(true);
     }, 4000);
 
-    return () => clearInterval(carouselInterval);
+    return () => clearInterval(autoScrollInterval.current);
   }, []);
 
+  const onClickNext = () => {
+    if (autoScrollInterval?.current) {
+      clearInterval(autoScrollInterval.current);
+    }
+    setMoveToNext(true);
+  };
+
   useEffect(() => {
+    // whenever we need to move to the next element...
     if (moveToNext) {
+      // change which card is focused (wrapping to the start of the list if necessary)
       setSelected((selected + 1) % values.length);
+      // once we're done scrolling to our focused card...
       setTimeout(() => {
-        const nextValue = Math.floor(selected + 1 + displayValues.length / 2);
+        // figure out what the "next" value is
+        // for example, if we are currently displaying cards 1 through 5 and our list is 5 elements long,
+        // the next value will be value number 1 (so we wrap back to the beginning)
+        const nextValue = selected + Math.ceil(displayValues.length / 2);
+        // now, chop off the first card in the list and append our "next" value onto the end
+        // if we don't chop off the front, our list could be infinitely long overtime!
         setDisplayValues([...displayValues.slice(1), values[nextValue % values.length]]);
+        // finally, reset our transition
+        // this will essentially undo our transition to the next card,
+        // but since we chopped off the first value, we won't notice this jump visually!
         setMoveToNext(false);
       }, 300);
     }
