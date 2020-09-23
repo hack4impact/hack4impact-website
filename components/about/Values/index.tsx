@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import Container from '@components/shared/Container';
 import { FaBullseye } from 'react-icons/fa';
+import { IoMdArrowDropright as ArrowIcon } from 'react-icons/io';
 import styles from './styles.module.scss';
 import classNames from 'classnames';
+import HoverShinyEffect from '@components/shared/HoverShinyEffect';
 
 const values = [
   {
@@ -103,6 +105,15 @@ function Values() {
             </article>
           ))}
         </div>
+      </div>
+      <div className={styles.button_container}>
+        <button
+          className={styles.next_value_button}
+          onClick={onClickNext}
+          style={{ backgroundColor: values[selected].color }}>
+          Next <ArrowIcon />
+          <HoverShinyEffect color="white" />
+        </button>
       </div>
     </Container>
   );

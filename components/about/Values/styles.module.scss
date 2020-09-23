@@ -3,6 +3,8 @@
 .root {
   margin-left: 0;
   margin-right: 0;
+  $card-margin: 10px;
+  $card-width: 340px;
 
   @include screen('tablet') {
     margin-left: 7vw;
@@ -13,45 +15,64 @@
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-.carousel_container {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-
-  @include screen('tablet-small') {
-    &:after {
-      content: '';
-      @include absolute-cover;
-      background: linear-gradient(90deg, white, rgba(white, 0) 10%, rgba(white, 0) 90%, white 100%);
-    }
-  }
-
-  .value_card_container {
-    $card-margin: 10px;
-    $card-width: 350px;
+  .carousel_container {
+    overflow: hidden;
     display: flex;
+    justify-content: center;
 
-    .value_card {
-      width: $card-width;
-      margin: $card-margin;
-      border: 3px solid black;
-      padding: 10px;
-      border-radius: $border-radius;
-      transform: scale(0.9);
-      opacity: 0.8;
-      transition: transform 0.3s;
-
-      &.selected {
-        opacity: 1;
-        transform: scale(1);
+    @include screen('tablet-small') {
+      &:after {
+        content: '';
+        @include absolute-cover;
+        background: linear-gradient(
+          90deg,
+          white,
+          rgba(white, 0) 10%,
+          rgba(white, 0) 90%,
+          white 100%
+        );
       }
     }
 
-    &.move {
-      transform: translateX(-$card-width - $card-margin * 2);
-      transition: transform 0.3s;
+    .value_card_container {
+      display: flex;
+
+      .value_card {
+        width: $card-width;
+        margin: $card-margin;
+        border: 3px solid black;
+        padding: 10px;
+        border-radius: $border-radius;
+        transform: scale(0.9);
+        opacity: 0.8;
+        transition: transform 0.3s;
+
+        &.selected {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      &.move {
+        transform: translateX(-$card-width - $card-margin * 2);
+        transition: transform 0.3s;
+      }
+    }
+  }
+
+  .button_container {
+    display: flex;
+    justify-content: center;
+    top: -50px;
+    .next_value_button {
+      transition: background-color 0.3s;
+      border-radius: $border-radius;
+      font-size: $body;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      padding-right: 15px;
+      margin-left: $card-width - 80px;
     }
   }
 }
