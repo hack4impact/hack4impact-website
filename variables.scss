@@ -113,6 +113,14 @@ $breakpoints: (
   }
 }
 
+@mixin absolute-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 @mixin dotted-shadow($offset-top: 20px, $offset-left: -20px) {
   position: relative;
   &:before {

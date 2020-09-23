@@ -4,6 +4,7 @@ import Banner from '@components/about/Banner';
 import fetchContent from '@utils/fetchContent';
 import ExecMember from '@utils/contentTypes/ExecMember';
 import ExecBoard from '@components/about/ExecBoard';
+import Values from '@components/about/Values';
 
 type Props = {
   execMembers: ExecMember[];
@@ -42,6 +43,7 @@ function About({ execMembers }: Props) {
       </Head>
       <Header title="About" />
       <Banner />
+      <Values />
       <ExecBoard execMembers={execMembers} />
     </main>
   );
