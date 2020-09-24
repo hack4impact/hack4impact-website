@@ -41,23 +41,40 @@
   height: 70%;
   width: 100%;
   overflow: hidden;
-  background-image: linear-gradient(to right, rgba(lighten($primary, 10), 0.6), rgba($primary, 0.6)),
-    url('http://placekitten.com/g/1200/500');
-  background-size: cover;
+  display: flex;
+  align-items: center;
   @include screen('tablet') {
     width: 57vw;
+  }
+
+  &::after {
+    content: '';
+    @include absolute-cover;
+    background: linear-gradient(to right, rgba(lighten($primary, 10), 0.6), rgba($primary, 0.6));
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
 .mission {
-  font-size: 20px;
-  padding: 12px 0;
-  &:before {
-    @include angle-bracket-accent('top-right', 18px);
-    right: -24px;
-  }
-  &:after {
-    @include angle-bracket-accent('bottom-left', 18px);
-    left: -32px;
+  font-size: $body;
+  display: flex;
+  justify-content: flex-end;
+
+  p {
+    max-width: 1000px;
+    padding: 24px 0;
+    &:before {
+      @include angle-bracket-accent('top-right', 18px);
+      right: -24px;
+    }
+    &:after {
+      @include angle-bracket-accent('bottom-left', 18px);
+      left: -32px;
+    }
   }
 }
