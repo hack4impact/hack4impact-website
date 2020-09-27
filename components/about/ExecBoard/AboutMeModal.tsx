@@ -12,7 +12,7 @@ type Props = {
 };
 
 function AboutMeModal({
-  execMember: { name, title, photo, description, linkedIn },
+  execMember: { name, title, photo, description, linkedIn, email },
   isOpen,
   close,
 }: Props) {
@@ -30,7 +30,10 @@ function AboutMeModal({
           <h1>{name}</h1>
           <h2>{title}</h2>
         </hgroup>
-        <a href={linkedIn}>Follow on LinkedIn</a>
+        <div className={styles.links}>
+          {email && <a href={email}>Email me</a>}
+          {linkedIn && <a href={linkedIn}>Find me on LinkedIn</a>}
+        </div>
         <div
           dangerouslySetInnerHTML={{
             __html: documentToHtmlString(description.json),

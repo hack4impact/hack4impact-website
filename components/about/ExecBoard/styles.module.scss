@@ -101,11 +101,16 @@
       margin-bottom: 24px;
     }
   }
-  a,
-  a:visited {
-    font-weight: bold;
-    color: $accent;
-    margin-bottom: 24px;
+  .links {
+    display: flex;
+    justify-content: center;
+    a,
+    a:visited {
+      font-weight: bold;
+      color: $accent;
+      margin: 0 10px;
+      margin-bottom: 24px;
+    }
   }
   div {
     line-height: 1.3;

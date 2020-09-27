@@ -5,7 +5,8 @@ type ExecMember = {
   title: string;
   description: RichText;
   photo: Image;
-  linkedIn: string;
+  linkedIn?: string;
+  email?: string;
 };
 
 export default ExecMember;
