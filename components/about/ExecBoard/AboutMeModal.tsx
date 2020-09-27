@@ -32,6 +32,7 @@ function AboutMeModal({
         </hgroup>
         <div className={styles.links}>
           {email && <a href={email}>Email me</a>}
+          {'•'}
           {linkedIn && <a href={linkedIn}>Find me on LinkedIn</a>}
         </div>
         <div
