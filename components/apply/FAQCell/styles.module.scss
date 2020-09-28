@@ -30,3 +30,19 @@
   font-size: 20px;
   font-weight: bold;
 }
+
+.dropdown {
+  font-size: 18px;
+  margin: 8px 0;
+  font-weight: bold;
+  color: $accent;
+}
+
+.dropdown_icon {
+  position: relative;
+  top: 2px;
+  transition: transform 200ms;
+  &.selected {
+    transform: rotate(180deg);
+  }
+}

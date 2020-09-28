@@ -1,4 +1,8 @@
+import { useState } from 'react';
 import { FaQuestion } from 'react-icons/fa';
+import { MdArrowDropDownCircle } from 'react-icons/md';
+import classNames from 'classnames';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@reach/disclosure';
 import styles from './styles.module.scss';
 
 type Props = {
@@ -7,6 +11,8 @@ type Props = {
 };
 
 function FAQCell({ question, answer }: Props) {
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <div className={styles.root}>
       <div className={styles.icon}>
@@ -14,7 +20,21 @@ function FAQCell({ question, answer }: Props) {
       </div>
       <div>
         <div className={styles.question}>{question}</div>
-        <p>{answer}</p>
+        <Disclosure open={isOpen} onChange={() => setOpen(!isOpen)}>
+          <DisclosureButton>
+            <div className={styles.dropdown}>
+              Answer{' '}
+              <MdArrowDropDownCircle
+                className={classNames(styles.dropdown_icon, {
+                  [styles.selected]: isOpen,
+                })}
+              />
+            </div>
+          </DisclosureButton>
+          <DisclosurePanel>
+            <p>{answer}</p>
+          </DisclosurePanel>
+        </Disclosure>
       </div>
     </div>
   );
