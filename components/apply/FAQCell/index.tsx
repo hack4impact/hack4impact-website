@@ -4,6 +4,7 @@ import { MdArrowDropDownCircle } from 'react-icons/md';
 import classNames from 'classnames';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@reach/disclosure';
 import styles from './styles.module.scss';
+import HoverShinyEffect from '@components/shared/HoverShinyEffect';
 
 type Props = {
   question: string;
@@ -19,7 +20,7 @@ function FAQCell({ question, answer }: Props) {
         <FaQuestion />
       </div>
       <div>
-        <div className={styles.question}>{question}</div>
+        <h3 className={styles.question}>{question}</h3>
         <Disclosure open={isOpen} onChange={() => setOpen(!isOpen)}>
           <DisclosureButton>
             <div className={styles.dropdown}>
@@ -29,6 +30,7 @@ function FAQCell({ question, answer }: Props) {
                   [styles.selected]: isOpen,
                 })}
               />
+              <HoverShinyEffect color="#001aff" />
             </div>
           </DisclosureButton>
           <DisclosurePanel>

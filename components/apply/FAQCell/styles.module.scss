@@ -27,9 +27,8 @@
 }
 
 .question {
-  display: flex;
-  font-size: 20px;
-  font-weight: bold;
+  margin: 10px 0;
+  font-size: $h4;
 }
 
 .dropdown {
@@ -37,6 +36,7 @@
   margin: 8px 0;
   font-weight: bold;
   color: $accent;
+  border-radius: $border-radius;
 }
 
 .dropdown_icon {
