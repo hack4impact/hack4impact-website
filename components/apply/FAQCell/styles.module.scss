@@ -4,6 +4,7 @@
   @include screen('phone') {
     display: flex;
   }
+  margin-bottom: 20px;
 }
 
 .icon {
@@ -26,7 +27,27 @@
 }
 
 .question {
-  display: flex;
-  font-size: 20px;
+  margin: 10px 0;
+  font-size: $h4;
+}
+
+.dropdown {
+  font-size: 18px;
+  margin: 8px 0;
   font-weight: bold;
+  color: $accent;
+  border-radius: $border-radius;
+}
+
+.dropdown_icon {
+  position: relative;
+  top: 2px;
+  transition: transform 200ms;
+  &.selected {
+    transform: rotate(180deg);
+  }
+}
+
+.answer {
+  margin-bottom: 0;
 }
