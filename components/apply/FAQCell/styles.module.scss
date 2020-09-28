@@ -4,6 +4,7 @@
   @include screen('phone') {
     display: flex;
   }
+  margin-bottom: 20px;
 }
 
 .icon {
@@ -45,4 +46,8 @@
   &.selected {
     transform: rotate(180deg);
   }
+}
+
+.answer {
+  margin-bottom: 0;
 }

@@ -32,7 +32,7 @@ function FAQCell({ question, answer }: Props) {
             </div>
           </DisclosureButton>
           <DisclosurePanel>
-            <p>{answer}</p>
+            <p className={styles.answer}>{answer}</p>
           </DisclosurePanel>
         </Disclosure>
       </div>
