@@ -12,20 +12,13 @@ type NavLinkProps = {
   ariaLabel?: string;
 };
 
-function NavLink({
-  children,
-  href,
-  activeRoute,
-  referenceRoute,
-  className,
-  ariaLabel,
-}: NavLinkProps) {
+function NavLink({ children, href, activeRoute, className, ariaLabel }: NavLinkProps) {
   return (
     <Link href={href}>
       <a
         aria-label={ariaLabel}
         className={classNames({
-          [styles.active_route]: activeRoute === href || activeRoute.includes(referenceRoute),
+          [styles.active_route]: activeRoute.startsWith(href),
           [className]: className != null,
         })}>
         {children}
