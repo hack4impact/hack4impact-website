@@ -7,6 +7,7 @@ export async function getStaticProps() {
     chapterApplication: applicationPageCollection(limit: 1, where: {applicationType: "New Chapters"}) {
       items {
         applicationType
+        headerTitle
         photo {
           url
         }

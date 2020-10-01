@@ -7,6 +7,7 @@ export type FAQ = {
 
 export type ApplicationPage = {
   applicationType: 'New Chapters' | 'Nonprofits';
+  headerTitle: string;
   photo: Image;
   applicationLink: string;
   description: RichText;

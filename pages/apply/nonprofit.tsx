@@ -7,6 +7,7 @@ export async function getStaticProps() {
     nonprofitApplication: applicationPageCollection(limit: 1, where: {applicationType: "Nonprofits"}) {
       items {
         applicationType
+        headerTitle
         photo {
           url
         }

@@ -47,7 +47,7 @@ function Apply({ content }: Props) {
       <div style={{ marginTop: 20 }}>
         <Container className="row spaced aligned wrap">
           <div className={styles.requirements}>
-            <h2>{"What you'll need"}</h2>
+            <h2>{content.headerTitle}</h2>
             <div
               style={{ marginBottom: 40 }}
               dangerouslySetInnerHTML={{
