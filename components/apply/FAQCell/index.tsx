@@ -5,13 +5,10 @@ import classNames from 'classnames';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@reach/disclosure';
 import styles from './styles.module.scss';
 import HoverShinyEffect from '@components/shared/HoverShinyEffect';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { FAQ } from '@utils/contentTypes/Apply';
 
-type Props = {
-  question: string;
-  answer: string;
-};
-
-function FAQCell({ question, answer }: Props) {
+function FAQCell({ question, answer }: FAQ) {
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -34,7 +31,12 @@ function FAQCell({ question, answer }: Props) {
             </div>
           </DisclosureButton>
           <DisclosurePanel>
-            <p className={styles.answer}>{answer}</p>
+            <div
+              className={styles.answer}
+              dangerouslySetInnerHTML={{
+                __html: documentToHtmlString(answer.json),
+              }}
+            />
           </DisclosurePanel>
         </Disclosure>
       </div>
