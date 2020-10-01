@@ -1,16 +1,14 @@
 import { Collection, Image, RichText } from './generic';
 
-type FAQ = {
+export type FAQ = {
   question: string;
   answer: RichText;
 };
 
-type ApplicationPage = {
-  applicationType: string;
+export type ApplicationPage = {
+  applicationType: 'New Chapters' | 'Nonprofits';
   photo: Image;
   applicationLink: string;
   description: RichText;
   faqsCollection: Collection<FAQ>;
 };
-
-export default ApplicationPage;
