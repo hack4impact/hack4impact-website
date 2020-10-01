@@ -90,6 +90,7 @@
   flex: 1;
   max-width: 450px;
   max-height: 450px;
+
   @include screen('tablet-wide') {
     display: block;
   }
@@ -147,7 +148,7 @@
     left: -160px;
     width: calc(60% + 50px);
   }
-  background-image: url('/public/svg/ben-day.svg');
+  background-image: url('/svg/ben-day.svg');
   background-size: 30px;
   transform: skew(-20deg, 0);
   opacity: 0.1;
