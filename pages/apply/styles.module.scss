@@ -7,6 +7,7 @@
     flex-direction: row;
   }
   a {
+    text-align: center;
     font-weight: bold;
     font-size: 28px;
     color: $neutral;
@@ -25,10 +26,13 @@
     margin-bottom: 20px;
     @include screen('tablet') {
       margin-bottom: 0;
+      a {
+        text-align: left;
+        &:first-child {
+          margin-right: 20px;
+        }
+      }
     }
-  }
-  a:first-child {
-    margin-right: 20px;
   }
 }
 
