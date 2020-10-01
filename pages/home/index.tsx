@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { FaNetworkWired } from 'react-icons/fa';
+import { FaNetworkWired, FaHandshake, FaFolder } from 'react-icons/fa';
 import styles from './styles.module.scss';
 import Container from '@components/shared/Container';
 import ProjectView from '@components/shared/Project';
@@ -27,17 +27,17 @@ function Home({ featuredProjects }: Props) {
             title="Chapter Network"
             subtitle="We mentor"
             description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
-            href="/work"
+            href="/work#our-chapters"
             buttonTitle="Current Chapters">
             <FaNetworkWired />
           </Card>
           <Card
-            title="Pro-bono Projects"
+            title="Nonprofit Projects"
             subtitle="We build"
             description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
             href="/work"
             buttonTitle="Current Projects">
-            <FaNetworkWired />
+            <FaHandshake size={34} />
           </Card>
           <Card
             title="Chapter Resources"
@@ -45,7 +45,7 @@ function Home({ featuredProjects }: Props) {
             description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
             href="/apply/chapter"
             buttonTitle="Apply to the Team">
-            <FaNetworkWired />
+            <FaFolder />
           </Card>
         </div>
       </Container>

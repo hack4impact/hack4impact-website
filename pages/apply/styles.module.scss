@@ -26,17 +26,24 @@
 
 .requirements {
   padding-bottom: 50px;
-  @include screen('tablet') {
-    width: 40vw;
+  width: 100%;
+  @include screen('tablet-wide') {
+    width: 45%;
   }
 }
 
 .image_wrap {
-  @include screen('tablet') {
+  display: none;
+  @include screen('tablet-wide') {
+    display: block;
     margin-right: 20px;
   }
 }
 
 .image {
   object-fit: cover;
+}
+
+.link_button {
+  width: 280px;
 }
