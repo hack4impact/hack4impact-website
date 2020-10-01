@@ -7,6 +7,7 @@ import styles from './styles.module.scss';
 import classNames from 'classnames';
 import FAQCell from '@components/apply/FAQCell';
 import Link from 'next/link';
+import HoverShinyEffect from '@components/shared/HoverShinyEffect';
 
 const fakeContentful = {
   chapter: {
@@ -58,11 +59,13 @@ function Apply({ content, applicationType }: Props) {
           <Link href="chapter">
             <a className={classNames({ [styles.selected]: applicationType === 'chapter' })}>
               For New Chapters
+              <HoverShinyEffect />
             </a>
           </Link>
           <Link href="nonprofit">
             <a className={classNames({ [styles.selected]: applicationType === 'nonprofit' })}>
               For Non Profits
+              <HoverShinyEffect />
             </a>
           </Link>
         </div>

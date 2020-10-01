@@ -7,20 +7,32 @@
     flex-direction: row;
   }
   a {
+    text-align: center;
     font-weight: bold;
-    font-size: $h3;
+    font-size: 28px;
     color: $neutral;
+    border-radius: 30px;
+    padding: 6px 20px;
+    transition: background-color 400ms;
+    &:hover {
+      background-color: lighten($accent, 45);
+      text-decoration: none;
+    }
     &.selected {
       color: $accent;
+      background-color: lighten($accent, 40);
     }
 
     margin-bottom: 20px;
     @include screen('tablet') {
       margin-bottom: 0;
+      a {
+        text-align: left;
+        &:first-child {
+          margin-right: 20px;
+        }
+      }
     }
-  }
-  a:first-child {
-    margin-right: 20px;
   }
 }
 
