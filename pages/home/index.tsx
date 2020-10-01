@@ -26,7 +26,7 @@ function Home({ featuredProjects }: Props) {
           <Card
             title="Chapter Network"
             subtitle="We mentor"
-            description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
+            description="We help new chapters help their local community by providing established communication channels with veteran chapters and mentors"
             href="/work#our-chapters"
             buttonTitle="Current Chapters">
             <FaNetworkWired />
@@ -34,7 +34,7 @@ function Home({ featuredProjects }: Props) {
           <Card
             title="Nonprofit Projects"
             subtitle="We build"
-            description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
+            description="We help nonprofits do the good they are meant to be doing more efficiently. By building them the custom software they need, they can focus on their important work"
             href="/work"
             buttonTitle="Current Projects">
             <FaHandshake size={34} />
@@ -42,9 +42,9 @@ function Home({ featuredProjects }: Props) {
           <Card
             title="Chapter Resources"
             subtitle="We share"
-            description="We help new chapters out by providing a way to talk to other chapters internationally and other resources to get started"
+            description="Our 6 years of experience in building socially impactful technology has given our chapters and members the tools to help nonprofits"
             href="/apply/chapter"
-            buttonTitle="Apply to the Team">
+            buttonTitle="Our Resourses">
             <FaFolder />
           </Card>
         </div>
