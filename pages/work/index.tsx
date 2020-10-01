@@ -27,7 +27,7 @@ function Work({ nationalInitiatives, chapters }: Props) {
         ))}
       </Container>
       <Container>
-        <h2>Our Chapters</h2>
+        <h2 id="our-chapters">Our Chapters</h2>
         <ChapterTable items={chapters}>
           {selectedItem => <ChapterFeature {...selectedItem} />}
         </ChapterTable>

@@ -7,8 +7,10 @@ function Footer() {
       <div className={styles.footer_content}>
         <div className={styles.left_content}>
           <h2>Contact Us</h2>
-          <p>Couldn&apos;t find what you&apos;re looking for?</p>
-          <p>Contact us through email to get in touch!</p>
+          <p>
+            Couldn&apos;t find what you&apos;re looking for? Contact us through email to get in
+            touch!
+          </p>
           <Link href="hello@hack4impact.org">
             <a href="hello@hack4impact.org" className={styles.footer_email}>
               hello@hack4impact.org
@@ -18,23 +20,29 @@ function Footer() {
 
         <div className={styles.right_content}>
           <div className={styles.link_list}>
-            <h4>General</h4>
+            <h2>Learn More</h2>
             <Link href="/about">
-              <a className={styles.footer_link}>About Us</a>
+              <a>Our Mission</a>
             </Link>
-            <Link href="/chapter">
-              <a className={styles.footer_link}>Our Chapters</a>
+            <Link href="/work#our-chapters">
+              <a>Our Chapters</a>
             </Link>
           </div>
 
           <div className={styles.link_list}>
-            <h4>Get Involved</h4>
-            <Link href="/chapter">
-              <a className={styles.footer_link}>For new chapter</a>
+            <h2>Get Involved</h2>
+            <Link href="/apply/chapter">
+              <a>Chapter Applications</a>
             </Link>
-            <Link href="chapters">
-              <a className={styles.footer_link}>Our Chapters</a>
+            <Link href="/apply/nonprofit">
+              <a>Nonprofit Proposals</a>
             </Link>
+          </div>
+
+          <div className={styles.link_list}>
+            <h2>Follow Us</h2>
+            <a href="https://www.linkedin.com/company/hack4impact/about/">LinkedIn</a>
+            <a href="https://github.com/hack4impact">GitHub</a>
           </div>
         </div>
       </div>

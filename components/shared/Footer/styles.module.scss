@@ -1,5 +1,7 @@
 @import '../../../variables.scss';
 
+$off-blue: #2e5987;
+
 .footer_wrapper {
   background-color: $background;
 }
@@ -9,42 +11,27 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-bottom: 6vw;
-  padding-top: 2vw;
+  padding: 80px 0;
 
   h2 {
-    margin-bottom: 16px;
-  }
-
-  h4 {
-    display: block;
+    margin-top: 0;
     margin-bottom: 16px;
   }
 
   p {
-    display: block;
+    color: $off-blue;
     margin-top: 0px;
     margin-bottom: 12px;
-    color: #2e5987;
-  }
-
-  a {
-    display: block;
   }
 }
 
 .left_content {
-  display: flex;
-  flex-direction: column;
+  max-width: 400px;
 }
 
 .right_content {
   display: flex;
   flex-direction: row;
-
-  a {
-    color: #2e5987;
-  }
 }
 
 .footer_email {
@@ -53,13 +40,21 @@
   margin-top: 16px;
 }
 
-.footer_link {
-  color: $black;
-  padding-bottom: 12px;
-}
-
 .link_list {
-  margin-left: 128px;
+  margin-left: 64px;
+
+  h2 {
+    font-size: $h4;
+  }
+
+  a,
+  a:visited {
+    display: block;
+    color: $black;
+    margin-bottom: 12px;
+    font-size: $body;
+    color: $off-blue;
+  }
 }
 
 @media only screen and (max-width: 980px) {
@@ -68,20 +63,23 @@
   }
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 1200px) {
+  .left_content {
+    margin-bottom: 80px;
+  }
   .right_content {
     display: flex;
     flex-direction: column;
+
+    .link_list + .link_list {
+      margin-top: 24px;
+    }
   }
 }
 
 @media only screen and (max-width: 582px) {
   .link_list {
     margin-left: 0px;
-  }
-
-  .left_content {
-    padding-bottom: 32px;
   }
 
   .footer_content {
