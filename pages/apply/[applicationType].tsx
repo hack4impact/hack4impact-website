@@ -8,47 +8,23 @@ import classNames from 'classnames';
 import FAQCell from '@components/apply/FAQCell';
 import Link from 'next/link';
 import HoverShinyEffect from '@components/shared/HoverShinyEffect';
-
-const fakeContentful = {
-  chapter: {
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel odio erat. Nullam vel risus nisi. Etiam sed nisi augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi a odio rutrum, feugiat elit quis, aliquam enim. Aliquam vel vehicula nisi, in venenatis nulla. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.  ',
-    photo: 'http://placekitten.com/g/1000/600',
-    applicationLink: 'http://placekitten.com',
-    faqs: [
-      {
-        question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit?',
-        answer:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel odio erat. Nullam vel risus nisi. Etiam sed nisi augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi a odio rutrum, feugiat elit quis, aliquam enim. Aliquam vel vehicula nisi, in venenatis nulla. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
-      },
-      {
-        question: 'Lorem ipsum dolor sit amet?',
-        answer:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel odio erat. Nullam vel risus nisi. Etiam sed nisi augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi a odio rutrum, feugiat elit quis, aliquam enim. Aliquam vel vehicula nisi, in venenatis nulla. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
-      },
-    ],
-  },
-  nonprofit: {
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel odio erat. Nullam vel risus nisi. Etiam sed nisi augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi a odio rutrum, feugiat elit quis, aliquam enim. Aliquam vel vehicula nisi, in venenatis nulla. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.  ',
-    image: 'http://placekitten.com/g/1000/600',
-    applicationLink: 'http://placekitten.com',
-    faqs: [
-      {
-        question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit?',
-        answer:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel odio erat. Nullam vel risus nisi. Etiam sed nisi augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi a odio rutrum, feugiat elit quis, aliquam enim. Aliquam vel vehicula nisi, in venenatis nulla. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.',
-      },
-    ],
-  },
-};
+import fetchContent from '@utils/fetchContent';
+import ApplicationPage from '@utils/contentTypes/Apply';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 type Props = {
-  content: any; // TODO: update when Contentful is added
+  applicationPages: ApplicationPage[];
   applicationType: 'chapter' | 'nonprofit';
 };
 
-function Apply({ content, applicationType }: Props) {
+function Apply({ applicationPages, applicationType }: Props) {
+  const content = applicationPages.find(x => {
+    if (applicationType === 'chapter') {
+      return x.applicationType === 'New Chapters';
+    } else {
+      return x.applicationType === 'Nonprofits';
+    }
+  });
   return (
     <main>
       <Head>
@@ -74,14 +50,19 @@ function Apply({ content, applicationType }: Props) {
         <Container className="row spaced aligned wrap">
           <div className={styles.requirements}>
             <h2>{"What you'll need"}</h2>
-            <p style={{ marginBottom: 40 }}>{content.description}</p>
+            <div
+              style={{ marginBottom: 40 }}
+              dangerouslySetInnerHTML={{
+                __html: documentToHtmlString(content.description.json),
+              }}
+            />
             <LinkButton href={content.applicationLink} className={styles.link_button} external>
               Application Here
             </LinkButton>
           </div>
           <div className={styles.image_wrap}>
             <ImageHighlight
-              src={content.photo}
+              src={content.photo.url}
               alt=""
               width="400"
               height="300"
@@ -91,7 +72,7 @@ function Apply({ content, applicationType }: Props) {
         </Container>
         <Container>
           <h2>FAQs</h2>
-          {content.faqs.map(({ question, answer }) => (
+          {content.faqsCollection.items.map(({ question, answer }) => (
             <FAQCell key={question} question={question} answer={answer} />
           ))}
         </Container>
@@ -113,9 +94,34 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { applicationType } }) {
-  const content = fakeContentful[applicationType];
-
+  const { applicationPageCollection } = await fetchContent(`
+  {
+    applicationPageCollection {
+      items {
+        applicationType
+        photo {
+          url
+        }
+        applicationLink
+        description {
+          json
+        }
+        faqsCollection {
+          items {
+            question
+            answer {
+              json
+            }
+          }
+        }
+      }
+    }
+  }
+  `);
   return {
-    props: { content, applicationType },
+    props: {
+      applicationPages: applicationPageCollection.items,
+      applicationType,
+    },
   };
 }

@@ -5,10 +5,12 @@ import classNames from 'classnames';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@reach/disclosure';
 import styles from './styles.module.scss';
 import HoverShinyEffect from '@components/shared/HoverShinyEffect';
+import { RichText } from '@utils/contentTypes/generic';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 type Props = {
   question: string;
-  answer: string;
+  answer: RichText;
 };
 
 function FAQCell({ question, answer }: Props) {
@@ -34,7 +36,12 @@ function FAQCell({ question, answer }: Props) {
             </div>
           </DisclosureButton>
           <DisclosurePanel>
-            <p className={styles.answer}>{answer}</p>
+            <div
+              className={styles.answer}
+              dangerouslySetInnerHTML={{
+                __html: documentToHtmlString(answer.json),
+              }}
+            />
           </DisclosurePanel>
         </Disclosure>
       </div>
