@@ -19,7 +19,7 @@ function Banner() {
         <h2>Our Mission</h2>
         <div className={styles.mission}>
           <p>
-          To empower engineers, designers, activists, and humanitarians to create lasting and impactful social change, fostering the wider adoption of software as a tool for social good.
+          To empower engineers, designers, activists, and humanitarians to create <strong>lasting and impactful social change</strong>, fostering the wider adoption of software as a tool for social good.
           </p>
         </div>
       </Container>

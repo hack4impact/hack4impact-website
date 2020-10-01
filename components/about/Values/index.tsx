@@ -16,25 +16,25 @@ const values = [
   {
     title: 'Be open minded',
     description:
-      'Organizational roles do not determine the value of an idea: great ideas can come from anyone and anywhere. We grow because we are always trying something new.',
+      'Our process depends on openness to different people, topics, and perspectives. We embrace difference and work against intolerance to foster an inclusive environment. Our goal is to expose our members to the vast opportunities and daunting challenges in our work',
     color: '#FF9BCB',
   },
   {
-    title: 'Be critical',
+    title: 'Go beyond technology',
     description:
-      'Organizational roles do not determine the value of an idea: great ideas can come from anyone and anywhere. We grow because we are always trying something new.',
+      'Technology is only one tool we use in our greater mission for social impact. Technology alone is not enough. We learn from, work with, and are inspired by others who are tackling social problems using a multitude of tools.',
     color: '#EF6F6F',
   },
   {
     title: 'Engage your community',
     description:
-      'Organizational roles do not determine the value of an idea: great ideas can come from anyone and anywhere. We grow because we are always trying something new.',
+      'Our community makes us special. The strength of our community comes from the contributions of its members. We welcome new members with warmth, and we make the effort to know each other beyond superficial details.',
     color: '#EFCD54',
   },
   {
-    title: 'Be dependable',
+    title: 'Develop with care.',
     description:
-      'Organizational roles do not determine the value of an idea: great ideas can come from anyone and anywhere. We grow because we are always trying something new.',
+      'We build with others in mind. Empathy and compassion are crucial to serving our partner organizations and members. When we embark on projects, we work to deeply understand the people who we are helping.',
     color: '#00C3AC',
   },
 ];

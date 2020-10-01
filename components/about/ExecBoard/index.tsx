@@ -18,7 +18,7 @@ function ExecBoard({ execMembers }: Props) {
   };
   return (
     <Container>
-      <h2>Exec Board</h2>
+      <h2>National Board</h2>
       <div className={styles.list_container}>
         {execMembers.map(({ name, title, photo }, index) => (
           <button
