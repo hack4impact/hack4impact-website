@@ -8,11 +8,13 @@ import classNames from 'classnames';
 import FAQCell from '@components/apply/FAQCell';
 import Link from 'next/link';
 import HoverShinyEffect from '@components/shared/HoverShinyEffect';
+import { IoMdArrowDropright as ArrowIcon } from 'react-icons/io';
 
 const fakeContentful = {
   chapter: {
+    title: "Writing your chapter application",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel odio erat. Nullam vel risus nisi. Etiam sed nisi augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi a odio rutrum, feugiat elit quis, aliquam enim. Aliquam vel vehicula nisi, in venenatis nulla. Maecenas mollis in metus in pulvinar. Nullam consequat massa quis quam tristique, sit amet pulvinar lectus pharetra. Donec ornare purus at ultrices facilisis.  ',
+      'Want to create your own chapter? Have a deep interest in social good and technology? Hack4Impact is currently recruiting for their Spring 2020 chapter cohort. Find your founders, partners, and friends, and consider applying to have an impact in your local community. Below you can find frequently asked questions to help guide you through your application process, and feel free to email contact@hack4impact.org at anytime for questions.',
     photo: 'http://placekitten.com/g/1000/600',
     applicationLink: 'http://placekitten.com',
     faqs: [
@@ -73,10 +75,11 @@ function Apply({ content, applicationType }: Props) {
       <div style={{ marginTop: 20 }}>
         <Container className="row spaced aligned wrap">
           <div className={styles.requirements}>
-            <h2>{"What you'll need"}</h2>
+            <h2>{content.title}</h2>
             <p style={{ marginBottom: 40 }}>{content.description}</p>
             <LinkButton href={content.applicationLink} className={styles.link_button} external>
-              Application Here
+              Apply Here 
+              <ArrowIcon />
             </LinkButton>
           </div>
           <div className={styles.image_wrap}>
