@@ -3,6 +3,7 @@ import Header from '@components/shared/Header';
 import ImageHighlight from '@components/shared/ImageHighlight';
 import Container from '@components/shared/Container';
 import LinkButton from '@components/shared/LinkButton';
+import StaggerAnimOnScroll, { StaggerItem } from '@components/shared/StaggerAnimOnScroll';
 import styles from './styles.module.scss';
 import classNames from 'classnames';
 import FAQCell from '@components/apply/FAQCell';
@@ -71,9 +72,13 @@ function Apply({ content }: Props) {
         </Container>
         <Container>
           <h2>FAQs</h2>
-          {content.faqsCollection.items.map(({ question, answer }) => (
-            <FAQCell key={question} question={question} answer={answer} />
-          ))}
+          <StaggerAnimOnScroll>
+            {content.faqsCollection.items.map(({ question, answer }) => (
+              <StaggerItem key={question}>
+                <FAQCell question={question} answer={answer} />
+              </StaggerItem>
+            ))}
+          </StaggerAnimOnScroll>
         </Container>
       </div>
     </main>
