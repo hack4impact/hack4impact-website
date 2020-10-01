@@ -6,6 +6,7 @@ import ProjectView from '@components/shared/Project';
 import Card from '@components/home/Card';
 import LinkButton from '@components/shared/LinkButton';
 import Hero from '@components/home/Hero';
+import StaggerAnimOnScroll, { StaggerItem } from '@components/shared/StaggerAnimOnScroll';
 import fetchContent from '@utils/fetchContent';
 import Project from '@utils/contentTypes/Project';
 
@@ -51,9 +52,13 @@ function Home({ featuredProjects }: Props) {
       </Container>
       <Container>
         <h2>Featured Projects</h2>
-        {featuredProjects.map(item => (
-          <ProjectView key={item.name} {...item} />
-        ))}
+        <StaggerAnimOnScroll>
+          {featuredProjects.map(item => (
+            <StaggerItem key={item.name}>
+              <ProjectView {...item} />
+            </StaggerItem>
+          ))}
+        </StaggerAnimOnScroll>
         <div className={styles.button_row}>
           <LinkButton href="/work">See all chapters</LinkButton>
           <LinkButton href="/apply/nonprofit" type="secondary">

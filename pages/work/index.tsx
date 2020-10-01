@@ -4,6 +4,7 @@ import Container from '@components/shared/Container';
 import ProjectView from '@components/shared/Project';
 import ChapterTable from '@components/work/ChapterTable';
 import ChapterFeature from '@components/work/ChapterFeature';
+import StaggerAnimOnScroll, { StaggerItem } from '@components/shared/StaggerAnimOnScroll';
 import fetchContent from '@utils/fetchContent';
 import Project from '@utils/contentTypes/Project';
 import Chapter from '@utils/contentTypes/Chapter';
@@ -22,9 +23,13 @@ function Work({ nationalInitiatives, chapters }: Props) {
       <Header title="Our Work" />
       <Container>
         <h2>National Initiatives</h2>
-        {nationalInitiatives.map(item => (
-          <ProjectView key={item.name} {...item} />
-        ))}
+        <StaggerAnimOnScroll>
+          {nationalInitiatives.map(item => (
+            <StaggerItem key={item.name}>
+              <ProjectView {...item} />
+            </StaggerItem>
+          ))}
+        </StaggerAnimOnScroll>
       </Container>
       <Container>
         <h2 id="our-chapters">Our Chapters</h2>
