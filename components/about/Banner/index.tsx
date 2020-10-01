@@ -19,12 +19,7 @@ function Banner() {
         <h2>Our Mission</h2>
         <div className={styles.mission}>
           <p>
-            Hack4Impact exists for both nonprofits and students. We connect student software
-            developers with nonprofits and other socially responsible businesses to develop powerful
-            new tools for social change. This enables nonprofits to further their mission and better
-            engage their clients. We are committed to increasing awareness of technology’s potential
-            for good. We host speaker events and develop workshops for students, open to the entire
-            university community.
+          To empower engineers, designers, activists, and humanitarians to create lasting and impactful social change, fostering the wider adoption of software as a tool for social good.
           </p>
         </div>
       </Container>
