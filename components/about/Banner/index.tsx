@@ -6,7 +6,7 @@ function Banner() {
     <>
       <div className={styles.root}>
         <div className={styles.b1}>
-          <img src={'images/uiuc-group-photo.jpg'} alt="UIUC chapter group" />
+          <img src={'images/uiuc-group.jpg'} alt="UIUC chapter group" />
         </div>
         <div className={styles.b2}>
           <img
