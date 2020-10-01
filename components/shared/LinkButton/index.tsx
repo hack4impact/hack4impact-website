@@ -29,6 +29,7 @@ function Button({
         rel="noreferrer"
         className={classNames(styles.button, className, styles[type])}>
         {children}
+        <HoverShinyEffect />
       </a>
     );
   }

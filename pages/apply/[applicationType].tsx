@@ -72,7 +72,7 @@ function Apply({ content, applicationType }: Props) {
           <div className={styles.requirements}>
             <h2>{"What you'll need"}</h2>
             <p style={{ marginBottom: 40 }}>{content.description}</p>
-            <LinkButton href={content.applicationLink} external>
+            <LinkButton href={content.applicationLink} className={styles.link_button} external>
               Application Here
             </LinkButton>
           </div>
