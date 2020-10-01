@@ -61,12 +61,11 @@
 }
 
 .mission {
-  font-size: $body;
   display: flex;
   justify-content: center;
-
   p {
-    max-width: 800px;
+    font-size: 28px;
+    max-width: 600px;
     padding: 24px 0;
     &:before {
       @include angle-bracket-accent('top-right', 18px);
