@@ -13,7 +13,7 @@ type Props = {
 export async function getStaticProps() {
   const { executiveBoardMemberCollection } = await fetchContent(`
   {
-    executiveBoardMemberCollection {
+    executiveBoardMemberCollection(order: title_DESC) {
       items {
         name
         title
