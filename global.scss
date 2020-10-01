@@ -37,10 +37,18 @@ h1 {
   }
 }
 h2 {
-  font-size: $h2;
+  font-size: $h3;
+
+  @include screen('tablet') {
+    font-size: $h2;
+  }
 }
 h3 {
-  font-size: $h3;
+  font-size: $h4;
+
+  @include screen('tablet') {
+    font-size: $h3;
+  }
 }
 h4 {
   font-size: $h4;
