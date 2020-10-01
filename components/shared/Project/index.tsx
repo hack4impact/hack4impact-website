@@ -17,9 +17,11 @@ function ProjectView({ photo, name, tags, description, link }: Project) {
           ))}
         </div>
         <div dangerouslySetInnerHTML={{ __html: documentToHtmlString(description.json) }}></div>
-        <a href={link} target="_blank" rel="noreferrer">
-          {determineLinkName(link)}
-        </a>
+        {link && (
+          <a href={link} target="_blank" rel="noreferrer">
+            {determineLinkName(link)}
+          </a>
+        )}
       </div>
     </div>
   );

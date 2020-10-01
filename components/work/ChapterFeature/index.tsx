@@ -47,14 +47,18 @@ function ChapterFeature({
           className={styles.image}
           src={photo.url}
           alt={photo.description}
-          height="375"
+          height="355"
           width="500"
         />
       </div>
-      <h4>Featured Projects</h4>
-      {projects.items.map(item => (
-        <ProjectView key={item.name} {...item} />
-      ))}
+      {projects?.items?.length ? (
+        <>
+          <h4>Featured Projects</h4>
+          {projects.items.map(item => (
+            <ProjectView key={item.name} {...item} />
+          ))}
+        </>
+      ) : null}
     </div>
   );
 }
