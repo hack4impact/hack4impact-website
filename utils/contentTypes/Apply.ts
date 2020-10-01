@@ -1,4 +1,3 @@
-import { ServerStreamFileResponseOptionsWithError } from 'http2';
 import { Collection, Image, RichText } from './generic';
 
 type FAQ = {
