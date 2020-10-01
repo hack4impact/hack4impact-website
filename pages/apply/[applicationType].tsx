@@ -56,13 +56,13 @@ function Apply({ content, applicationType }: Props) {
       </Head>
       <Header title="Apply">
         <div className={styles.switch_control}>
-          <Link href="chapter">
+          <Link href="/apply/[applicationType]" as="/apply/chapter">
             <a className={classNames({ [styles.selected]: applicationType === 'chapter' })}>
               For New Chapters
               <HoverShinyEffect />
             </a>
           </Link>
-          <Link href="nonprofit">
+          <Link href="/apply/[applicationType]" as="/apply/nonprofit">
             <a className={classNames({ [styles.selected]: applicationType === 'nonprofit' })}>
               For Non Profits
               <HoverShinyEffect />
