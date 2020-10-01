@@ -8,23 +8,14 @@ import classNames from 'classnames';
 import FAQCell from '@components/apply/FAQCell';
 import Link from 'next/link';
 import HoverShinyEffect from '@components/shared/HoverShinyEffect';
-import fetchContent from '@utils/fetchContent';
-import ApplicationPage from '@utils/contentTypes/Apply';
+import { ApplicationPage } from '@utils/contentTypes/Apply';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 type Props = {
-  applicationPages: ApplicationPage[];
-  applicationType: 'chapter' | 'nonprofit';
+  content: ApplicationPage;
 };
 
-function Apply({ applicationPages, applicationType }: Props) {
-  const content = applicationPages.find(x => {
-    if (applicationType === 'chapter') {
-      return x.applicationType === 'New Chapters';
-    } else {
-      return x.applicationType === 'Nonprofits';
-    }
-  });
+function Apply({ content }: Props) {
   return (
     <main>
       <Head>
@@ -32,14 +23,20 @@ function Apply({ applicationPages, applicationType }: Props) {
       </Head>
       <Header title="Apply">
         <div className={styles.switch_control}>
-          <Link href="/apply/[applicationType]" as="/apply/chapter">
-            <a className={classNames({ [styles.selected]: applicationType === 'chapter' })}>
+          <Link href="/apply/chapter">
+            <a
+              className={classNames({
+                [styles.selected]: content.applicationType === 'New Chapters',
+              })}>
               For New Chapters
               <HoverShinyEffect />
             </a>
           </Link>
-          <Link href="/apply/[applicationType]" as="/apply/nonprofit">
-            <a className={classNames({ [styles.selected]: applicationType === 'nonprofit' })}>
+          <Link href="/apply/nonprofit">
+            <a
+              className={classNames({
+                [styles.selected]: content.applicationType === 'Nonprofits',
+              })}>
               For Non Profits
               <HoverShinyEffect />
             </a>
@@ -82,46 +79,3 @@ function Apply({ applicationPages, applicationType }: Props) {
 }
 
 export default Apply;
-
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { applicationType: 'chapter' } },
-      { params: { applicationType: 'nonprofit' } },
-    ],
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params: { applicationType } }) {
-  const { applicationPageCollection } = await fetchContent(`
-  {
-    applicationPageCollection {
-      items {
-        applicationType
-        photo {
-          url
-        }
-        applicationLink
-        description {
-          json
-        }
-        faqsCollection {
-          items {
-            question
-            answer {
-              json
-            }
-          }
-        }
-      }
-    }
-  }
-  `);
-  return {
-    props: {
-      applicationPages: applicationPageCollection.items,
-      applicationType,
-    },
-  };
-}
