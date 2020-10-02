@@ -7,18 +7,26 @@ type NavLinkProps = {
   children: React.ReactNode;
   href: string;
   activeRoute: string;
+  activeOverride?: boolean;
   referenceRoute?: string;
   className?: string;
   ariaLabel?: string;
 };
 
-function NavLink({ children, href, activeRoute, className, ariaLabel }: NavLinkProps) {
+function NavLink({
+  children,
+  href,
+  activeRoute,
+  activeOverride,
+  className,
+  ariaLabel,
+}: NavLinkProps) {
   return (
     <Link href={href}>
       <a
         aria-label={ariaLabel}
         className={classNames({
-          [styles.active_route]: activeRoute.startsWith(href),
+          [styles.active_route]: activeOverride ?? href === activeRoute,
           [className]: className != null,
         })}>
         {children}

@@ -45,7 +45,10 @@ function Nav() {
           <NavLink activeRoute={activeRoute} href="/work">
             Our Work
           </NavLink>
-          <NavLink activeRoute={activeRoute} href="/apply/chapter">
+          <NavLink
+            activeRoute={activeRoute}
+            href="/apply/chapter"
+            activeOverride={activeRoute.startsWith('/apply')}>
             Apply
           </NavLink>
           <a href="mailto:contact@hack4impact.org">
