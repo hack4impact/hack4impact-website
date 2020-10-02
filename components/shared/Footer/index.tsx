@@ -11,11 +11,13 @@ function Footer() {
             Couldn&apos;t find what you&apos;re looking for? Contact us through email to get in
             touch!
           </p>
-          <Link href="hello@hack4impact.org">
-            <a href="hello@hack4impact.org" className={styles.footer_email}>
-              hello@hack4impact.org
-            </a>
-          </Link>
+          <a
+            href="mailto:contact@hack4impact.org"
+            className={styles.footer_email}
+            target="_blank"
+            rel="noreferrer">
+            contact@hack4impact.org
+          </a>
         </div>
 
         <div className={styles.right_content}>
