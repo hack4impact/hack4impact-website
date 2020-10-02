@@ -2,6 +2,7 @@ import ProjectView from '@components/shared/Project';
 import Chapter from '@utils/contentTypes/Chapter';
 import styles from './styles.module.scss';
 import ImageHightlight from '@components/shared/ImageHighlight';
+import StaggerAnimOnScroll, { StaggerItem } from '@components/shared/StaggerAnimOnScroll';
 import AboutLink from './AboutLink';
 import {
   IoIosGlobe as WebsiteLinkIcon,
@@ -20,6 +21,7 @@ function ChapterFeature({
   codeRepoLink,
   projects,
 }: Chapter) {
+  console.log(projects);
   return (
     <div className={styles.root}>
       <div className={styles.about_chapter_container}>
@@ -54,9 +56,13 @@ function ChapterFeature({
       {projects?.items?.length ? (
         <>
           <h4>Featured Projects</h4>
-          {projects.items.map(item => (
-            <ProjectView key={item.name} {...item} />
-          ))}
+          <StaggerAnimOnScroll>
+            {projects.items.map(item => (
+              <StaggerItem key={item.name}>
+                <ProjectView {...item} />
+              </StaggerItem>
+            ))}
+          </StaggerAnimOnScroll>
         </>
       ) : null}
     </div>

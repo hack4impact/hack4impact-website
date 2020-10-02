@@ -1,4 +1,5 @@
 import Container from '@components/shared/Container';
+import StaggerAnimOnScroll, { StaggerItem } from '@components/shared/StaggerAnimOnScroll';
 import ExecMember from '@utils/contentTypes/ExecMember';
 import styles from './styles.module.scss';
 import { useState } from 'react';
@@ -19,22 +20,26 @@ function ExecBoard({ execMembers }: Props) {
   return (
     <Container>
       <h2>National Board</h2>
-      <div className={styles.list_container}>
+      <StaggerAnimOnScroll className={styles.list_container}>
         {execMembers.map(({ name, title, photo }, index) => (
-          <button
-            className={styles.member_container}
+          <StaggerItem
             key={name}
-            aria-label={`Learn more about ${name}`}
-            onClick={() => openAboutModal(index)}>
-            <img src={photo.url} alt={photo.description} />
-            <h3>{name}</h3>
-            <p>{title}</p>
-            <p aria-hidden={true} className={styles.about_button}>
-              About me <ArrowIcon size={28} />
-            </p>
-          </button>
+            animHidden={{ opacity: 0, y: 100 }}
+            animShow={{ opacity: 1, y: 0 }}>
+            <button
+              className={styles.member_container}
+              aria-label={`Learn more about ${name}`}
+              onClick={() => openAboutModal(index)}>
+              <img src={photo.url} alt={photo.description} />
+              <h3>{name}</h3>
+              <p>{title}</p>
+              <p aria-hidden={true} className={styles.about_button}>
+                About me <ArrowIcon size={28} />
+              </p>
+            </button>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerAnimOnScroll>
       <AboutMeModal
         execMember={execMembers[selectedExecMember]}
         isOpen={modalOpened}
