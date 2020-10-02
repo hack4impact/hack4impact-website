@@ -21,7 +21,6 @@ function ChapterFeature({
   codeRepoLink,
   projects,
 }: Chapter) {
-  console.log(projects);
   return (
     <div className={styles.root}>
       <div className={styles.about_chapter_container}>

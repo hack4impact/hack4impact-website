@@ -8,10 +8,19 @@ type Props = {
   description: string;
   href: string;
   buttonTitle: string;
+  isExternalLink?: boolean;
   children: React.ReactNode;
 };
 
-function Card({ title, subtitle, description, href, buttonTitle, children }: Props) {
+function Card({
+  title,
+  subtitle,
+  description,
+  href,
+  buttonTitle,
+  isExternalLink = false,
+  children,
+}: Props) {
   return (
     <div className={styles.card_root}>
       <div className={styles.card_content}>
@@ -21,7 +30,7 @@ function Card({ title, subtitle, description, href, buttonTitle, children }: Pro
         </hgroup>
         <p>{description}</p>
       </div>
-      <LinkButton href={href} className={styles.card_button}>
+      <LinkButton href={href} className={styles.card_button} external={isExternalLink}>
         {buttonTitle}
         <ArrowIcon size={32} />
       </LinkButton>

@@ -49,7 +49,8 @@ function Home({ featuredProjects }: Props) {
               title="Chapter Resources"
               subtitle="We share"
               description="Our 6 years of experience in building socially impactful technology has given our chapters and members the tools to help nonprofits"
-              href="/apply/chapter"
+              href="https://www.notion.so/h4i/Hack4Impact-Home-a8145b7695d64f04bca8acb5094d5c83"
+              isExternalLink
               buttonTitle="Our Resources">
               <FaFolder />
             </Card>
