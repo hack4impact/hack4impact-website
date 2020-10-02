@@ -67,7 +67,7 @@ function Home({ featuredProjects }: Props) {
           ))}
         </StaggerAnimOnScroll>
         <div className={styles.button_row}>
-          <LinkButton href="/work">See all chapters</LinkButton>
+          <LinkButton href="/work#our-chapters">See all chapters</LinkButton>
           <LinkButton href="/apply/nonprofit" type="secondary">
             Propose your nonprofit project
           </LinkButton>
