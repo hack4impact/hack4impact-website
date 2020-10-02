@@ -32,7 +32,6 @@ function Work({ nationalInitiatives, chapters }: Props) {
         </StaggerAnimOnScroll>
       </Container>
       <Container>
-        <h2 id="our-chapters">Our Chapters</h2>
         <ChapterTable items={chapters}>
           {selectedItem => <ChapterFeature {...selectedItem} />}
         </ChapterTable>

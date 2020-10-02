@@ -35,6 +35,10 @@ function ChapterTable({ items, children }: Props) {
 
   return (
     <div className={styles.root}>
+      <div className={styles.header}>
+        <h2 id="our-chapters">Our Chapters</h2>
+        <p className={styles.chapter_count}>{items.length} chapters and counting</p>
+      </div>
       <div className={styles.chapter_select_ribbon}>
         <div className={styles.chapter_select_option_container} ref={selectRibbonRef}>
           {items.map(({ name, universityLogo }, index) => (

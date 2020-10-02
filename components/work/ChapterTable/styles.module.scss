@@ -3,6 +3,39 @@
 .root {
   display: flex;
   flex-direction: column;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+    .chapter_count {
+      margin-top: 10px;
+      margin-bottom: 36px;
+      background-color: $secondary;
+      text-align: center;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 20px;
+      color: $primary-dark;
+      text-transform: uppercase;
+    }
+
+    @include screen(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 36px 0;
+
+      h2,
+      .chapter_count {
+        margin: 0;
+      }
+    }
+  }
 }
 
 .chapter_select_ribbon {
