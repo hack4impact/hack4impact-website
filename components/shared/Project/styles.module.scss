@@ -8,7 +8,7 @@
   @include screen('tablet') {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .image {
@@ -20,7 +20,7 @@
 
     @include screen('tablet') {
       width: 400px;
-      max-width: 50%;
+      max-width: 40%;
       margin-right: 30px;
       margin-bottom: 0;
     }
