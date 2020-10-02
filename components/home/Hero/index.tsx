@@ -14,7 +14,8 @@ function Hero() {
             <span>for social change</span>
           </h1>
           <p>
-            We create lasting and impactful <strong>software for nonprofits</strong>, fostering the adoption of technology for social good
+            We create lasting and impactful <strong>software for nonprofits</strong>, fostering the
+            adoption of technology for social good
           </p>
           <LinkButton className={styles.cta} href="apply/nonprofit">
             Work With Us
@@ -24,8 +25,8 @@ function Hero() {
           <img
             width="450"
             height="450"
-            src="http://placekitten.com/g/600/600"
-            alt="A very cute kitty"
+            src="/images/bog-stone-mountain.jpg"
+            alt="Bits of Good having a good time climbing Stone Mountain in Atlanta"
           />
         </div>
       </Container>
