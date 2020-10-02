@@ -35,7 +35,7 @@ function ChapterFeature({
           </hgroup>
           <p className={styles.subheading}>
             Located in {location}{' '}
-            <a className={styles.contact} href={email}>
+            <a className={styles.contact} href={'mailto:' + email} target="_blank" rel="noreferrer">
               • Contact
             </a>
           </p>
