@@ -21,6 +21,7 @@ function ChapterFeature({
   codeRepoLink,
   projects,
 }: Chapter) {
+  console.log(projects);
   return (
     <div className={styles.root}>
       <div className={styles.about_chapter_container}>
@@ -56,7 +57,7 @@ function ChapterFeature({
         <>
           <h4>Featured Projects</h4>
           <StaggerAnimOnScroll>
-            {featuredProjects.map(item => (
+            {projects.items.map(item => (
               <StaggerItem key={item.name}>
                 <ProjectView {...item} />
               </StaggerItem>

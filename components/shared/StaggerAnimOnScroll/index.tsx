@@ -27,7 +27,7 @@ type StaggerAnimOnScrollProps = React.HTMLAttributes<HTMLDivElement> & {
 
 function StaggerAnimOnScroll({ children, className }: StaggerAnimOnScrollProps) {
   const [ref, inView] = useInView({
-    rootMargin: '0 0 -30% 0',
+    rootMargin: '0 0 -50px 50px',
     threshold: 0,
   });
 
