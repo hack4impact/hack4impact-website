@@ -74,7 +74,7 @@ function Apply({ content }: Props) {
           <h2>FAQs</h2>
           <StaggerAnimOnScroll>
             {content.faqsCollection.items.map(({ question, answer }) => (
-              <StaggerItem key={question}>
+              <StaggerItem key={`${content.applicationType}-${question}`}>
                 <FAQCell question={question} answer={answer} />
               </StaggerItem>
             ))}
