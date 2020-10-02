@@ -15,8 +15,19 @@
 
     .text_content {
       flex: 1;
-      h3 {
-        margin-bottom: 10px;
+      hgroup {
+        .established_date {
+          font-weight: normal;
+          font-size: $body;
+          color: $primary-dark-2;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 10px;
+        }
+
+        h3 {
+          margin: 10px 0;
+        }
       }
 
       .subheading {

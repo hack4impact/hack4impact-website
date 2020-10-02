@@ -65,7 +65,7 @@ export async function getStaticProps() {
     nationalInitiatives: projectCollection(limit: 2, where: {type: "National Initiative"}) {
       ${projectQuery}
     }
-    chapters: chapterCollection {
+    chapters: chapterCollection(order: establishedDate_ASC) {
       items {
         universityLogo {
           url
@@ -73,6 +73,8 @@ export async function getStaticProps() {
         }
         name
         location
+        establishedDate
+        incubating
         email
         websiteLink
         socialMediaLink
@@ -89,10 +91,20 @@ export async function getStaticProps() {
     }
   }
   `);
+  const chaptersWithFormattedDate = chapters.items.map(chapter => {
+    const date = new Date(chapter.establishedDate);
+    const year = date.getUTCFullYear();
+    const semester = date.getUTCMonth() >= 6 ? 'Fall' : 'Spring';
+    return {
+      ...chapter,
+      establishedDate: `${semester} ${year}`,
+    };
+  });
+
   return {
     props: {
       nationalInitiatives: nationalInitiatives.items,
-      chapters: chapters.items,
+      chapters: chaptersWithFormattedDate,
     },
   };
 }

@@ -1,7 +1,5 @@
 @import '../../../variables.scss';
 
-$off-blue: #2e5987;
-
 .footer_wrapper {
   background-color: $background;
 }
@@ -19,7 +17,7 @@ $off-blue: #2e5987;
   }
 
   p {
-    color: $off-blue;
+    color: $primary-dark-2;
     margin-top: 0px;
     margin-bottom: 12px;
   }
@@ -53,7 +51,7 @@ $off-blue: #2e5987;
     color: $black;
     margin-bottom: 12px;
     font-size: $body;
-    color: $off-blue;
+    color: $primary-dark-2;
   }
 }
 

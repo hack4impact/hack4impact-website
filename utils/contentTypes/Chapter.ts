@@ -7,6 +7,8 @@ type Chapter = {
   universityLogo: Image;
   name: string;
   location: string;
+  establishedDate: string;
+  incubating: boolean;
   email: string;
   websiteLink?: string;
   socialMediaLink?: string;

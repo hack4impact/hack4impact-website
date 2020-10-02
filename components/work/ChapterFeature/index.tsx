@@ -15,6 +15,8 @@ function ChapterFeature({
   photo,
   location,
   email,
+  establishedDate,
+  incubating,
   websiteLink,
   socialMediaLink,
   socialMediaLinkType,
@@ -25,7 +27,12 @@ function ChapterFeature({
     <div className={styles.root}>
       <div className={styles.about_chapter_container}>
         <div className={styles.text_content}>
-          <h3>{name}</h3>
+          <hgroup>
+            <h4 className={styles.established_date}>
+              {incubating ? <strong>Incubating</strong> : <span>EST. {establishedDate}</span>}
+            </h4>
+            <h3>{name}</h3>
+          </hgroup>
           <p className={styles.subheading}>
             Located in {location}{' '}
             <a className={styles.contact} href={email}>
