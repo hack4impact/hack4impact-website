@@ -14,11 +14,10 @@ function Hero() {
             <span>for social change</span>
           </h1>
           <p>
-            We create lasting and impactful <strong>software for nonprofits</strong>, fostering the
-            adoption of technology for social good
+            Building powerful nonprofit software as a <strong>tool for social good</strong>
           </p>
           <LinkButton className={styles.cta} href="apply/nonprofit">
-            Work With Us
+            Work with us
           </LinkButton>
         </div>
         <div className={styles.image_container}>
