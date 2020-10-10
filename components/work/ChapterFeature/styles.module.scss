@@ -31,12 +31,24 @@
       }
 
       .subheading {
-        font-size: 24px;
         margin-bottom: 40px;
+        font-size: 20px;
+        @include screen('tablet') {
+          font-size: 24px;
+        }
+
         .contact {
-          margin-left: 10px;
           color: $accent;
           font-weight: bold;
+          display: block;
+
+          @include screen('tablet') {
+            display: inline-block;
+            margin-left: 10px;
+            &::before {
+              content: '• ';
+            }
+          }
         }
       }
 
