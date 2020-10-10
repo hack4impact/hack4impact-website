@@ -69,6 +69,7 @@ export async function getStaticProps() {
           description
         }
         name
+        slug
         location
         establishedDate
         incubating

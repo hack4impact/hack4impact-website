@@ -6,6 +6,7 @@ export type ProjectType = 'National Initiative' | 'Chapter Project';
 type Chapter = {
   universityLogo: Image;
   name: string;
+  slug: string;
   location: string;
   establishedDate: string;
   incubating: boolean;

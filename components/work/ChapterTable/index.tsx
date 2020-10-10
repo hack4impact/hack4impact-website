@@ -1,10 +1,10 @@
-import { useState, useRef } from 'react';
-import classNames from 'classnames';
+import { useRef, useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import VisuallyHidden from '@reach/visually-hidden';
 import Chapter from '@utils/contentTypes/Chapter';
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
 import ChapterFeature from '../ChapterFeature';
+import { useRouter } from 'next/router';
 
 type Props = {
   items: Chapter[];
@@ -12,7 +12,20 @@ type Props = {
 
 function ChapterTable({ items }: Props) {
   const selectRibbonRef = useRef(null);
+  const [selectedChapter, setSelectedChapter] = useState(0);
+  const router = useRouter();
 
+  // check whether the URL includes a chapter name as a query param
+  useEffect(() => {
+    const { chapter } = router.query;
+    const chapterMatchingSlug = items.findIndex(({ slug }) => slug === chapter);
+
+    if (chapterMatchingSlug > 0) {
+      onChangeTab(chapterMatchingSlug);
+    }
+  }, [router.query]);
+
+  // scroll to the currently selected chapter
   const onChangeTab = (index: number) => {
     const { scrollWidth, clientWidth } = selectRibbonRef.current;
     const thumbnailWidth = scrollWidth / items.length;
@@ -28,10 +41,11 @@ function ChapterTable({ items }: Props) {
 
     // now, shift the ribbon to the scroll position we want using CSS
     selectRibbonRef.current.style.transform = `translateX(-${adjustedOffsetToCenter}px)`;
+    setSelectedChapter(index);
   };
 
   return (
-    <Tabs className={styles.root} onChange={onChangeTab}>
+    <Tabs className={styles.root} index={selectedChapter} onChange={onChangeTab}>
       <div className={styles.header}>
         <h2 id="our-chapters">Our Chapters</h2>
         <p className={styles.chapter_count}>{items.length} chapters and counting</p>
