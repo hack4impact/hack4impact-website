@@ -79,10 +79,10 @@
           background-color: rgba($primary-dark, 0.2);
         }
 
-        padding: 10px;
+        padding: 6px 10px;
         img {
-          height: 40px;
-          width: 40px;
+          height: 36px;
+          width: 36px;
         }
         @include screen('tablet') {
           padding: 10px 20px;
