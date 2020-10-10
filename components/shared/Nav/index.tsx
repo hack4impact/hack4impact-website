@@ -20,6 +20,14 @@ function Nav() {
     setMobileNavOpened(false);
   }, [activeRoute]);
 
+  useEffect(() => {
+    const escapeKeyListener = (event: KeyboardEvent) =>
+      event.key === 'Escape' && setMobileNavOpened(false);
+
+    document.addEventListener('keypress', escapeKeyListener);
+    return () => document.removeEventListener('keypress', escapeKeyListener);
+  }, []);
+
   const hasScrolledDown = useHasScrolledDown();
 
   return (
@@ -38,6 +46,8 @@ function Nav() {
           ariaLabel="Go to homepage">
           <img width="275" height="53" src="/svg/logo.svg" alt="Hack4Impact logo" />
         </NavLink>
+
+        <MobileDropdownToggle toggled={mobileNavOpened} onClick={toggleMobileNav} />
         <div className={styles.dropdown_link_container}>
           <NavLink activeRoute={activeRoute} href="/about">
             About Us
@@ -55,8 +65,6 @@ function Nav() {
             Contact Us <HoverShinyEffect color="#001aff" />
           </a>
         </div>
-
-        <MobileDropdownToggle toggled={mobileNavOpened} onClick={toggleMobileNav} />
       </nav>
     </header>
   );
