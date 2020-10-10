@@ -13,6 +13,7 @@
         "@contentful/rich-text-html-renderer": "^14.1.1",
         "@reach/dialog": "^0.10.5",
         "@reach/disclosure": "^0.11.2",
+        "@reach/tabs": "^0.11.2",
         "@reach/visually-hidden": "^0.11.1",
         "classnames": "^2.2.6",
         "framer-motion": "^2.7.6",

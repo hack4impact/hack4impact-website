@@ -36,33 +36,62 @@
       }
     }
   }
-}
 
-.chapter_select_ribbon {
-  width: 100%;
-  white-space: nowrap;
-  border-bottom: solid 1px lightgray;
-  margin-bottom: 12px;
-  overflow: hidden;
+  .chapter_select_ribbon {
+    width: 100%;
+    white-space: nowrap;
+    border-bottom: solid 1px lightgray;
+    margin-bottom: 12px;
+    overflow: hidden;
 
-  .chapter_select_option_container {
-    transition: transform 0.3s;
+    $overflow-fade-width: 10px;
 
-    .chapter_select_option {
-      box-sizing: content-box;
-      transition: background-color 0.2s;
-      padding: 10px 20px;
-      &.selected {
-        border-bottom: solid 5px $accent;
-      }
-      &:focus,
-      &:hover {
-        outline: 0;
-        background-color: rgba($primary-dark, 0.2);
-      }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+      background: linear-gradient(
+        90deg,
+        white,
+        rgba(white, 0%) $overflow-fade-width,
+        rgba(white, 0%) calc(100% - #{$overflow-fade-width}),
+        white
+      );
     }
-    .chapter_select_option:first-child {
-      margin-left: 0;
+    .chapter_select_option_container {
+      transition: transform 0.3s;
+      padding: 0 $overflow-fade-width;
+
+      .chapter_select_option {
+        box-sizing: content-box;
+        transition: background-color 0.2s;
+        padding: 10px 20px;
+        &[data-selected] {
+          border-bottom: solid 5px $accent;
+        }
+        &:focus,
+        &:hover {
+          outline: 0;
+          background-color: rgba($primary-dark, 0.2);
+        }
+
+        padding: 10px;
+        img {
+          height: 40px;
+          width: 40px;
+        }
+        @include screen('tablet') {
+          padding: 10px 20px;
+          img {
+            height: 50px;
+            width: 50px;
+          }
+        }
+      }
     }
   }
 }
