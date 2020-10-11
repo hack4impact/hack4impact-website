@@ -10,6 +10,18 @@ class MyDocument extends Document {
     return (
       <Html lang="en-US">
         <Head>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180291004-1"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+  
+              gtag('config', 'UA-180291004-1');
+              `,
+            }}
+          />
           <link rel="shortcut icon" href="/favicon.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta
