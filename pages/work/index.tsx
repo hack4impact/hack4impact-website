@@ -3,7 +3,6 @@ import Header from '@components/shared/Header';
 import Container from '@components/shared/Container';
 import ProjectView from '@components/shared/Project';
 import ChapterTable from '@components/work/ChapterTable';
-import ChapterFeature from '@components/work/ChapterFeature';
 import StaggerAnimOnScroll, { StaggerItem } from '@components/shared/StaggerAnimOnScroll';
 import fetchContent from '@utils/fetchContent';
 import Project from '@utils/contentTypes/Project';
@@ -32,7 +31,7 @@ function Work({ nationalInitiatives, chapters }: Props) {
         </StaggerAnimOnScroll>
       </Container>
       <Container>
-        <ChapterTable items={chapters} />
+        <ChapterTable chapters={chapters} />
       </Container>
     </main>
   );
