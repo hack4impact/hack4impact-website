@@ -7,7 +7,10 @@
         "build": "next build",
         "start": "next start",
         "lint": "eslint --fix .",
-        "lint:format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+        "lint:format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+        "secrets:logout": "(bw logout || exit 0)",
+        "secrets:sync": "bw sync && bw get item 2daa4e76-1097-4b9b-8956-ac580138e0f0 | fx .notes > \".env\"",
+        "secrets": "npm run secrets:logout && cross-env-shell BW_SESSION=`bw login benholmes@hack4impact.org --raw` \"npm run secrets:sync\""
     },
     "dependencies": {
         "@contentful/rich-text-html-renderer": "^14.1.1",
@@ -25,16 +28,19 @@
         "sass": "^1.26.10"
     },
     "devDependencies": {
+        "@bitwarden/cli": "^1.12.1",
         "@types/node": "^14.6.0",
         "@types/react": "^16.9.46",
         "@typescript-eslint/eslint-plugin": "^3.9.1",
         "@typescript-eslint/parser": "^3.9.1",
+        "cross-env": "^7.0.2",
         "eslint": "^7.7.0",
         "eslint-config-prettier": "^6.11.0",
         "eslint-plugin-jsx-a11y": "^6.3.1",
         "eslint-plugin-prettier": "^3.1.4",
         "eslint-plugin-react": "^7.20.6",
         "eslint-plugin-react-hooks": "^4.0.8",
+        "fx": "^20.0.2",
         "prettier": "^1.19.1",
         "typescript": "^3.9.7"
     }
