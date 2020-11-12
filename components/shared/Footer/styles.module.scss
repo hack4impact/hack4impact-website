@@ -55,6 +55,27 @@
   }
 }
 
+.repo_links_wrapper {
+  background: $primary-dark;
+  padding: 20px;
+
+  .repo_links {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a,
+    a:visited {
+      font-size: 18px;
+      color: white;
+      text-decoration: underline;
+    }
+    img {
+      width: 140px;
+    }
+  }
+}
+
 @media only screen and (max-width: 980px) {
   .link_list {
     margin-left: 64px;
