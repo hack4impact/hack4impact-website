@@ -48,6 +48,22 @@ function Footer() {
           </div>
         </div>
       </div>
+      <div className={styles.repo_links_wrapper}>
+        <div className={styles.repo_links}>
+          <a
+            href="https://github.com/hack4impact/hack4impact-website"
+            target="_blank"
+            rel="noreferrer">
+            Made with &#9829; by the Hack4Impact team
+          </a>
+          <a href="https://www.contentful.com/" target="_blank" rel="noreferrer">
+            <img
+              src="https://images.ctfassets.net/fo9twyrwpveg/7Htleo27dKYua8gio8UEUy/0797152a2d2f8e41db49ecbf1ccffdaa/PoweredByContentful_DarkBackground_MonochromeLogo.svg"
+              alt="Powered by Contentful"
+            />
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
