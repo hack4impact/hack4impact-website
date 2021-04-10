@@ -12,7 +12,8 @@
   gap: 48px 36px;
 
   @include screen('tablet-small') {
-    grid-template-columns: repeat(auto-fill, 250px);
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, 150px);
   }
 
   .member_container {
@@ -22,6 +23,7 @@
     align-items: center;
     font-size: 16px;
     padding: 0;
+    height: 100%;
 
     &:hover > img {
       transform: scale(1.1);
@@ -59,16 +61,9 @@
     }
 
     @include screen('tablet-small') {
-      font-size: $body;
-      h3 {
-        font-size: $h4;
-      }
       img {
-        height: 180px;
-        width: 180px;
-      }
-      .about_button {
-        font-size: $body;
+        height: 150px;
+        width: 150px;
       }
     }
   }
