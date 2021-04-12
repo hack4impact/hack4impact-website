@@ -50,7 +50,7 @@
     display: block;
     color: $black;
     margin-bottom: 12px;
-    font-size: $body;
+    font-size: 16px;
     color: $primary-dark-2;
   }
 }
@@ -96,7 +96,7 @@
   }
 }
 
-@media only screen and (max-width: 582px) {
+@media only screen and (max-width: 750px) {
   .link_list {
     margin-left: 0px;
   }

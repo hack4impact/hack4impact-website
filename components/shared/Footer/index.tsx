@@ -22,6 +22,15 @@ function Footer() {
 
         <div className={styles.right_content}>
           <div className={styles.link_list}>
+            <h2>Follow Us</h2>
+            <a href="https://www.facebook.com/Hack4Impact/">Facebook</a>
+            <a href="https://www.instagram.com/hack4impact/">Instagram</a>
+            <a href="https://medium.com/@hack4impact">Medium</a>
+            <a href="https://www.linkedin.com/company/hack4impact/">LinkedIn</a>
+            <a href="https://github.com/hack4impact">GitHub</a>
+          </div>
+
+          <div className={styles.link_list}>
             <h2>Learn More</h2>
             <Link href="/about">
               <a>Our Mission</a>
@@ -39,12 +48,6 @@ function Footer() {
             <Link href="/apply/nonprofit">
               <a>Nonprofit Proposals</a>
             </Link>
-          </div>
-
-          <div className={styles.link_list}>
-            <h2>Follow Us</h2>
-            <a href="https://www.linkedin.com/company/hack4impact/about/">LinkedIn</a>
-            <a href="https://github.com/hack4impact">GitHub</a>
           </div>
         </div>
       </div>
