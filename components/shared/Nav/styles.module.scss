@@ -69,6 +69,18 @@
     }
   }
 
+  @media (min-width: $nav-breakpoint) {
+    a.donate_button, a.donate_button:visited {
+      background-color: #172a3a;
+      border-radius: 4px;
+      color: white;
+      &:hover {
+        background-color: #1e374c;
+        color: white;
+      }
+    }
+  }
+
   @media (max-width: $nav-breakpoint) {
     .dropdown_link_container {
       position: fixed;

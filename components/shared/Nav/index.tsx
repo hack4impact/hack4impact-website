@@ -64,6 +64,13 @@ function Nav() {
           <a href="mailto:contact@hack4impact.org">
             Contact Us <HoverShinyEffect color="#001aff" />
           </a>
+          <a
+            className={classNames(styles.donate_button)}
+            href="https://opencollective.com/Hack4impact"
+            target="_blank"
+            rel="noopener noreferrer">
+            Donate <HoverShinyEffect />
+          </a>
         </div>
       </nav>
     </header>
